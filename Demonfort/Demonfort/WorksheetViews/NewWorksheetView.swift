@@ -14,9 +14,14 @@ struct NewWorksheetView: View {
             Text("Nouvelle feuille de temps")
             .font(.title)
             .fontWeight(.heavy)
+            
+            Spacer()
+                .frame(height: 10)
+            
             VStack{
                 HStack{
                     Text("Date")
+                        .font(.headline)
                     Spacer()
                 }
                 Text("date picker here")
