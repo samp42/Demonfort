@@ -15,6 +15,7 @@
 		1E487F7823E67F0B00F01C25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E487F7623E67F0B00F01C25 /* LaunchScreen.storyboard */; };
 		1E487F8323E67F0B00F01C25 /* DemonfortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F8223E67F0B00F01C25 /* DemonfortTests.swift */; };
 		1E487F8E23E67F0B00F01C25 /* DemonfortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F8D23E67F0B00F01C25 /* DemonfortUITests.swift */; };
+		1EAB04B023F32AE40031B9EE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAB04AF23F32AE40031B9EE /* HeaderView.swift */; };
 		1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB6003423E688CC00AB9CD1 /* NewWorksheetView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		1E487F8923E67F0B00F01C25 /* DemonfortUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemonfortUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E487F8D23E67F0B00F01C25 /* DemonfortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemonfortUITests.swift; sourceTree = "<group>"; };
 		1E487F8F23E67F0B00F01C25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EAB04AF23F32AE40031B9EE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		1EB6003423E688CC00AB9CD1 /* NewWorksheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorksheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				1EB6003323E6886400AB9CD1 /* AccountViews */,
 				1EB6003223E6884800AB9CD1 /* WorksheetViews */,
 				1E487F6F23E67F0A00F01C25 /* ContentView.swift */,
+				1EAB04AF23F32AE40031B9EE /* HeaderView.swift */,
 				1E487F7123E67F0B00F01C25 /* Assets.xcassets */,
 				1E487F7623E67F0B00F01C25 /* LaunchScreen.storyboard */,
 				1E487F7923E67F0B00F01C25 /* Info.plist */,
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EAB04B023F32AE40031B9EE /* HeaderView.swift in Sources */,
 				1E487F6C23E67F0A00F01C25 /* AppDelegate.swift in Sources */,
 				1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */,
 				1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */,

@@ -12,34 +12,36 @@ struct ContentView: View {
     @State private var selection = 0
  
     var body: some View {
-        TabView(selection: $selection){
-            Text("First View")
+        VStack{
+            HeaderView()
+            TabView(selection: $selection){
+                Text("First View")
+                    .font(.title)
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "tray.fill")
+                            Text("Feuilles de temps")
+                        }
+                    }
+                    .tag(0)
+                    NewWorksheetView()
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image(systemName: "tray.fill")
-                        Text("Feuilles de temps")
+                        Image(systemName: "plus.square.fill")
                     }
                 }
-                .tag(0)
-            //NewWorksheetView()'
+                .tag(1)
                 Text("Second View")
-            .font(.title)
-            .tabItem {
-                VStack {
-                    Image(systemName: "plus.square.fill")
+                    .font(.title)
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "person.fill")
+                            Text("Compte")
+                        }
                 }
+                    .tag(2)
             }
-            .tag(1)
-            Text("Second View")
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "person.fill")
-                        Text("Compte")
-                    }
-            }
-                .tag(2)
         }
     }
 }
