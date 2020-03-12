@@ -9,6 +9,11 @@
 import SwiftUI
 
 struct NewWorksheetView: View {
+    @State private var day: Date = Date()
+    @State private var startTime: Date = Date()
+    @State private var endTime: Date = Date()
+    @State private var tasks: String = ""
+    
     var body: some View {
         VStack(alignment: .leading){
             Text("Nouvelle feuille de temps")
@@ -18,13 +23,49 @@ struct NewWorksheetView: View {
             Spacer()
                 .frame(height: 10)
             
-            VStack{
+            Form{
                 HStack{
-                    Text("Date")
+                    Text("Journée")
                         .font(.headline)
                     Spacer()
                 }
-                Text("date picker here")
+                
+                DatePicker(selection: $day, displayedComponents: .date, label: {
+                        Text("Début")
+                            .fontWeight(.semibold).frame(minWidth: 80)
+                    }).labelsHidden()
+                
+                HStack{
+                    Text("Heure de début")
+                        .font(.headline)
+                    Spacer()
+                }
+                
+                DatePicker(selection: $startTime, displayedComponents: .hourAndMinute, label: {
+                        Text("Début")
+                            .fontWeight(.semibold).frame(minWidth: 80)
+                    }).labelsHidden()
+                
+                HStack{
+                    Text("Heure de fin")
+                        .font(.headline)
+                    Spacer()
+                }
+                
+                DatePicker(selection: $endTime, displayedComponents: .hourAndMinute, label: {
+                        Text("Début")
+                            .fontWeight(.semibold).frame(minWidth: 80)
+                    }).labelsHidden()
+                
+                Spacer()
+                
+                TextField("Description des tâches", text: $tasks)
+                
+                Spacer()
+                
+               // Button(action: {
+                    
+                //}, label: Text("Envoyer"))
             }
             
         }.padding(10)

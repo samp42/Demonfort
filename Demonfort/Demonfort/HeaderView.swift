@@ -10,17 +10,21 @@ import SwiftUI
 
 struct HeaderView: View {
     var body: some View {
-        NavigationView{
-            HStack{
-                Image("Demonfort")
-                    .resizable()
-                    .frame(height: 30)
-                    .aspectRatio(contentMode: .fit)
-                Button(action:{}){
-                    Image("system.bubble.left")
-                }
-            }.background(Color.black)
-        }.frame(height: 40)
+        HStack(alignment: .top){
+            Image("Demonfort")
+                .position(x: 190, y: 80)
+                //.resizable()
+                //.frame(height: 54)
+                //.aspectRatio(contentMode: .fit)
+            /*NavigationLink(destination: TextingView()){
+                Image(systemName: "bubble.left")
+                
+            }*/
+        }.edgesIgnoringSafeArea(.all)
+            .frame(height: 80)
+            .background(Color.black)
+            .foregroundColor(Color.white)
+        
     }
 }
 

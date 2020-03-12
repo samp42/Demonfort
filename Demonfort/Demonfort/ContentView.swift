@@ -14,12 +14,14 @@ struct ContentView: View {
     var body: some View {
         VStack{
             HeaderView()
+            
             TabView(selection: $selection){
                 Text("First View")
                     .font(.title)
                     .tabItem {
                         VStack {
                             Image(systemName: "tray.fill")
+                                .foregroundColor(Color.black)
                             Text("Feuilles de temps")
                         }
                     }
@@ -28,7 +30,7 @@ struct ContentView: View {
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image(systemName: "plus.square.fill")
+                        Image(systemName: "plus.square.fill").background(Color.black)
                     }
                 }
                 .tag(1)
