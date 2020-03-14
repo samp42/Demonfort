@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,12 +18,12 @@
 		1E7AA12F241AF666006CA1BC /* AccountImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA12E241AF665006CA1BC /* AccountImageView.swift */; };
 		1E7AA131241AF681006CA1BC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA130241AF681006CA1BC /* ProfileView.swift */; };
 		1E7AA133241AF6E7006CA1BC /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA132241AF6E7006CA1BC /* AccountView.swift */; };
-		1E7AA137241B2986006CA1BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E7AA136241B2986006CA1BC /* GoogleService-Info.plist */; };
+		1E94EDDE241D41FD004A80A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E94EDDD241D41FD004A80A5 /* GoogleService-Info.plist */; };
 		1EAB04B023F32AE40031B9EE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAB04AF23F32AE40031B9EE /* HeaderView.swift */; };
 		1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB6003423E688CC00AB9CD1 /* NewWorksheetView.swift */; };
-		3F2A4E471050690587525D68 /* Pods_Demonfort_DemonfortUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BF5F2368D6DAECC7E18BAA /* Pods_Demonfort_DemonfortUITests.framework */; };
-		AAE9C0F080EBB8B319094D98 /* Pods_DemonfortTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F778E20F180C305230EFB5E /* Pods_DemonfortTests.framework */; };
-		BAFD09DAC21D46BFB4A7B347 /* Pods_Demonfort.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D11172985A9B058B3E5C9A0 /* Pods_Demonfort.framework */; };
+		8EDF9F02F169A035750124F0 /* Pods_DemonfortTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF8499968ECDA145798328B /* Pods_DemonfortTests.framework */; };
+		A7FEA02CE3A4941622E43F64 /* Pods_Demonfort_DemonfortUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA582A871FE758CFEA9B4DF0 /* Pods_Demonfort_DemonfortUITests.framework */; };
+		C144243451153758F0357F47 /* Pods_Demonfort.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D86E9A62BC2B3335E3D9F /* Pods_Demonfort.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D11172985A9B058B3E5C9A0 /* Pods_Demonfort.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demonfort.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DCE5F98BE9BB08487722C29 /* Pods-Demonfort.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demonfort.release.xcconfig"; path = "Target Support Files/Pods-Demonfort/Pods-Demonfort.release.xcconfig"; sourceTree = "<group>"; };
+		0E2FFB9005FD655931DE00E2 /* Pods-Demonfort-DemonfortUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demonfort-DemonfortUITests.debug.xcconfig"; path = "Target Support Files/Pods-Demonfort-DemonfortUITests/Pods-Demonfort-DemonfortUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E487F6823E67F0900F01C25 /* Demonfort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demonfort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E487F6B23E67F0900F01C25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E487F6D23E67F0A00F01C25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,16 +62,17 @@
 		1E7AA12E241AF665006CA1BC /* AccountImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImageView.swift; sourceTree = "<group>"; };
 		1E7AA130241AF681006CA1BC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1E7AA132241AF6E7006CA1BC /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
-		1E7AA136241B2986006CA1BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1E94EDDD241D41FD004A80A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EAB04AF23F32AE40031B9EE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		1EB6003423E688CC00AB9CD1 /* NewWorksheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorksheetView.swift; sourceTree = "<group>"; };
-		382E6F82E8A2865B333891B5 /* Pods-Demonfort-DemonfortUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demonfort-DemonfortUITests.release.xcconfig"; path = "Target Support Files/Pods-Demonfort-DemonfortUITests/Pods-Demonfort-DemonfortUITests.release.xcconfig"; sourceTree = "<group>"; };
-		38BF5F2368D6DAECC7E18BAA /* Pods_Demonfort_DemonfortUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demonfort_DemonfortUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D1EDCB840A6BA5F922ED131 /* Pods-Demonfort-DemonfortUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demonfort-DemonfortUITests.debug.xcconfig"; path = "Target Support Files/Pods-Demonfort-DemonfortUITests/Pods-Demonfort-DemonfortUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		72891450E7141FA844BF3B16 /* Pods-Demonfort.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demonfort.debug.xcconfig"; path = "Target Support Files/Pods-Demonfort/Pods-Demonfort.debug.xcconfig"; sourceTree = "<group>"; };
-		7F778E20F180C305230EFB5E /* Pods_DemonfortTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemonfortTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC4F5184B0E17DC3C3E4F0B0 /* Pods-DemonfortTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemonfortTests.debug.xcconfig"; path = "Target Support Files/Pods-DemonfortTests/Pods-DemonfortTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EB529C73EF1269DFB86A3CA8 /* Pods-DemonfortTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemonfortTests.release.xcconfig"; path = "Target Support Files/Pods-DemonfortTests/Pods-DemonfortTests.release.xcconfig"; sourceTree = "<group>"; };
+		4A5BAE17E6942D8D565E1C3D /* Pods-DemonfortTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemonfortTests.release.xcconfig"; path = "Target Support Files/Pods-DemonfortTests/Pods-DemonfortTests.release.xcconfig"; sourceTree = "<group>"; };
+		4BA1B93CE1D351B48F7D81D3 /* Pods-Demonfort.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demonfort.release.xcconfig"; path = "Target Support Files/Pods-Demonfort/Pods-Demonfort.release.xcconfig"; sourceTree = "<group>"; };
+		5C55ACC80F5C94A2AADD401C /* Pods-DemonfortTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemonfortTests.debug.xcconfig"; path = "Target Support Files/Pods-DemonfortTests/Pods-DemonfortTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6FF8499968ECDA145798328B /* Pods_DemonfortTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemonfortTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		839D86E9A62BC2B3335E3D9F /* Pods_Demonfort.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demonfort.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA582A871FE758CFEA9B4DF0 /* Pods_Demonfort_DemonfortUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demonfort_DemonfortUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDAC180EBC3D280A3FDBA01B /* Pods-Demonfort-DemonfortUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demonfort-DemonfortUITests.release.xcconfig"; path = "Target Support Files/Pods-Demonfort-DemonfortUITests/Pods-Demonfort-DemonfortUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F0219AD4AF16F096C884D6CB /* Pods-Demonfort.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demonfort.debug.xcconfig"; path = "Target Support Files/Pods-Demonfort/Pods-Demonfort.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAFD09DAC21D46BFB4A7B347 /* Pods_Demonfort.framework in Frameworks */,
+				C144243451153758F0357F47 /* Pods_Demonfort.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE9C0F080EBB8B319094D98 /* Pods_DemonfortTests.framework in Frameworks */,
+				8EDF9F02F169A035750124F0 /* Pods_DemonfortTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,27 +96,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F2A4E471050690587525D68 /* Pods_Demonfort_DemonfortUITests.framework in Frameworks */,
+				A7FEA02CE3A4941622E43F64 /* Pods_Demonfort_DemonfortUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		011701E096B025846A1A069A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				72891450E7141FA844BF3B16 /* Pods-Demonfort.debug.xcconfig */,
-				1DCE5F98BE9BB08487722C29 /* Pods-Demonfort.release.xcconfig */,
-				4D1EDCB840A6BA5F922ED131 /* Pods-Demonfort-DemonfortUITests.debug.xcconfig */,
-				382E6F82E8A2865B333891B5 /* Pods-Demonfort-DemonfortUITests.release.xcconfig */,
-				CC4F5184B0E17DC3C3E4F0B0 /* Pods-DemonfortTests.debug.xcconfig */,
-				EB529C73EF1269DFB86A3CA8 /* Pods-DemonfortTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		1E487F5F23E67F0900F01C25 = {
 			isa = PBXGroup;
 			children = (
@@ -124,8 +110,8 @@
 				1E487F8123E67F0B00F01C25 /* DemonfortTests */,
 				1E487F8C23E67F0B00F01C25 /* DemonfortUITests */,
 				1E487F6923E67F0900F01C25 /* Products */,
-				011701E096B025846A1A069A /* Pods */,
-				227B2A724AF5B791DB3BFDAF /* Frameworks */,
+				7E9E9EAA92EB6018DEEFAABE /* Pods */,
+				2C36DF88CFA328F6B3469E95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,7 +137,7 @@
 				1E487F7123E67F0B00F01C25 /* Assets.xcassets */,
 				1E487F7623E67F0B00F01C25 /* LaunchScreen.storyboard */,
 				1E487F7923E67F0B00F01C25 /* Info.plist */,
-				1E7AA136241B2986006CA1BC /* GoogleService-Info.plist */,
+				1E94EDDD241D41FD004A80A5 /* GoogleService-Info.plist */,
 				1E487F7323E67F0B00F01C25 /* Preview Content */,
 			);
 			path = Demonfort;
@@ -201,14 +187,28 @@
 			path = AccountViews;
 			sourceTree = "<group>";
 		};
-		227B2A724AF5B791DB3BFDAF /* Frameworks */ = {
+		2C36DF88CFA328F6B3469E95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0D11172985A9B058B3E5C9A0 /* Pods_Demonfort.framework */,
-				38BF5F2368D6DAECC7E18BAA /* Pods_Demonfort_DemonfortUITests.framework */,
-				7F778E20F180C305230EFB5E /* Pods_DemonfortTests.framework */,
+				839D86E9A62BC2B3335E3D9F /* Pods_Demonfort.framework */,
+				DA582A871FE758CFEA9B4DF0 /* Pods_Demonfort_DemonfortUITests.framework */,
+				6FF8499968ECDA145798328B /* Pods_DemonfortTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E9E9EAA92EB6018DEEFAABE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0219AD4AF16F096C884D6CB /* Pods-Demonfort.debug.xcconfig */,
+				4BA1B93CE1D351B48F7D81D3 /* Pods-Demonfort.release.xcconfig */,
+				0E2FFB9005FD655931DE00E2 /* Pods-Demonfort-DemonfortUITests.debug.xcconfig */,
+				EDAC180EBC3D280A3FDBA01B /* Pods-Demonfort-DemonfortUITests.release.xcconfig */,
+				5C55ACC80F5C94A2AADD401C /* Pods-DemonfortTests.debug.xcconfig */,
+				4A5BAE17E6942D8D565E1C3D /* Pods-DemonfortTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,7 +222,7 @@
 				1E487F6423E67F0900F01C25 /* Sources */,
 				1E487F6523E67F0900F01C25 /* Frameworks */,
 				1E487F6623E67F0900F01C25 /* Resources */,
-				3A7D215B90E9F9981DE9D290 /* [CP] Embed Pods Frameworks */,
+				9EA60921AB58F7D9E26D7246 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,7 +260,7 @@
 				1E487F8523E67F0B00F01C25 /* Sources */,
 				1E487F8623E67F0B00F01C25 /* Frameworks */,
 				1E487F8723E67F0B00F01C25 /* Resources */,
-				3145E420B8C1F02C1C1A756C /* [CP] Embed Pods Frameworks */,
+				233088EC61076A4003C9DCF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,7 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E487F7823E67F0B00F01C25 /* LaunchScreen.storyboard in Resources */,
-				1E7AA137241B2986006CA1BC /* GoogleService-Info.plist in Resources */,
+				1E94EDDE241D41FD004A80A5 /* GoogleService-Info.plist in Resources */,
 				1E487F7523E67F0B00F01C25 /* Preview Assets.xcassets in Resources */,
 				1E487F7223E67F0B00F01C25 /* Assets.xcassets in Resources */,
 			);
@@ -366,7 +366,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3145E420B8C1F02C1C1A756C /* [CP] Embed Pods Frameworks */ = {
+		233088EC61076A4003C9DCF9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,23 +381,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demonfort-DemonfortUITests/Pods-Demonfort-DemonfortUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3A7D215B90E9F9981DE9D290 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demonfort/Pods-Demonfort-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demonfort/Pods-Demonfort-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demonfort/Pods-Demonfort-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5B9391F654DB4E48E3544F76 /* [CP] Check Pods Manifest.lock */ = {
@@ -442,6 +425,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EA60921AB58F7D9E26D7246 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demonfort/Pods-Demonfort-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demonfort/Pods-Demonfort-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demonfort/Pods-Demonfort-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -621,7 +621,7 @@
 		};
 		1E487F9323E67F0B00F01C25 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72891450E7141FA844BF3B16 /* Pods-Demonfort.debug.xcconfig */;
+			baseConfigurationReference = F0219AD4AF16F096C884D6CB /* Pods-Demonfort.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -641,7 +641,7 @@
 		};
 		1E487F9423E67F0B00F01C25 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DCE5F98BE9BB08487722C29 /* Pods-Demonfort.release.xcconfig */;
+			baseConfigurationReference = 4BA1B93CE1D351B48F7D81D3 /* Pods-Demonfort.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -661,7 +661,7 @@
 		};
 		1E487F9623E67F0B00F01C25 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC4F5184B0E17DC3C3E4F0B0 /* Pods-DemonfortTests.debug.xcconfig */;
+			baseConfigurationReference = 5C55ACC80F5C94A2AADD401C /* Pods-DemonfortTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -683,7 +683,7 @@
 		};
 		1E487F9723E67F0B00F01C25 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB529C73EF1269DFB86A3CA8 /* Pods-DemonfortTests.release.xcconfig */;
+			baseConfigurationReference = 4A5BAE17E6942D8D565E1C3D /* Pods-DemonfortTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -705,7 +705,7 @@
 		};
 		1E487F9923E67F0B00F01C25 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D1EDCB840A6BA5F922ED131 /* Pods-Demonfort-DemonfortUITests.debug.xcconfig */;
+			baseConfigurationReference = 0E2FFB9005FD655931DE00E2 /* Pods-Demonfort-DemonfortUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -725,7 +725,7 @@
 		};
 		1E487F9A23E67F0B00F01C25 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 382E6F82E8A2865B333891B5 /* Pods-Demonfort-DemonfortUITests.release.xcconfig */;
+			baseConfigurationReference = EDAC180EBC3D280A3FDBA01B /* Pods-Demonfort-DemonfortUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

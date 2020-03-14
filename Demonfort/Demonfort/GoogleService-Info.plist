@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>3711937686-f8u0u2gsof7jhj8ip4bdraffj9ff6v5k.apps.googleusercontent.com</string>
+	<string>753550831305-vcldre97t3cm0bk4tsnq2h005ruo2t7b.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.3711937686-f8u0u2gsof7jhj8ip4bdraffj9ff6v5k</string>
+	<string>com.googleusercontent.apps.753550831305-vcldre97t3cm0bk4tsnq2h005ruo2t7b</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAJtf2HZW3aKIj2Nz_ZRW8oRWWhemxDAB0</string>
+	<string>AIzaSyBivFiT3LBB-KDj2xXl-DwqDcc1RzmVaSM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>3711937686</string>
+	<string>753550831305</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.demonfort.Demonfort</string>
 	<key>PROJECT_ID</key>
-	<string>demonfort-a742a</string>
+	<string>demonfort-85bd5</string>
 	<key>STORAGE_BUCKET</key>
-	<string>demonfort-a742a.appspot.com</string>
+	<string>demonfort-85bd5.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:3711937686:ios:8420fe35b8dfb938d866b7</string>
+	<string>1:753550831305:ios:d69c70c977e8da6ee46718</string>
 	<key>DATABASE_URL</key>
-	<string>https://demonfort-a742a.firebaseio.com</string>
+	<string>https://demonfort-85bd5.firebaseio.com</string>
 </dict>
 </plist>
