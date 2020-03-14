@@ -12,7 +12,7 @@ struct HeaderView: View {
     var body: some View {
         HStack(alignment: .top){
             Image("Demonfort")
-                .position(x: 190, y: 80)
+                .position(x: 190, y: 85)
                 //.resizable()
                 //.frame(height: 54)
                 //.aspectRatio(contentMode: .fit)
@@ -21,7 +21,7 @@ struct HeaderView: View {
                 
             }*/
         }.edgesIgnoringSafeArea(.all)
-            .frame(height: 80)
+            .frame(height: 90)
             .background(Color.black)
             .foregroundColor(Color.white)
         

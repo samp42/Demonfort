@@ -27,22 +27,21 @@ struct ContentView: View {
                     }
                     .tag(0)
                     NewWorksheetView()
-                .font(.title)
                 .tabItem {
                     VStack {
                         Image(systemName: "plus.square.fill").background(Color.black)
                     }
                 }
                 .tag(1)
-                Text("Second View")
-                    .font(.title)
+                
+                AccountView()
                     .tabItem {
                         VStack {
                             Image(systemName: "person.fill")
                             Text("Compte")
                         }
                 }
-                    .tag(2)
+                .tag(2)
             }
         }
     }

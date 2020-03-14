@@ -63,12 +63,22 @@ struct NewWorksheetView: View {
                 
                 Spacer()
                 
-               // Button(action: {
-                    
-                //}, label: Text("Envoyer"))
+            }//End of form
+            
+            HStack{
+                Spacer()
+                
+                Button(action: {}) {
+                    Text("Envoyer")
+                        .foregroundColor(Color.black)
+                        .fontWeight(.heavy)
+                }
+                
+                Spacer()
             }
             
-        }.padding(10)
+        }//End of VStack
+        .padding(10)
     }
 }
 
