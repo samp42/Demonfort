@@ -10,7 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 0
- 
+    /*
+     init() {
+        UITabBar.appearance().barTextColor = UIColor.gray
+     }*/
     var body: some View {
         VStack{
             HeaderView()
@@ -30,6 +33,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "plus.square.fill").background(Color.black)
+                        Text("Nouvelle feuille")
                     }
                 }
                 .tag(1)
@@ -42,7 +46,8 @@ struct ContentView: View {
                         }
                 }
                 .tag(2)
-            }
+            }//End of TabView
+                .accentColor(Color.red)
         }
     }
 }

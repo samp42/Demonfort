@@ -13,7 +13,15 @@ struct AccountView: View {
         VStack{
             ProfileView()
             Spacer()
-        }
+                .frame(height: 20)
+            HStack {
+                Text("Chantiers")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Spacer()
+            }
+            Spacer()
+        }.padding([.horizontal], 8)
     }
 }
 

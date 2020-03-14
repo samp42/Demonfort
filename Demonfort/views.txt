@@ -12,7 +12,8 @@ Tab 2: Nouvelle feuille de temps
 Tab 3: Compte
     -AccountImageView
     -ProfileView
-    -
+    -WorkPlacesListView
+    -WorkPlaceView
 
 HeaderView
 ContentView

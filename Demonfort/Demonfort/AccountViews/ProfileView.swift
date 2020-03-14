@@ -10,25 +10,26 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        ZStack{
-            Rectangle()
-                .background(Color.black)
-                .frame(minWidth:0, maxWidth: .infinity, minHeight: 140, maxHeight: 140)
-           
-            
-            VStack{
-                AccountImageView()
+
+            HStack{
+                ZStack{
+                    AccountImageView()
+                        //.overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                }
+                
+                VStack(alignment: .leading){
+                    Text("Simon Fonseca")
+                        .fontWeight(.heavy)
+                        .font(.title)
+                    Text("Surintendant")
+                        .font(.headline)
+                    Spacer()
+                }
                 Spacer()
-                    .frame(height:15)
-                Text("Simon Fonseca")
-                    .fontWeight(.heavy)
-                    .font(.headline)
-                Text("Surintendant")
-                    .font(.subheadline)
-            }.offset(y:25)
-        }
+            }.padding([.all], 8).frame(height: 128).frame(minWidth:360, maxWidth: 540).overlay(RoundedRectangle(cornerRadius: 20).foregroundColor(Color.black).opacity(0.1))
     }
 }
+
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
