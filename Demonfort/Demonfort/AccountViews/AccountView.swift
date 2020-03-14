@@ -13,9 +13,26 @@ struct AccountView: View {
         VStack{
             ProfileView()
             Spacer()
+            .frame(height: 20)
+            HStack {
+                Text("Jours de la semaine")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Spacer()
+            }
+            Spacer()
                 .frame(height: 20)
             HStack {
                 Text("Chantiers")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Spacer()
+            }
+            UserWorkPlacesView()
+            Spacer()
+                .frame(height: 20)
+            HStack {
+                Text("Feuilles à approuver")
                     .font(.title)
                     .fontWeight(.bold)
                 Spacer()

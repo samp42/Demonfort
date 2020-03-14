@@ -15,6 +15,8 @@
 		1E487F7823E67F0B00F01C25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E487F7623E67F0B00F01C25 /* LaunchScreen.storyboard */; };
 		1E487F8323E67F0B00F01C25 /* DemonfortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F8223E67F0B00F01C25 /* DemonfortTests.swift */; };
 		1E487F8E23E67F0B00F01C25 /* DemonfortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F8D23E67F0B00F01C25 /* DemonfortUITests.swift */; };
+		1E4EE786241DA20200855E41 /* UserWorkPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */; };
+		1E4EE788241DA67B00855E41 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4EE787241DA67B00855E41 /* General.swift */; };
 		1E7AA12F241AF666006CA1BC /* AccountImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA12E241AF665006CA1BC /* AccountImageView.swift */; };
 		1E7AA131241AF681006CA1BC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA130241AF681006CA1BC /* ProfileView.swift */; };
 		1E7AA133241AF6E7006CA1BC /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA132241AF6E7006CA1BC /* AccountView.swift */; };
@@ -59,6 +61,8 @@
 		1E487F8923E67F0B00F01C25 /* DemonfortUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemonfortUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E487F8D23E67F0B00F01C25 /* DemonfortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemonfortUITests.swift; sourceTree = "<group>"; };
 		1E487F8F23E67F0B00F01C25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserWorkPlacesView.swift; path = Demonfort/AccountViews/UserWorkPlacesView.swift; sourceTree = SOURCE_ROOT; };
+		1E4EE787241DA67B00855E41 /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		1E7AA12E241AF665006CA1BC /* AccountImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImageView.swift; sourceTree = "<group>"; };
 		1E7AA130241AF681006CA1BC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1E7AA132241AF6E7006CA1BC /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -103,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E277F9F241D65FC0052FEFB /* NewWorksheetViews */ = {
+			isa = PBXGroup;
+			children = (
+				1EB6003423E688CC00AB9CD1 /* NewWorksheetView.swift */,
+				1E4EE787241DA67B00855E41 /* General.swift */,
+			);
+			path = NewWorksheetViews;
+			sourceTree = "<group>";
+		};
 		1E487F5F23E67F0900F01C25 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +144,7 @@
 				1E487F6B23E67F0900F01C25 /* AppDelegate.swift */,
 				1E487F6D23E67F0A00F01C25 /* SceneDelegate.swift */,
 				1EB6003223E6884800AB9CD1 /* WorksheetViews */,
+				1E277F9F241D65FC0052FEFB /* NewWorksheetViews */,
 				1EB6003323E6886400AB9CD1 /* AccountViews */,
 				1E487F6F23E67F0A00F01C25 /* ContentView.swift */,
 				1EAB04AF23F32AE40031B9EE /* HeaderView.swift */,
@@ -172,7 +186,6 @@
 		1EB6003223E6884800AB9CD1 /* WorksheetViews */ = {
 			isa = PBXGroup;
 			children = (
-				1EB6003423E688CC00AB9CD1 /* NewWorksheetView.swift */,
 			);
 			path = WorksheetViews;
 			sourceTree = "<group>";
@@ -183,6 +196,7 @@
 				1E7AA12E241AF665006CA1BC /* AccountImageView.swift */,
 				1E7AA130241AF681006CA1BC /* ProfileView.swift */,
 				1E7AA132241AF6E7006CA1BC /* AccountView.swift */,
+				1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */,
 			);
 			path = AccountViews;
 			sourceTree = "<group>";
@@ -207,7 +221,6 @@
 				5C55ACC80F5C94A2AADD401C /* Pods-DemonfortTests.debug.xcconfig */,
 				4A5BAE17E6942D8D565E1C3D /* Pods-DemonfortTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -455,7 +468,9 @@
 				1E487F6C23E67F0A00F01C25 /* AppDelegate.swift in Sources */,
 				1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */,
 				1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */,
+				1E4EE788241DA67B00855E41 /* General.swift in Sources */,
 				1E7AA133241AF6E7006CA1BC /* AccountView.swift in Sources */,
+				1E4EE786241DA20200855E41 /* UserWorkPlacesView.swift in Sources */,
 				1E7AA12F241AF666006CA1BC /* AccountImageView.swift in Sources */,
 				1E7AA131241AF681006CA1BC /* ProfileView.swift in Sources */,
 				1E487F7023E67F0A00F01C25 /* ContentView.swift in Sources */,

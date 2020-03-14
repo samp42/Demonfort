@@ -26,7 +26,7 @@ struct ProfileView: View {
                     Spacer()
                 }
                 Spacer()
-            }.padding([.all], 8).frame(height: 128).frame(minWidth:360, maxWidth: 540).overlay(RoundedRectangle(cornerRadius: 20).foregroundColor(Color.black).opacity(0.1))
+            }.padding([.all], 8).frame(height: 128).frame(minWidth:360).overlay(RoundedRectangle(cornerRadius: 20).foregroundColor(Color.black).opacity(0.1))
     }
 }
 

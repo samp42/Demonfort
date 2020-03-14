@@ -7,6 +7,7 @@ Tab 1: Feuilles de temps
     -WorksheetDetailView
 
 Tab 2: Nouvelle feuille de temps
+    (ouvrier)
     -NewWorksheetView
 
 Tab 3: Compte
@@ -14,6 +15,29 @@ Tab 3: Compte
     -ProfileView
     -WorkPlacesListView
     -WorkPlaceView
+    -UserWorkPlacesView
+    -WeekDaysView // a voir pour le nom
+    /*
+    (surintendant)
+        -(in ProfileView)*/
 
 HeaderView
 ContentView
+
+When "Envoyer" is clicked and another worksheet for the day exists:
+-"Vous avez déjà remplie une feuille de temps aujourd'hui? Continuer?"
+
+Notification à 15h chaque jour de la semaine:
+-"Avez-vous travailler aujourd'hui? N'oubliez pas de remplir votre feuille de temps."
+
+::::SIMON::::
+But de l’app. ;
+Faire gagner du temps à la comptable. Elle reçoit une liste .xls le dimanche qu’elle peut copy/paste dans son chiffrier de paie le lundi.
+Centraliser les feuilles de temps. Faciliter la traçabilité et la surveillance des heures. Éliminer le papier.
+Simplifier le remplissage pour les ouvriers,
+Associer des photos aux tâches et jours de la feuille de temps.
+
+Possibilité;
+Surintendant peut ajouter des heures sur les FDT des ouvriers. EX; quelqun brise son cell.
+On voit les jours de la semaine (lundi@dim) dans la page principale du compte des ouvriers
+On voit la liste des chantiers dans la page principale du compte des surintendant

@@ -12,7 +12,7 @@ struct HeaderView: View {
     var body: some View {
         HStack(alignment: .top){
             Image("Demonfort")
-                .position(x: 190, y: 85)
+                .position(x: 190, y: 95)
                 //.resizable()
                 //.frame(height: 54)
                 //.aspectRatio(contentMode: .fit)
@@ -20,8 +20,8 @@ struct HeaderView: View {
                 Image(systemName: "bubble.left")
                 
             }*/
-        }.edgesIgnoringSafeArea(.all)
-            .frame(height: 90)
+        }.edgesIgnoringSafeArea(.vertical)
+            .frame(height: 100)
             .background(Color.black)
             .foregroundColor(Color.white)
         

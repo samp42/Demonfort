@@ -13,6 +13,9 @@ struct NewWorksheetView: View {
     @State private var startTime: Date = Date()
     @State private var endTime: Date = Date()
     @State private var tasks: String = ""
+    @State private var selectedWorkPlace = 0
+    
+    var chantiers = ["Coursol", "Waverly"]
     
     var body: some View {
         VStack(alignment: .leading){
@@ -31,9 +34,9 @@ struct NewWorksheetView: View {
                 }
                 
                 DatePicker(selection: $day, displayedComponents: .date, label: {
-                        Text("Début")
+                        Text("Journée")
                             .fontWeight(.semibold).frame(minWidth: 80)
-                    }).labelsHidden()
+                }).labelsHidden()
                 
                 HStack{
                     Text("Heure de début")
@@ -44,7 +47,7 @@ struct NewWorksheetView: View {
                 DatePicker(selection: $startTime, displayedComponents: .hourAndMinute, label: {
                         Text("Début")
                             .fontWeight(.semibold).frame(minWidth: 80)
-                    }).labelsHidden()
+                }).labelsHidden()
                 
                 HStack{
                     Text("Heure de fin")
@@ -53,9 +56,17 @@ struct NewWorksheetView: View {
                 }
                 
                 DatePicker(selection: $endTime, displayedComponents: .hourAndMinute, label: {
-                        Text("Début")
+                        Text("Fin")
                             .fontWeight(.semibold).frame(minWidth: 80)
                     }).labelsHidden()
+                
+                Spacer()
+                
+                Picker(selection: $selectedWorkPlace, label: Text("Chantier")) {
+                    ForEach(0 ..< chantiers.count) {
+                        Text(self.chantiers[$0])
+                    }
+                }.pickerStyle(WheelPickerStyle())
                 
                 Spacer()
                 
