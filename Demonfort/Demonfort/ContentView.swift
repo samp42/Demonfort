@@ -8,6 +8,19 @@
 
 import SwiftUI
 
+class GlobalEnvironment: ObservableObject {
+    //put all global variables here
+    
+    @Published var workPlaces = ["RueX", "Waverly", "Maisonneuve"]
+    
+    /*
+    Implement as such:
+    
+       @EnvironmentObject var global: GlobalEnvironment
+    
+    */
+}
+
 struct ContentView: View {
     @State private var selection = 0
     /*

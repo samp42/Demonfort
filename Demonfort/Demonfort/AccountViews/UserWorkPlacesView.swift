@@ -9,12 +9,13 @@
 import SwiftUI
 
 struct UserWorkPlacesView: View {
-    let workPlaces = ["RueX", "Waverly", "Maisonneuve"]
+   
+    @EnvironmentObject var global: GlobalEnvironment
     
     var body: some View {
-        ForEach(0..<workPlaces.count){place in
+        ForEach(0..<self.global.workPlaces.count){place in
             HStack {
-                Text(self.workPlaces[place])
+                Text(self.global.workPlaces[place])
                     .font(.headline)
                     .padding(.bottom, 4)
                     .padding(.leading, 8)
