@@ -11,8 +11,10 @@ import SwiftUI
 struct HeaderView: View {
     var body: some View {
         HStack(alignment: .top){
+            Spacer()
             Image("Demonfort")
-                .position(x: 190, y: 95)
+            Spacer()
+                //.position(x: 190, y: 95)
                 //.resizable()
                 //.frame(height: 54)
                 //.aspectRatio(contentMode: .fit)
@@ -21,7 +23,7 @@ struct HeaderView: View {
                 
             }*/
         }.edgesIgnoringSafeArea(.vertical)
-            .frame(height: 100)
+            .padding([.vertical], 12)
             .background(Color.black)
             .foregroundColor(Color.white)
         

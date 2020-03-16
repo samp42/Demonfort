@@ -16,7 +16,7 @@ struct WorksheetFormView: View {
     
     var body: some View {
         Form{
-            //DateSelectorView()
+            DateSelectorView()
             
             Spacer()
         
@@ -25,6 +25,7 @@ struct WorksheetFormView: View {
                     Text(self.global.workPlaces[$0])
                 }
             }.pickerStyle(WheelPickerStyle())
+            .labelsHidden()
             
             Spacer()
             

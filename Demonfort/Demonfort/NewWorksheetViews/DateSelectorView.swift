@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-/*
+
 struct DateSelectorView: View {
     @EnvironmentObject var global: GlobalEnvironment
     
@@ -57,4 +57,4 @@ struct DateSelectorView_Previews: PreviewProvider {
     static var previews: some View {
         DateSelectorView()
     }
-}*/
+}
