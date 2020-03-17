@@ -12,7 +12,6 @@ class GlobalEnvironment: ObservableObject {
     //put all global variables here
     
     @Published var workPlaces = ["RueX", "Waverly", "Maisonneuve"]
-    
     /*
     Implement as such:
     
@@ -22,7 +21,7 @@ class GlobalEnvironment: ObservableObject {
 }
 
 struct ContentView: View {
-    @State private var selection = 0
+    @State private var selection = 1 //open on new worksheet view by default
     /*
      init() {
         UITabBar.appearance().barTextColor = UIColor.gray
@@ -32,8 +31,7 @@ struct ContentView: View {
             HeaderView()
             
             TabView(selection: $selection){
-                Text("First View")
-                    .font(.title)
+                WorksheetView()
                     .tabItem {
                         VStack {
                             Image(systemName: "tray.fill")
@@ -51,7 +49,9 @@ struct ContentView: View {
                 }
                 .tag(1)
                 
-                AccountView()
+                ScrollView(.vertical){
+                    AccountView()
+                }
                     .tabItem {
                         VStack {
                             Image(systemName: "person.fill")

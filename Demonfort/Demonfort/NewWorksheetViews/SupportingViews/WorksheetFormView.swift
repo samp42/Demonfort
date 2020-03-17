@@ -16,6 +16,7 @@ struct WorksheetFormView: View {
     @State private var endTime: Date = Date()
     @State private var selectedWorkPlace = 0
     @State private var tasks: String = ""
+
     //let dateComponents = DateComponents( hour: 9, minute: 0)
     //let date = Calendar.current.date(from: dateComponents)
     
@@ -77,20 +78,7 @@ struct WorksheetFormView: View {
                     
             }//End of form
            
-            HStack{
-                Spacer()
-                
-                Button(action: {}) {
-                    Text("Envoyer")
-                        .foregroundColor(Color.white)
-                        .fontWeight(.heavy)
-                        .frame(width: 256)
-                }.padding([.vertical], 8)
-                .background(Color.black)
-                .cornerRadius(10)
-                
-                Spacer()
-            }
+            SendButtonView()
             
             Spacer()
         }//End of VStack
