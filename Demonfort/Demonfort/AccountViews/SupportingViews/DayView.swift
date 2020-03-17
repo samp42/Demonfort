@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct DayView: View {
+    var day: String
     var body: some View {
         VStack{
             HStack{
-                Text("Lundi")
+                Text(day)
                     .font(.title)
                     .fontWeight(.bold)
                 Spacer()
@@ -28,6 +29,6 @@ struct DayView: View {
 
 struct DayView_Previews: PreviewProvider {
     static var previews: some View {
-        DayView()
+        DayView(day: "Lundi")
     }
 }

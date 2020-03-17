@@ -20,6 +20,7 @@ struct AccountView: View {
                     .fontWeight(.bold)
                 Spacer()
             }
+            WeekDaysView()
             Spacer()
                 .frame(height: 20)
             HStack {

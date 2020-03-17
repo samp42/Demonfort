@@ -84,10 +84,10 @@ struct WorksheetFormView: View {
                     Text("Envoyer")
                         .foregroundColor(Color.white)
                         .fontWeight(.heavy)
+                        .frame(width: 256)
                 }.padding([.vertical], 8)
-                .padding([.horizontal], 64)
-                .cornerRadius(5)
                 .background(Color.black)
+                .cornerRadius(10)
                 
                 Spacer()
             }
