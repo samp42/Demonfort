@@ -39,5 +39,5 @@ Associer des photos aux tâches et jours de la feuille de temps.
 
 Possibilité;
 Surintendant peut ajouter des heures sur les FDT des ouvriers. EX; quelqun brise son cell.
-On voit les jours de la semaine (lundi@dim) dans la page principale du compte des ouvriers
+On voit les jours de la semaine (lundi@dim) dans la page principale du compte *des ouvriers*
 On voit la liste des chantiers dans la page principale du compte des surintendant

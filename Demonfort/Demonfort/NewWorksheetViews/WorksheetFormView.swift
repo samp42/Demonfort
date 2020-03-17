@@ -11,28 +11,72 @@ import SwiftUI
 struct WorksheetFormView: View {
     @EnvironmentObject var global: GlobalEnvironment
     
-    @State private var tasks: String = ""
+    @State private var day: Date = Date()
+    @State private var startTime: Date = Date()
+    @State private var endTime: Date = Date()
     @State private var selectedWorkPlace = 0
+    @State private var tasks: String = ""
+    //let dateComponents = DateComponents( hour: 9, minute: 0)
+    //let date = Calendar.current.date(from: dateComponents)
     
     var body: some View {
-        Form{
-            DateSelectorView()
-            
-            Spacer()
-        
-            Picker("Chantier", selection: $selectedWorkPlace) {
-                ForEach(0..<self.global.workPlaces.count) {
-                    Text(self.global.workPlaces[$0])
+        VStack{
+            Form{
+                Section(header: Text("Date").font(.headline)){
+                    HStack{
+                        Text("Journée")
+                            .font(.headline)
+                        Spacer()
+                    }
+                    
+                    DatePicker(selection: $day, displayedComponents: .date, label: {
+                            Text("Journée")
+                                .fontWeight(.semibold).frame(minWidth: 80)
+                    }).labelsHidden()
+                    
+                    HStack{
+                        Text("Heure de début")
+                            .font(.headline)
+                        Spacer()
+                    }
+                    
+                    DatePicker(selection: $startTime, displayedComponents: .hourAndMinute, label: {
+                            Text("Début")
+                                .fontWeight(.semibold).frame(minWidth: 80)
+                    }).labelsHidden()
+                    
+                    HStack{
+                        Text("Heure de fin")
+                            .font(.headline)
+                        Spacer()
+                    }
+                    
+                    DatePicker(selection: $endTime, displayedComponents: .hourAndMinute, label: {
+                            Text("Fin")
+                                .fontWeight(.semibold).frame(minWidth: 80)
+                    }).labelsHidden()
                 }
-            }.pickerStyle(WheelPickerStyle())
-            .labelsHidden()
-            
-            Spacer()
-            
-            TextField("Description des tâches", text: $tasks)
-            
-            Spacer()
-            
+                
+                Section(header: Text("Chantier").font(.headline)){
+                    HStack{
+                        Spacer()
+                        Picker("Chantier", selection: $selectedWorkPlace) {
+                            ForEach(0..<self.global.workPlaces.count) {
+                                Text(self.global.workPlaces[$0])
+                            }
+                        }.pickerStyle(WheelPickerStyle())
+                            .labelsHidden()
+                            .frame(height: 180)
+                        Spacer()
+                    }
+                }
+                
+                Section(header: Text("Tâches").font(.headline)){
+                    TextField("Description des tâches", text: $tasks)
+                }
+                    
+            }//End of form
+           
             HStack{
                 Spacer()
                 
@@ -40,12 +84,17 @@ struct WorksheetFormView: View {
                     Text("Envoyer")
                         .foregroundColor(Color.white)
                         .fontWeight(.heavy)
-                    }.padding([.vertical], 8)
+                }.padding([.vertical], 8)
+                .padding([.horizontal], 64)
+                .cornerRadius(5)
+                .background(Color.black)
                 
                 Spacer()
-            }.background(Color.black)
-                
-        }//End of form
+            }
+            
+            Spacer()
+        }//End of VStack
+        
     }
 }
 
