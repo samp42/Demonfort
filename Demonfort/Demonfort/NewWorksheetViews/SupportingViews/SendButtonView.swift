@@ -11,8 +11,8 @@ import SwiftUI
 struct SendButtonView: View {
     @State private var show2SheetsAlert = false
     
-    var startTime: Date
-    var endTime: Date
+    var startTime: Date = Date()
+    var endTime: Date = Date()
     
     var body: some View {
         HStack{
@@ -22,14 +22,14 @@ struct SendButtonView: View {
                 self.show2SheetsAlert = true
             }) {
                 Text("Envoyer")
-                    .foregroundColor(Color("buttonText"))
+                    .foregroundColor(Color("darkText"))
                     .fontWeight(.heavy)
                     .frame(width: 256)
                 }.alert(isPresented: $show2SheetsAlert, content: {
                     Alert(title: Text("Une fiche existe déjà pour cette journée."), message: Text("Envoyer la fiche malgré tout?"), primaryButton: .default(Text("Non")), secondaryButton: .default(Text("Oui")))
                 })
             .padding([.vertical], 8)
-            .background(Color("buttonBackground"))
+            .background(Color("darkBackground"))
             .cornerRadius(10)
             
             Spacer()
@@ -39,6 +39,8 @@ struct SendButtonView: View {
 
 struct SendButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        SendButtonView(startTime: , endTime: )
+        SendButtonView()
+        //startTime: , endTime:
     }
 }
+

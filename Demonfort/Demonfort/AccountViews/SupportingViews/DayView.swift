@@ -55,7 +55,7 @@ struct DayView: View {
                 Spacer()
                 Text("Approuvée")
                     .fontWeight(.bold)
-                    .foregroundColor(Color.green)
+                    .foregroundColor(Color.yellow)
                 
             }.padding([.horizontal],12)
         }.frame(height: 54)

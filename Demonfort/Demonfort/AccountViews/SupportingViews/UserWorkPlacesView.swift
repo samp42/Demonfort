@@ -18,7 +18,6 @@ struct UserWorkPlacesView: View {
                 Text(self.global.workPlaces[place])
                     .font(.headline)
                     .padding(.bottom, 4)
-                    .padding(.leading, 8)
                 Spacer()
             }
         }

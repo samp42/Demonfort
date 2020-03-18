@@ -11,7 +11,7 @@ import SwiftUI
 class GlobalEnvironment: ObservableObject {
     //put all global variables here
     
-    @Published var workPlaces = ["RueX", "Waverly", "Maisonneuve"]
+    @Published var workPlaces = ["123, rue Maisonneuve, Montréal", "456, rue Waverly, Montréal", "789, rue Mont-Royal, Montréal"]
     /*
     Implement as such:
     

@@ -13,7 +13,7 @@ struct WorksheetView: View {
         NavigationView{
             List{
                 ForEach(0..<25){_ in
-                    Text("Hello world!")
+                    WorksheetRowView()
                 }
             }.navigationBarTitle("Feuilles de temps")
         }
