@@ -7,8 +7,15 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct NewWorksheetView: View {
+    
+    func didLoad(){
+        //let database = Firestore.firestore()
+        
+        //database.collection("workers").addDocument
+    }
     
     var body: some View {
         VStack(alignment: .leading){

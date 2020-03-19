@@ -24,6 +24,11 @@ struct ProfileView: View {
                     Text("Surintendant")
                         .font(.headline)
                     Spacer()
+                    Button(action:{/*signout + toggle signout alert IF successful*/}){
+                        Text("Déconnexion")
+                            .foregroundColor(Color("lightText"))
+                            .fontWeight(.medium)
+                    }
                 }
                 Spacer()
             }.padding([.all], 8).frame(height: 144).frame(minWidth:360)
