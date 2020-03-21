@@ -9,7 +9,23 @@ import SwiftUI
 
 struct LoginView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Spacer()
+            HStack {
+                Spacer()
+                Image("Demonfort")
+                Spacer()
+            }
+            Button(action:{}){
+                Text("Se connecter")
+                    .font(.headline)
+                    .foregroundColor(Color.black)
+                    .padding([.vertical], 10)
+                    .padding([.horizontal], 60)
+            }.background(Color.white)
+                .cornerRadius(10)
+            Spacer()
+        }.background(Color.black).edgesIgnoringSafeArea(.all)
     }
 }
 
