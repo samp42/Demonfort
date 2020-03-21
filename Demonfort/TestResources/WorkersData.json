@@ -1,0 +1,22 @@
+[{
+        "name": "Simon Fonseca",
+        "title": "superintendent",
+        "mail": "simon.fonseca@demonfort.ca",
+        "phoneNumber": "5144763330",
+        "workPlaces": ["123, rue Maisonneuve, Montréal", "456, rue Waverly, Montréal", "789, rue Mont-Royal, Montréal"]
+    },
+    {
+        "name": "Samuel Proulx",
+        "title": "worker",
+        "mail": "samuelproulx26@gmail.com",
+        "phoneNumber": "5149142782",
+        "workPlaces": ["123, rue Maisonneuve, Montréal", "456, rue Waverly, Montréal", "789, rue Mont-Royal, Montréal"]
+    },
+    {
+        "name": "John Doe",
+        "title": "worker",
+        "mail": "john.doe@demonfort.ca",
+        "phoneNumber": "5149141234",
+        "workPlaces": ["123, rue Maisonneuve, Montréal", "456, rue Waverly, Montréal", "789, rue Mont-Royal, Montréal"]
+    }
+]

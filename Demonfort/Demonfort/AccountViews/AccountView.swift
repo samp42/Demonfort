@@ -32,12 +32,7 @@ struct AccountView: View {
             UserWorkPlacesView()
             Spacer()
                 .frame(height: 20)
-            HStack {
-                Text("Feuilles à approuver")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-            }
+            WorkerSheetsListView()
             Spacer()
         }.padding([.horizontal], 8)
     }

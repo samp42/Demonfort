@@ -19,14 +19,17 @@ struct SendButtonView: View {
             Spacer()
             
             Button(action: {
-                self.show2SheetsAlert = true
+                //if worksheet exist for this worker on this date:
+                if(true){
+                    self.show2SheetsAlert = true
+                }
             }) {
                 Text("Envoyer")
                     .foregroundColor(Color("darkText"))
                     .fontWeight(.heavy)
                     .frame(width: 256)
                 }.alert(isPresented: $show2SheetsAlert, content: {
-                    Alert(title: Text("Une fiche existe déjà pour cette journée."), message: Text("Envoyer la fiche malgré tout?"), primaryButton: .default(Text("Non")), secondaryButton: .default(Text("Oui")))
+                    Alert(title: Text("Une feuille de temps existe déjà pour cette journée."), message: Text("Envoyer la feuille de temps malgré tout?"), primaryButton: .default(Text("Non")), secondaryButton: .default(Text("Oui")))
                 })
             .padding([.vertical], 8)
             .background(Color("darkBackground"))

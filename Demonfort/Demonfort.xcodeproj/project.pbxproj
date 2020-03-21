@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E37106624267F47004CEB8C /* WorkerSheetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */; };
+		1E37106A24267F67004CEB8C /* WorkerSheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */; };
+		1E37106C24267F83004CEB8C /* WorkerSheetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */; };
+		1E37106F24269538004CEB8C /* DateHoursInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106E24269538004CEB8C /* DateHoursInfoView.swift */; };
+		1E37107124269548004CEB8C /* WorkPlaceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37107024269548004CEB8C /* WorkPlaceInfoView.swift */; };
+		1E3710732426962B004CEB8C /* TaskInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3710722426962B004CEB8C /* TaskInfoView.swift */; };
 		1E3E78BB241DC37C00730C63 /* WorksheetFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E78BA241DC37C00730C63 /* WorksheetFormView.swift */; };
 		1E487F6C23E67F0A00F01C25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F6B23E67F0900F01C25 /* AppDelegate.swift */; };
 		1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F6D23E67F0A00F01C25 /* SceneDelegate.swift */; };
@@ -24,6 +30,9 @@
 		1E82301524214CFF0029F974 /* WorksheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82301424214CFF0029F974 /* WorksheetView.swift */; };
 		1E823017242171860029F974 /* SendButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E823016242171860029F974 /* SendButtonView.swift */; };
 		1E82301B2421B8340029F974 /* WorksheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82301A2421B8340029F974 /* WorksheetRowView.swift */; };
+		1EAA1DF22426B13200123504 /* TestResources in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA1DF12426B13200123504 /* TestResources */; };
+		1EAA1DF42426B14B00123504 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA1DF32426B14B00123504 /* Worker.swift */; };
+		1EAA1DF62426B15700123504 /* Worksheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA1DF52426B15700123504 /* Worksheet.swift */; };
 		1EAB04B023F32AE40031B9EE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAB04AF23F32AE40031B9EE /* HeaderView.swift */; };
 		1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB6003423E688CC00AB9CD1 /* NewWorksheetView.swift */; };
 		1EDD793D2423EB9500A9CF70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EDD793C2423EB9500A9CF70 /* GoogleService-Info.plist */; };
@@ -56,6 +65,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetsListView.swift; sourceTree = "<group>"; };
+		1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetRowView.swift; sourceTree = "<group>"; };
+		1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetDetailView.swift; sourceTree = "<group>"; };
+		1E37106E24269538004CEB8C /* DateHoursInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHoursInfoView.swift; sourceTree = "<group>"; };
+		1E37107024269548004CEB8C /* WorkPlaceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkPlaceInfoView.swift; sourceTree = "<group>"; };
+		1E3710722426962B004CEB8C /* TaskInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoView.swift; sourceTree = "<group>"; };
 		1E3E78BA241DC37C00730C63 /* WorksheetFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksheetFormView.swift; sourceTree = "<group>"; };
 		1E487F6823E67F0900F01C25 /* Demonfort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demonfort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E487F6B23E67F0900F01C25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +94,9 @@
 		1E82301424214CFF0029F974 /* WorksheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksheetView.swift; sourceTree = "<group>"; };
 		1E823016242171860029F974 /* SendButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButtonView.swift; sourceTree = "<group>"; };
 		1E82301A2421B8340029F974 /* WorksheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksheetRowView.swift; sourceTree = "<group>"; };
+		1EAA1DF12426B13200123504 /* TestResources */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestResources; sourceTree = SOURCE_ROOT; };
+		1EAA1DF32426B14B00123504 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		1EAA1DF52426B15700123504 /* Worksheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worksheet.swift; sourceTree = "<group>"; };
 		1EAB04AF23F32AE40031B9EE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		1EB6003423E688CC00AB9CD1 /* NewWorksheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorksheetView.swift; sourceTree = "<group>"; };
 		1EDD793C2423EB9500A9CF70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -132,6 +150,27 @@
 			path = NewWorksheetViews;
 			sourceTree = "<group>";
 		};
+		1E37106424267EBA004CEB8C /* CorrectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */,
+				1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */,
+				1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */,
+				1E37106D242694DC004CEB8C /* Supporting Views */,
+			);
+			path = CorrectionViews;
+			sourceTree = "<group>";
+		};
+		1E37106D242694DC004CEB8C /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				1E37106E24269538004CEB8C /* DateHoursInfoView.swift */,
+				1E37107024269548004CEB8C /* WorkPlaceInfoView.swift */,
+				1E3710722426962B004CEB8C /* TaskInfoView.swift */,
+			);
+			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
 		1E487F5F23E67F0900F01C25 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +198,7 @@
 			children = (
 				1E487F6B23E67F0900F01C25 /* AppDelegate.swift */,
 				1E487F6D23E67F0A00F01C25 /* SceneDelegate.swift */,
+				1EBC110A2426B074009E5AF9 /* Model */,
 				1EDD79442423F52F00A9CF70 /* Login */,
 				1EB6003223E6884800AB9CD1 /* WorksheetViews */,
 				1E277F9F241D65FC0052FEFB /* NewWorksheetViews */,
@@ -166,6 +206,7 @@
 				1E487F6F23E67F0A00F01C25 /* ContentView.swift */,
 				1EAB04AF23F32AE40031B9EE /* HeaderView.swift */,
 				1EDD793C2423EB9500A9CF70 /* GoogleService-Info.plist */,
+				1EAA1DF12426B13200123504 /* TestResources */,
 				1E487F7123E67F0B00F01C25 /* Assets.xcassets */,
 				1E487F7623E67F0B00F01C25 /* LaunchScreen.storyboard */,
 				1E487F7923E67F0B00F01C25 /* Info.plist */,
@@ -203,6 +244,7 @@
 		1E672D0E2420744F003E501D /* SupportingViews */ = {
 			isa = PBXGroup;
 			children = (
+				1E37106424267EBA004CEB8C /* CorrectionViews */,
 				1E7AA12E241AF665006CA1BC /* AccountImageView.swift */,
 				1E672D0F24207466003E501D /* DayView.swift */,
 				1EDF9762242120DB00228FA8 /* WeekDaysView.swift */,
@@ -245,6 +287,15 @@
 				1E672D0E2420744F003E501D /* SupportingViews */,
 			);
 			path = AccountViews;
+			sourceTree = "<group>";
+		};
+		1EBC110A2426B074009E5AF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1EAA1DF32426B14B00123504 /* Worker.swift */,
+				1EAA1DF52426B15700123504 /* Worksheet.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1EDD79442423F52F00A9CF70 /* Login */ = {
@@ -387,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EAA1DF22426B13200123504 /* TestResources in Resources */,
 				1E487F7823E67F0B00F01C25 /* LaunchScreen.storyboard in Resources */,
 				1EDD793D2423EB9500A9CF70 /* GoogleService-Info.plist in Resources */,
 				1E487F7523E67F0B00F01C25 /* Preview Assets.xcassets in Resources */,
@@ -521,11 +573,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EAB04B023F32AE40031B9EE /* HeaderView.swift in Sources */,
+				1E37106624267F47004CEB8C /* WorkerSheetsListView.swift in Sources */,
 				1E672D1024207466003E501D /* DayView.swift in Sources */,
+				1E37106C24267F83004CEB8C /* WorkerSheetDetailView.swift in Sources */,
 				1E82301B2421B8340029F974 /* WorksheetRowView.swift in Sources */,
+				1E3710732426962B004CEB8C /* TaskInfoView.swift in Sources */,
+				1EAA1DF62426B15700123504 /* Worksheet.swift in Sources */,
 				1E82301524214CFF0029F974 /* WorksheetView.swift in Sources */,
 				1E3E78BB241DC37C00730C63 /* WorksheetFormView.swift in Sources */,
 				1E487F6C23E67F0A00F01C25 /* AppDelegate.swift in Sources */,
+				1E37106F24269538004CEB8C /* DateHoursInfoView.swift in Sources */,
+				1E37106A24267F67004CEB8C /* WorkerSheetRowView.swift in Sources */,
+				1EAA1DF42426B14B00123504 /* Worker.swift in Sources */,
+				1E37107124269548004CEB8C /* WorkPlaceInfoView.swift in Sources */,
 				1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */,
 				1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */,
 				1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */,
