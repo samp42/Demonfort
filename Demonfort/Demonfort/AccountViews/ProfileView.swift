@@ -31,7 +31,7 @@ struct ProfileView: View {
                     }
                 }
                 Spacer()
-            }.padding([.all], 8).frame(height: 144).frame(minWidth:360)
+            }.padding([.all], 8).frame(height: 136).frame(minWidth:360)
                 .background(Color("lightGray")
                     .cornerRadius(20)
         )
