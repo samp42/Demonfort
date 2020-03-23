@@ -9,13 +9,32 @@
 import SwiftUI
 import Firebase
 
-struct NewWorksheetView: View {
+class Worksheet: ObservableObject{
+    @Published var workPlaces: [String]
     
-    func didLoad(){
-        //let database = Firestore.firestore()
-        
-        //database.collection("workers").addDocument
+    @Published var day: Date
+    @Published var startTime: Date
+    @Published var endTime: Date
+    @Published var selectedWorkPlace: Int
+    @Published var tasks: String
+    
+    let database = Firestore.firestore()
+
+    init(){
+        workPlaces = ["1"]
+        day = Date()
+        startTime = Date()
+        endTime = Date()
+        selectedWorkPlace = 0
+        tasks = ""
     }
+    
+    func reset() -> Void{
+        //reset data on press of send button
+    }
+}
+
+struct NewWorksheetView: View {
     
     var body: some View {
         VStack(alignment: .leading){
@@ -36,6 +55,6 @@ struct NewWorksheetView: View {
 
 struct NewWorksheetView_Previews: PreviewProvider {
     static var previews: some View {
-        NewWorksheetView()
+        NewWorksheetView().environmentObject(Worksheet())
     }
 }

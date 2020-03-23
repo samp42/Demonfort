@@ -8,18 +8,6 @@
 
 import SwiftUI
 
-class GlobalEnvironment: ObservableObject {
-    //put all global variables here
-    
-    @Published var workPlaces = ["123, rue Maisonneuve, Montréal", "456, rue Waverly, Montréal", "789, rue Mont-Royal, Montréal"]
-    /*
-    Implement as such:
-    
-       @EnvironmentObject var global: GlobalEnvironment
-    
-    */
-}
-
 struct ContentView: View {
     @State private var selection = 1 //open on new worksheet view by default
     /*
@@ -40,7 +28,7 @@ struct ContentView: View {
                         }
                     }
                     .tag(0)
-                    NewWorksheetView()
+                    NewWorksheetView().environmentObject(Worksheet())
                 .tabItem {
                     VStack {
                         Image(systemName: "plus.square.fill").background(Color.black)
@@ -67,6 +55,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-         ContentView().environmentObject(GlobalEnvironment())
+        ContentView().environmentObject(Worksheet())
     }
 }

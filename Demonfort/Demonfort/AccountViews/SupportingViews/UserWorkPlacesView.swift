@@ -10,12 +10,12 @@ import SwiftUI
 
 struct UserWorkPlacesView: View {
    
-    @EnvironmentObject var global: GlobalEnvironment
+    @EnvironmentObject var worksheet: Worksheet
     
     var body: some View {
-        ForEach(0..<self.global.workPlaces.count){place in
+        ForEach(0..<self.worksheet.workPlaces.count){place in
             HStack {
-                Text(self.global.workPlaces[place])
+                Text(self.worksheet.workPlaces[place])
                     .font(.headline)
                     .padding(.bottom, 4)
                 Spacer()

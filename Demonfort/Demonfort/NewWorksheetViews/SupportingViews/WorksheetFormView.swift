@@ -7,15 +7,10 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct WorksheetFormView: View {
-    @EnvironmentObject var global: GlobalEnvironment
-    
-    @State private var day: Date = Date()
-    @State private var startTime: Date = Date()
-    @State private var endTime: Date = Date()
-    @State private var selectedWorkPlace = 0
-    @State private var tasks: String = ""
+    @EnvironmentObject var worksheet: Worksheet
 
     //let dateComponents = DateComponents( hour: 9, minute: 0)
     //let date = Calendar.current.date(from: dateComponents)
@@ -30,10 +25,7 @@ struct WorksheetFormView: View {
                         Spacer()
                     }
                     
-                    DatePicker(selection: $day, displayedComponents: .date, label: {
-                            Text("Journée")
-                                .fontWeight(.semibold).frame(minWidth: 80)
-                    }).labelsHidden()
+                   DayPickerView()
                     
                     HStack{
                         Text("Heure de début")
@@ -41,10 +33,7 @@ struct WorksheetFormView: View {
                         Spacer()
                     }
                     
-                    DatePicker(selection: $startTime, displayedComponents: .hourAndMinute, label: {
-                            Text("Début")
-                                .fontWeight(.semibold).frame(minWidth: 80)
-                    }).labelsHidden()
+                    StartPickerView()
                     
                     HStack{
                         Text("Heure de fin")
@@ -52,28 +41,8 @@ struct WorksheetFormView: View {
                         Spacer()
                     }
                     
-                    DatePicker(selection: $endTime, displayedComponents: .hourAndMinute, label: {
-                            Text("Fin")
-                                .fontWeight(.semibold).frame(minWidth: 80)
-                    }).labelsHidden()
-                }
-                
-                Section(header: Text("Chantier").font(.headline)){
-                    HStack{
-                        Spacer()
-                        Picker("Chantier", selection: $selectedWorkPlace) {
-                            ForEach(0..<self.global.workPlaces.count) {
-                                Text(self.global.workPlaces[$0])
-                            }
-                        }.pickerStyle(WheelPickerStyle())
-                            .labelsHidden()
-                            .frame(height: 180)
-                        Spacer()
-                    }
-                }
-                
-                Section(header: Text("Tâches").font(.headline)){
-                    TextField("Description des tâches", text: $tasks)
+                    EndPickerView()
+                    
                 }
                     
             }//End of form
@@ -88,6 +57,6 @@ struct WorksheetFormView: View {
 
 struct WorksheetFormView_Previews: PreviewProvider {
     static var previews: some View {
-        WorksheetFormView()
+        WorksheetFormView().environmentObject(Worksheet())
     }
 }

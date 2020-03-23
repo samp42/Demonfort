@@ -7,12 +7,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SendButtonView: View {
-    @State private var show2SheetsAlert = false
+    @EnvironmentObject var worksheet: Worksheet
     
-    var startTime: Date = Date()
-    var endTime: Date = Date()
+    @State private var show2SheetsAlert = false
     
     var body: some View {
         HStack{
@@ -21,9 +21,11 @@ struct SendButtonView: View {
             Button(action: {
                 //if worksheet exist for this worker on this date:
                 if(true){
-                    self.show2SheetsAlert = true
+                    //self.show2SheetsAlert = true
+                    self.worksheet.database.collection("worksheets").addDocument(data: ["Day":self.worksheet.day, "StartTime":self.worksheet.startTime, "EndTime": self.worksheet.endTime, "Tasks": self.worksheet.tasks])
                 }
-            }) {
+                
+            }/*End of button action*/) {
                 Text("Envoyer")
                     .foregroundColor(Color("darkText"))
                     .fontWeight(.heavy)
@@ -42,8 +44,7 @@ struct SendButtonView: View {
 
 struct SendButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        SendButtonView()
-        //startTime: , endTime:
+        SendButtonView().environmentObject(Worksheet())
     }
 }
 

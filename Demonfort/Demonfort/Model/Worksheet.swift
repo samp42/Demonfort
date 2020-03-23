@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Worksheet: Hashable, Codable, Identifiable{
+struct SendableWorksheet: Hashable, Codable, Identifiable{
     var id: UInt8
     var workerName: String
     var day: Date
