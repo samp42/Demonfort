@@ -38,7 +38,7 @@ struct ContentView: View {
                 .tag(1)
                 
                 ScrollView(.vertical){
-                    AccountView()
+                    AccountView().environmentObject(Worksheet())
                 }
                     .tabItem {
                         VStack {

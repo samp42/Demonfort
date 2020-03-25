@@ -25,7 +25,7 @@ struct WorksheetFormView: View {
                         Spacer()
                     }
                     
-                   DayPickerView()
+                   DayPickerView().environmentObject(Worksheet())
                     
                     HStack{
                         Text("Heure de début")
@@ -33,7 +33,7 @@ struct WorksheetFormView: View {
                         Spacer()
                     }
                     
-                    StartPickerView()
+                    StartPickerView().environmentObject(Worksheet())
                     
                     HStack{
                         Text("Heure de fin")
@@ -41,13 +41,21 @@ struct WorksheetFormView: View {
                         Spacer()
                     }
                     
-                    EndPickerView()
+                    EndPickerView().environmentObject(Worksheet())
                     
+                }
+                
+                Section(header: Text("Chantier").font(.headline)) {
+                    WorkPlacePickerView().environmentObject(Worksheet())
+                }
+                
+                Section(header: Text("Tâches effectuées").font(.headline)) {
+                    TasksView().environmentObject(Worksheet())
                 }
                     
             }//End of form
            
-            SendButtonView()
+            SendButtonView().environmentObject(Worksheet())
             
             Spacer()
         }//End of VStack

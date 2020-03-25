@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E2A8AAF242A850900E281E6 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A8AAE242A850900E281E6 /* TasksView.swift */; };
+		1E2A8AB1242A863B00E281E6 /* SendErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A8AB0242A863B00E281E6 /* SendErrorManager.swift */; };
 		1E37106624267F47004CEB8C /* WorkerSheetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */; };
 		1E37106A24267F67004CEB8C /* WorkerSheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */; };
 		1E37106C24267F83004CEB8C /* WorkerSheetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */; };
@@ -69,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E2A8AAE242A850900E281E6 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		1E2A8AB0242A863B00E281E6 /* SendErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendErrorManager.swift; sourceTree = "<group>"; };
 		1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetsListView.swift; sourceTree = "<group>"; };
 		1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetRowView.swift; sourceTree = "<group>"; };
 		1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetDetailView.swift; sourceTree = "<group>"; };
@@ -156,6 +160,14 @@
 				1E8230182421718D0029F974 /* SupportingViews */,
 			);
 			path = NewWorksheetViews;
+			sourceTree = "<group>";
+		};
+		1E2A8AB2242A864300E281E6 /* SupportingButtonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1E2A8AB0242A863B00E281E6 /* SendErrorManager.swift */,
+			);
+			path = SupportingButtonFiles;
 			sourceTree = "<group>";
 		};
 		1E37106424267EBA004CEB8C /* CorrectionViews */ = {
@@ -269,7 +281,9 @@
 				1EC692C72429310100105F23 /* StartPickerView.swift */,
 				1EC692C92429310A00105F23 /* EndPickerView.swift */,
 				1EC692CB2429319400105F23 /* WorkPlacePickerView.swift */,
+				1E2A8AAE242A850900E281E6 /* TasksView.swift */,
 				1E823016242171860029F974 /* SendButtonView.swift */,
+				1E2A8AB2242A864300E281E6 /* SupportingButtonFiles */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -588,6 +602,7 @@
 				1E37106624267F47004CEB8C /* WorkerSheetsListView.swift in Sources */,
 				1E672D1024207466003E501D /* DayView.swift in Sources */,
 				1E37106C24267F83004CEB8C /* WorkerSheetDetailView.swift in Sources */,
+				1E2A8AB1242A863B00E281E6 /* SendErrorManager.swift in Sources */,
 				1E82301B2421B8340029F974 /* WorksheetRowView.swift in Sources */,
 				1E3710732426962B004CEB8C /* TaskInfoView.swift in Sources */,
 				1EAA1DF62426B15700123504 /* Worksheet.swift in Sources */,
@@ -606,6 +621,7 @@
 				1E4EE786241DA20200855E41 /* UserWorkPlacesView.swift in Sources */,
 				1E7AA12F241AF666006CA1BC /* AccountImageView.swift in Sources */,
 				1EC692CA2429310A00105F23 /* EndPickerView.swift in Sources */,
+				1E2A8AAF242A850900E281E6 /* TasksView.swift in Sources */,
 				1E7AA131241AF681006CA1BC /* ProfileView.swift in Sources */,
 				1EC692C6242930F600105F23 /* DayPickerView.swift in Sources */,
 				1E823017242171860029F974 /* SendButtonView.swift in Sources */,

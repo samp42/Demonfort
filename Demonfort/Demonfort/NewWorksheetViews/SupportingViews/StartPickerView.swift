@@ -14,8 +14,8 @@ struct StartPickerView: View {
     var body: some View {
         VStack{
             DatePicker(selection: $worksheet.startTime, displayedComponents: .hourAndMinute, label: {
-                    Text("Début")
-                        .fontWeight(.semibold).frame(minWidth: 80)
+                Text("Début")
+                    .fontWeight(.semibold).frame(minWidth: 80)
             }).labelsHidden()
         }
     }

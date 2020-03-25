@@ -45,7 +45,7 @@ struct NewWorksheetView: View {
             Spacer()
                 .frame(height: 10)
             
-            WorksheetFormView()
+            WorksheetFormView().environmentObject(Worksheet())
             
             
         }//End of VStack

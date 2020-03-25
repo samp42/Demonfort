@@ -14,9 +14,9 @@ struct EndPickerView: View {
     var body: some View {
         VStack{
             DatePicker(selection: $worksheet.endTime, displayedComponents: .hourAndMinute, label: {
-                                       Text("Fin")
-                                           .fontWeight(.semibold).frame(minWidth: 80)
-                               }).labelsHidden()
+                Text("Fin")
+                    .fontWeight(.semibold).frame(minWidth: 80)
+            }).labelsHidden()
         }
     }
 }

@@ -22,7 +22,7 @@ struct SendButtonView: View {
                 //if worksheet exist for this worker on this date:
                 if(true){
                     //self.show2SheetsAlert = true
-                    self.worksheet.database.collection("worksheets").addDocument(data: ["Day":self.worksheet.day, "StartTime":self.worksheet.startTime, "EndTime": self.worksheet.endTime, "Tasks": self.worksheet.tasks])
+                    self.worksheet.database.collection("worksheets").addDocument(data: ["Employee": "Samuel Proulx", "Day":self.worksheet.day, "StartTime":self.worksheet.startTime, "EndTime": self.worksheet.endTime, "Tasks": self.worksheet.tasks])
                 }
                 
             }/*End of button action*/) {

@@ -14,9 +14,9 @@ struct DayPickerView: View {
     var body: some View {
         VStack{
             DatePicker(selection: $worksheet.day, displayedComponents: .date, label: {
-                                       Text("Journée")
-                                           .fontWeight(.semibold).frame(minWidth: 80)
-                               }).labelsHidden()
+                Text("Journée")
+                    .fontWeight(.semibold).frame(minWidth: 80)
+            }).labelsHidden()
         }
     }
 }
