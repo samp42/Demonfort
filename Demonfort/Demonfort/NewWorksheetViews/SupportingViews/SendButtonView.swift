@@ -12,8 +12,6 @@ import Firebase
 struct SendButtonView: View {
     @EnvironmentObject var worksheet: Worksheet
     
-    @State private var show2SheetsAlert = false
-    
     var body: some View {
         HStack{
             Spacer()
@@ -26,16 +24,16 @@ struct SendButtonView: View {
                 }
                 
             }/*End of button action*/) {
+                //ButtonAlerts()
                 Text("Envoyer")
                     .foregroundColor(Color("darkText"))
                     .fontWeight(.heavy)
                     .frame(width: 256)
-                }.alert(isPresented: $show2SheetsAlert, content: {
-                    Alert(title: Text("Une feuille de temps existe déjà pour cette journée."), message: Text("Envoyer la feuille de temps malgré tout?"), primaryButton: .default(Text("Non")), secondaryButton: .default(Text("Oui")))
-                })
-            .padding([.vertical], 8)
-            .background(Color("darkBackground"))
-            .cornerRadius(10)
+                    
+            }
+                .padding([.vertical], 8)
+                .background(Color("darkBackground"))
+                .cornerRadius(10)
             
             Spacer()
         }

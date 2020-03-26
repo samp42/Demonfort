@@ -48,6 +48,7 @@
 		1EDD79422423F52600A9CF70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDD79402423F52600A9CF70 /* LoginView.swift */; };
 		1EDD79432423F52600A9CF70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDD79402423F52600A9CF70 /* LoginView.swift */; };
 		1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF9762242120DB00228FA8 /* WeekDaysView.swift */; };
+		1EFB34E3242CEFD1003F3763 /* ButtonAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFB34E2242CEFD1003F3763 /* ButtonAlerts.swift */; };
 		8EDF9F02F169A035750124F0 /* Pods_DemonfortTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF8499968ECDA145798328B /* Pods_DemonfortTests.framework */; };
 		A7FEA02CE3A4941622E43F64 /* Pods_Demonfort_DemonfortUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA582A871FE758CFEA9B4DF0 /* Pods_Demonfort_DemonfortUITests.framework */; };
 		C144243451153758F0357F47 /* Pods_Demonfort.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D86E9A62BC2B3335E3D9F /* Pods_Demonfort.framework */; };
@@ -114,6 +115,7 @@
 		1EDD793C2423EB9500A9CF70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1EDD79402423F52600A9CF70 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1EDF9762242120DB00228FA8 /* WeekDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysView.swift; sourceTree = "<group>"; };
+		1EFB34E2242CEFD1003F3763 /* ButtonAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonAlerts.swift; sourceTree = "<group>"; };
 		553DF69DBC7FC04F102BB172 /* Pods-Demonfort.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demonfort.release.xcconfig"; path = "Target Support Files/Pods-Demonfort/Pods-Demonfort.release.xcconfig"; sourceTree = "<group>"; };
 		6FF8499968ECDA145798328B /* Pods_DemonfortTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemonfortTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78ED5CDA71EB30855BEA9D93 /* Pods-DemonfortTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemonfortTests.release.xcconfig"; path = "Target Support Files/Pods-DemonfortTests/Pods-DemonfortTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				1EC692CB2429319400105F23 /* WorkPlacePickerView.swift */,
 				1E2A8AAE242A850900E281E6 /* TasksView.swift */,
 				1E823016242171860029F974 /* SendButtonView.swift */,
+				1EFB34E2242CEFD1003F3763 /* ButtonAlerts.swift */,
 				1E2A8AB2242A864300E281E6 /* SupportingButtonFiles */,
 			);
 			path = SupportingViews;
@@ -620,6 +623,7 @@
 				1E7AA133241AF6E7006CA1BC /* AccountView.swift in Sources */,
 				1E4EE786241DA20200855E41 /* UserWorkPlacesView.swift in Sources */,
 				1E7AA12F241AF666006CA1BC /* AccountImageView.swift in Sources */,
+				1EFB34E3242CEFD1003F3763 /* ButtonAlerts.swift in Sources */,
 				1EC692CA2429310A00105F23 /* EndPickerView.swift in Sources */,
 				1E2A8AAF242A850900E281E6 /* TasksView.swift in Sources */,
 				1E7AA131241AF681006CA1BC /* ProfileView.swift in Sources */,
