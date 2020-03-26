@@ -9,11 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var worksheet: Worksheet
     @State private var selection = 1 //open on new worksheet view by default
-    /*
+    
      init() {
-        UITabBar.appearance().barTextColor = UIColor.gray
-     }*/
+        //UITabBar.appearance().barTextColor = UIColor.gray
+     }
     var body: some View {
         VStack{
             HeaderView()

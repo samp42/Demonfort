@@ -9,5 +9,15 @@
 import SwiftUI
 
 class ButtonManager{
+    func reset() -> Void{
+        //reset info from worksheet
+    }
     
+    func validateErrors() -> Void{
+        
+    }
+    
+    private func validateCompleteFields() -> Void{
+        //check that all fields contain something
+    }
 }

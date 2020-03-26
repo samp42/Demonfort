@@ -8,8 +8,14 @@
 
 import SwiftUI
 import Firebase
+import FirebaseFirestore
 
-class Worksheet: ObservableObject{
+enum Status: String{
+    case sent = "Sent"
+    case approved = "Approved"
+}
+
+class Worksheet: ButtonManager, ObservableObject{
     @Published var workPlaces: [String]
     
     @Published var day: Date
@@ -17,10 +23,13 @@ class Worksheet: ObservableObject{
     @Published var endTime: Date
     @Published var selectedWorkPlace: Int
     @Published var tasks: String
+    @Published var status: Status = Status.sent
     
     let database = Firestore.firestore()
 
-    init(){
+    //super init(){}
+    
+    override init(){
         workPlaces = ["1"]
         day = Date()
         startTime = Date()
@@ -29,12 +38,10 @@ class Worksheet: ObservableObject{
         tasks = ""
     }
     
-    func reset() -> Void{
-        //reset data on press of send button
-    }
 }
 
 struct NewWorksheetView: View {
+    @EnvironmentObject var worksheet: Worksheet
     
     var body: some View {
         VStack(alignment: .leading){
