@@ -9,28 +9,15 @@
 import SwiftUI
 
 class ButtonManager{
-    enum ErrorType{
-        case incompleteFields //if tasks description is empty
-        case dateInverted //if end >= start
-        case similarWorksheets //if worksheet exists in database with same date and same workplace
-        
-        func errorDescription() -> String{
-            
-            switch(self){
-            case .incompleteFields:
-                return "Certains champs sont vides."
-            case .dateInverted:
-                return "Les dates entrées sont invalides."
-            case .similarWorksheets:
-                return "Il existe une feuille de temps pour cette journée et ce chantier."
-            }
-        }
-    }
+   
+    var employee: String
+    var workPlaces: [String]
     
-    func reset() -> Void{
-        //reset info from worksheet
+    init(employee: String, workPlaces: [String]){
+        self.employee = employee
+        self.workPlaces = workPlaces
     }
-    
+
     func validateErrors() -> [String: Bool]{
         return ["Ehllo":true]
     }

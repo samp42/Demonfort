@@ -8,40 +8,6 @@
 
 import SwiftUI
 
-enum approval {
-    case notSent, sent, approved
-    
-    func toString() -> String{
-        switch self{
-        case .notSent:
-            return "Non envoyée"
-            
-        case .sent:
-            return "Envoyée"
-            
-        case .approved:
-            return "Approuvée"
-        }
-    }
-    
-    func makeColor(state: String) -> Color{
-        //recode this ugly function
-        switch state{
-        case "Non envoyée":
-            return Color.red
-            
-        case "Envoyée":
-            return Color.yellow
-            
-        case "Approuvée":
-            return Color.green
-            
-        default:
-            return Color.red
-        }
-    }
-}
-
 struct DayView: View {
     var day: String
     //var approvalState: String

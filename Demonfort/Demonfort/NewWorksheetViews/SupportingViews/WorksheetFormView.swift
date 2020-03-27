@@ -20,42 +20,34 @@ struct WorksheetFormView: View {
             Form{
                 Section(header: Text("Date").font(.headline)){
                     HStack{
-                        Text("Journée")
+                        Text("Début")
                             .font(.headline)
                         Spacer()
                     }
                     
-                   DayPickerView().environmentObject(Worksheet())
+                    StartPickerView()
                     
                     HStack{
-                        Text("Heure de début")
+                        Text("Fin")
                             .font(.headline)
                         Spacer()
                     }
                     
-                    StartPickerView().environmentObject(Worksheet())
-                    
-                    HStack{
-                        Text("Heure de fin")
-                            .font(.headline)
-                        Spacer()
-                    }
-                    
-                    EndPickerView().environmentObject(Worksheet())
+                    EndPickerView()
                     
                 }
                 
                 Section(header: Text("Chantier").font(.headline)) {
-                    WorkPlacePickerView().environmentObject(Worksheet())
+                    WorkPlacePickerView()
                 }
                 
                 Section(header: Text("Tâches effectuées").font(.headline)) {
-                    TasksView().environmentObject(Worksheet())
+                    TasksView()
                 }
                     
             }//End of form
            
-            SendButtonView().environmentObject(Worksheet())
+            SendButtonView()
             
             Spacer()
         }//End of VStack
@@ -65,6 +57,6 @@ struct WorksheetFormView: View {
 
 struct WorksheetFormView_Previews: PreviewProvider {
     static var previews: some View {
-        WorksheetFormView().environmentObject(Worksheet())
+        WorksheetFormView()
     }
 }

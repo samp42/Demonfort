@@ -13,7 +13,7 @@ struct StartPickerView: View {
     
     var body: some View {
         VStack{
-            DatePicker(selection: $worksheet.startTime, displayedComponents: .hourAndMinute, label: {
+            DatePicker(selection: $worksheet.start, label: {
                 Text("Début")
                     .fontWeight(.semibold).frame(minWidth: 80)
             }).labelsHidden()
@@ -23,6 +23,6 @@ struct StartPickerView: View {
 
 struct StartPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        StartPickerView().environmentObject(Worksheet())
+        StartPickerView()
     }
 }

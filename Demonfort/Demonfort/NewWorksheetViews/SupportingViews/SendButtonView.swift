@@ -7,7 +7,8 @@
 //
 
 import SwiftUI
-import Firebase
+
+//Alert(title: Text("Une feuille de temps existe déjà pour cette journée."), message: Text("Envoyer la feuille de temps malgré tout?"), primaryButton: .default(Text("Non")), secondaryButton: .default(Text("Oui")))
 
 struct SendButtonView: View {
     @EnvironmentObject var worksheet: Worksheet
@@ -18,10 +19,10 @@ struct SendButtonView: View {
             
             Button(action: {
                 //if worksheet exist for this worker on this date:
-                if(true){
-                    //self.show2SheetsAlert = true
-                    self.worksheet.database.collection("worksheets").addDocument(data: ["Employee": "Samuel Proulx", "Day": self.worksheet.day, "StartTime": self.worksheet.startTime, "EndTime": self.worksheet.endTime, "Tasks": self.worksheet.tasks])
-                }
+//                if(true){
+//                    //self.show2SheetsAlert = true
+//                    self.worksheet.database.collection("worksheets").addDocument(data: ["Employee": "Samuel Proulx", "Day": self.worksheet.day, "StartTime": self.worksheet.startTime, "EndTime": self.worksheet.endTime, "Tasks": self.worksheet.tasks])
+//                }
                 
             }/*End of button action*/) {
                 //ButtonAlerts()
@@ -42,7 +43,7 @@ struct SendButtonView: View {
 
 struct SendButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        SendButtonView().environmentObject(Worksheet())
+        SendButtonView()
     }
 }
 

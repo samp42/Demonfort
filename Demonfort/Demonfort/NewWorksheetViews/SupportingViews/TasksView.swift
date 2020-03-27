@@ -20,6 +20,6 @@ struct TasksView: View {
 
 struct TasksView_Previews: PreviewProvider {
     static var previews: some View {
-        TasksView().environmentObject(Worksheet())
+        TasksView()
     }
 }

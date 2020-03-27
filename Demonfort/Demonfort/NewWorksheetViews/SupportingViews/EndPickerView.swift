@@ -13,7 +13,7 @@ struct EndPickerView: View {
     
     var body: some View {
         VStack{
-            DatePicker(selection: $worksheet.endTime, displayedComponents: .hourAndMinute, label: {
+            DatePicker(selection: $worksheet.end, label: {
                 Text("Fin")
                     .fontWeight(.semibold).frame(minWidth: 80)
             }).labelsHidden()
@@ -23,6 +23,6 @@ struct EndPickerView: View {
 
 struct EndPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        EndPickerView().environmentObject(Worksheet())
+        EndPickerView()
     }
 }
