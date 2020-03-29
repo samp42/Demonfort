@@ -31,13 +31,15 @@ enum Status: String{
 }
 
 class Worksheet: ObservableObject{
-    @Published var workPlaces: [String]
+    var worksheets: [Any] // array of firebase documents from the logged in employee
     
-    @Published var start: Date
-    @Published var end: Date
-    @Published var selectedWorkPlace: Int
-    @Published var tasks: String
-    @Published var status: Status = .notSent
+    @Published var workPlaces: [String] //workplaces of the employee retrieved from database
+    
+    @Published var start: Date // start date and hour of the current worksheet to be sent
+    @Published var end: Date // end date and hour of the current worksheet to be sent
+    @Published var selectedWorkPlace: Int // workplace selected for the worksheet to be sent
+    @Published var tasks: String // tasks description for the current worksheet
+    @Published var status: Status = .notSent // status of the worksheet
     
     let database = Firestore.firestore()
     
@@ -47,6 +49,24 @@ class Worksheet: ObservableObject{
         end = Date()
         selectedWorkPlace = 0
         tasks = ""
+        worksheets = []
+        
+        //initialise user worksheets
+        database.collection("worksheets").whereField("Employee", isEqualTo: "Samuel Proulx").getDocuments{ (snapshot, error) in
+            
+            if error == nil && snapshot != nil{
+                for document in snapshot!.documents{
+                    self.worksheets.append(document.data())
+                }
+            }
+//            guard error == nil && snapshot != nil {
+//
+//            } else {
+//                throw
+//            }
+        }// end of database.getDocuments
+        
+       //VERIFY THAT WORKSHEETS IS WELL INITIALISED
     }
     
     enum ErrorType: Error {
