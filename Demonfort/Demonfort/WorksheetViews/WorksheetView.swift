@@ -11,6 +11,13 @@ import SwiftUI
 struct WorksheetView: View {
     var body: some View {
         NavigationView{
+            /**
+                *To do:
+                    *Lock Navigation View title so that it scrolls with the list instead of staying in place
+                    *Insert optionnal error message under Navigation View tile if loading documents from firebase was to fail
+                    *Make WorksheetRowView() retrieve its data from Worksheet.worksheets
+                    *Make the list adjust for the number of documents retrieved from firebase
+             */
             List{
                 ForEach(0..<25){_ in
                     WorksheetRowView()

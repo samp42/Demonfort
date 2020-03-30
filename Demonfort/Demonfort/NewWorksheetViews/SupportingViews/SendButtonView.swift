@@ -7,7 +7,13 @@
 //
 
 import SwiftUI
-
+/**
+    *To do:
+        *handle errors for sending document
+        *Alert if document was successfully sent
+        *Alert if document was not successfully sent
+        *Notification to the user at 15:00 to complete its worksheet
+ */
 //Alert(title: Text("Une feuille de temps existe déjà pour cette journée."), message: Text("Envoyer la feuille de temps malgré tout?"), primaryButton: .default(Text("Non")), secondaryButton: .default(Text("Oui")))
 
 struct SendButtonView: View {
@@ -39,6 +45,7 @@ struct SendButtonView: View {
             Spacer()
         }
     }
+    
 }
 
 struct SendButtonView_Previews: PreviewProvider {

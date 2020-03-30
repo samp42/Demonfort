@@ -33,12 +33,12 @@ enum Status: String{
 class Worksheet: ObservableObject{
     var worksheets: [Any] // array of firebase documents from the logged in employee
     
-    @Published var workPlaces: [String] //workplaces of the employee retrieved from database
+    @Published var workPlaces: [String?] //workplaces of the employee retrieved from database
     
     @Published var start: Date // start date and hour of the current worksheet to be sent
     @Published var end: Date // end date and hour of the current worksheet to be sent
-    @Published var selectedWorkPlace: Int // workplace selected for the worksheet to be sent
-    @Published var tasks: String // tasks description for the current worksheet
+    @Published var selectedWorkPlace: Int? // workplace selected for the worksheet to be sent
+    @Published var tasks: String? // tasks description for the current worksheet
     @Published var status: Status = .notSent // status of the worksheet
     
     let database = Firestore.firestore()
@@ -47,17 +47,26 @@ class Worksheet: ObservableObject{
         workPlaces = ["123 rue Maisonneuve, Montréal", "456 rue Waverly, Montréal"]
         start = Date()
         end = Date()
-        selectedWorkPlace = 0
-        tasks = ""
+        selectedWorkPlace = workPlaces[0] == nil ? nil : 0
+        tasks = nil
         worksheets = []
         
         //initialise user worksheets
-        database.collection("worksheets").whereField("Employee", isEqualTo: "Samuel Proulx").getDocuments{ (snapshot, error) in
+        database.collection("worksheets").whereField("Employee", isEqualTo: "Samuel Proulx").order(by: "StartTime", descending: true).getDocuments{ (querySnapshot, error) in
             
-            if error == nil && snapshot != nil{
-                for document in snapshot!.documents{
-                    self.worksheets.append(document.data())
+            if error == nil && querySnapshot != nil{
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                    }
                 }
+//                for document in querySnapshot!.documents{
+//                    //unexpectedly found nil while unwrappring querySnapshot
+//                    self.worksheets.append(document.data())
+//                    print((self.worksheets[0] as AnyObject).document.data())
+//                }
             }
 //            guard error == nil && snapshot != nil {
 //
@@ -67,9 +76,10 @@ class Worksheet: ObservableObject{
         }// end of database.getDocuments
         
        //VERIFY THAT WORKSHEETS IS WELL INITIALISED
+        
     }
     
-    enum ErrorType: Error {
+    enum FieldsErrorType: Error {
         case incompleteFields //if tasks description is empty
         case dateInverted //if end >= start
         case similarWorksheets //if worksheet exists in database with same date and same workplace
@@ -85,6 +95,26 @@ class Worksheet: ObservableObject{
                 return "Il existe une feuille de temps pour cette journée et ce chantier."
             }
         }
+    }
+    
+    func validateError() -> Error? {
+        var error: Error? = nil
+        
+        //validate that tasks description entered is not nil and not an empty string
+        guard case let tasks != nil || "" else {
+            error = FieldsErrorType.incompleteFields
+            return error
+        }
+        
+        //validate that the start time is strictly inferior to the end time
+        guard case start < end else {
+            error = FieldsErrorType.dateInverted
+            return error
+        }
+        
+        //validate that the sheet about to be sent does not match any existing sheet
+        //must read user's previous sheets from the database (access them where previously read from the database)
+        return error
     }
     
     func reset() -> Void{
