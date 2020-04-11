@@ -14,7 +14,7 @@ struct WorksheetView: View {
             /**
                 *To do:
                     *Lock Navigation View title so that it scrolls with the list instead of staying in place
-                    *Insert optionnal error message under Navigation View tile if loading documents from firebase was to fail
+                    *Insert optionnal error message under Navigation View title if loading documents from firebase was to fail
                     *Make WorksheetRowView() retrieve its data from Worksheet.worksheets
                     *Make the list adjust for the number of documents retrieved from firebase
              */

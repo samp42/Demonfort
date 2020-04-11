@@ -33,12 +33,12 @@ enum Status: String{
 class Worksheet: ObservableObject{
     var worksheets: [Any] // array of firebase documents from the logged in employee
     
-    @Published var workPlaces: [String?] //workplaces of the employee retrieved from database
+    @Published var workPlaces: [String] //workplaces of the employee retrieved from database
     
     @Published var start: Date // start date and hour of the current worksheet to be sent
     @Published var end: Date // end date and hour of the current worksheet to be sent
-    @Published var selectedWorkPlace: Int? // workplace selected for the worksheet to be sent
-    @Published var tasks: String? // tasks description for the current worksheet
+    @Published var selectedWorkPlace: Int // workplace selected for the worksheet to be sent
+    @Published var tasks: String // tasks description for the current worksheet
     @Published var status: Status = .notSent // status of the worksheet
     
     let database = Firestore.firestore()
@@ -47,8 +47,8 @@ class Worksheet: ObservableObject{
         workPlaces = ["123 rue Maisonneuve, Montréal", "456 rue Waverly, Montréal"]
         start = Date()
         end = Date()
-        selectedWorkPlace = workPlaces[0] == nil ? nil : 0
-        tasks = nil
+        selectedWorkPlace = 0
+        tasks = ""
         worksheets = []
         
         //initialise user worksheets
@@ -99,19 +99,19 @@ class Worksheet: ObservableObject{
     
     func validateError() -> Error? {
         var error: Error? = nil
-        
+
         //validate that tasks description entered is not nil and not an empty string
-        guard case let tasks != nil || "" else {
+        guard case let worksheetTasks = tasks != "" else {
             error = FieldsErrorType.incompleteFields
             return error
         }
-        
+
         //validate that the start time is strictly inferior to the end time
-        guard case start < end else {
+        guard case let dates = start < end else {
             error = FieldsErrorType.dateInverted
             return error
         }
-        
+
         //validate that the sheet about to be sent does not match any existing sheet
         //must read user's previous sheets from the database (access them where previously read from the database)
         return error

@@ -13,6 +13,7 @@ struct UserWorkPlacesView: View {
     @EnvironmentObject var worksheet: Worksheet
     
     var body: some View {
+        
         ForEach(0..<self.worksheet.workPlaces.count){place in
             HStack {
                 Text(self.worksheet.workPlaces[place])

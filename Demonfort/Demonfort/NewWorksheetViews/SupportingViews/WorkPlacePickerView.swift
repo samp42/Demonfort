@@ -12,6 +12,7 @@ struct WorkPlacePickerView: View {
     @EnvironmentObject var worksheet: Worksheet
     
     var body: some View {
+        
         VStack{
             Picker(selection: $worksheet.selectedWorkPlace, label: Text("Chantier")) {
                 ForEach(0..<self.worksheet.workPlaces.count) {
