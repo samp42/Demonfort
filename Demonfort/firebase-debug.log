@@ -1,0 +1,16 @@
+[debug] [2020-04-10T04:45:32.633Z] ----------------------------------------------------------------------
+[debug] [2020-04-10T04:45:32.635Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2020-04-10T04:45:32.635Z] CLI Version:   8.0.2
+[debug] [2020-04-10T04:45:32.635Z] Platform:      darwin
+[debug] [2020-04-10T04:45:32.635Z] Node Version:  v12.13.0
+[debug] [2020-04-10T04:45:32.641Z] Time:          Fri Apr 10 2020 00:45:32 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-04-10T04:45:32.642Z] ----------------------------------------------------------------------
+[debug] [2020-04-10T04:45:32.642Z] 
+[debug] [2020-04-10T04:45:32.650Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-10T04:45:32.666Z] Error: Could not load the default credentials. Browse to https://cloud.google.com/docs/authentication/getting-started for more information.
+    at GoogleAuth.getApplicationDefaultAsync (/usr/local/lib/node_modules/firebase-tools/node_modules/google-auth-library/build/src/auth/googleauth.js:160:19)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async GoogleAuth.getClient (/usr/local/lib/node_modules/firebase-tools/node_modules/google-auth-library/build/src/auth/googleauth.js:502:17)
+    at async GoogleAuth.getAccessToken (/usr/local/lib/node_modules/firebase-tools/node_modules/google-auth-library/build/src/auth/googleauth.js:524:24)
+[error] 
+[error] Error: An unexpected error has occurred.
