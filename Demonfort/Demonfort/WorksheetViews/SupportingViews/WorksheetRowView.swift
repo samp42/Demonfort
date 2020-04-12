@@ -9,31 +9,35 @@
 import SwiftUI
 
 struct WorksheetRowView: View {
+    var startTime: Date
+    var endTime: Date
+    var workPlace: String
+    
     var body: some View {
         VStack{
             HStack {
-                Text("12 juin 2020")
+                Text("\(startTime)")
                     .font(.title)
                     .fontWeight(.heavy)
                 Spacer()
                     .frame(width: 10)
-                Text("7h à 15h")
+                Text("\(endTime)")
                     .font(.headline)
                     .fontWeight(.medium)
                 Spacer()
             }
             HStack{
-                Text("123, rue Maisonneuve, Montréal")
+                Text(workPlace)
                 Spacer()
                 
             }
         }.padding([.all],8)
-            .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color("darkBackground"), lineWidth: 2))
+            .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color("darkBackground"), lineWidth: 1))
     }
 }
 
 struct WorksheetRowView_Previews: PreviewProvider {
     static var previews: some View {
-        WorksheetRowView()
+        WorksheetRowView(startTime: Date(), endTime: Date(), workPlace: "123, rue Maisonneuve, Montréal")
     }
 }

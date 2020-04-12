@@ -20,7 +20,7 @@ struct WorksheetView: View {
              */
             List{
                 ForEach(0..<25){_ in
-                    WorksheetRowView()
+                    WorksheetRowView(startTime: Date(), endTime: Date(), workPlace: "123, rue Maisonneuve, Montréal")
                 }
             }.navigationBarTitle("Feuilles de temps")
         }

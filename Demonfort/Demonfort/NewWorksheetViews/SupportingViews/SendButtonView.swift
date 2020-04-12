@@ -28,6 +28,7 @@ struct SendButtonView: View {
                 if(true){
                     //self.show2SheetsAlert = true
                     self.worksheet.database.collection("worksheets").addDocument(data: ["Employee": "Samuel Proulx", "StartTime": self.worksheet.start, "EndTime": self.worksheet.end, "Tasks": self.worksheet.tasks])
+                    self.worksheet.reset()
                 }
                 
             }/*End of button action*/) {
