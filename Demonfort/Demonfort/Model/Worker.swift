@@ -10,21 +10,7 @@ import SwiftUI
 import Firebase
 import FirebaseFirestore
 
-//struct Worker: Hashable, Codable, Identifiable{
-//    var id: UInt8
-//    var name: String
-//    var day: Date
-//    var startHour: Date
-//    var endHour: Date
-//    var workPlace: String
-//    var tasks: String
-//    var status: Status
-//
-//    enum Status: String, CaseIterable, Codable, Hashable {
-//        case sent = "Envoyé"
-//        case approved = "Approuvé"
-//    }
-//}
+//IMPLEMENT SWIPE TO REFRESH
 
 class Worker: ObservableObject{
     @Published var workPlaces: [String] //workplaces of the employee retrieved from database
