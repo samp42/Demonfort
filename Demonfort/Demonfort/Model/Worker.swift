@@ -44,6 +44,27 @@ class Worker: ObservableObject{
                 }
             }
         }// end of database.getDocuments
+    }//end of init
+    
+    func refresh() -> Void{
+        database.collection("worksheets").whereField("Employee", isEqualTo: "Samuel Proulx").order(by: "StartTime", descending: true).getDocuments{ (querySnapshot, error) in
+                    
+            if error == nil && querySnapshot != nil{
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                    //display alert to user HERE
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                        //append to workerWorksheets
+                        self.fields.merge(document.data(), uniquingKeysWith: {(_,new) in new})
+                        self.workerWorksheets.append(self.fields)
+                        self.forCount+=1
+                        print(self.forCount)
+                    }
+                }
+            }
+        }// end of database.getDocuments
     }
     
 }

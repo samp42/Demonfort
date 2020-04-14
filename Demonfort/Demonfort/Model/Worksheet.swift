@@ -40,7 +40,7 @@ class Worksheet: Worker{
     
     override init(){
         start = Date()
-        end = Date()
+        end = Date().addingTimeInterval(100000)
         selectedWorkPlace = 0
         tasks = ""
     }

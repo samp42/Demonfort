@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct WorksheetView: View {
+    @EnvironmentObject var worksheet: Worksheet
+    
     var body: some View {
         NavigationView{
             /**
@@ -20,9 +22,15 @@ struct WorksheetView: View {
              */
             List{
                 ForEach(0..<25){_ in
-                    WorksheetRowView(startTime: Date(), endTime: Date(), workPlace: "123, rue Maisonneuve, Montréal")
+                    WorksheetRowView(startTime: self.worksheet.start, endTime: self.worksheet.end, workPlace: "123, rue Maisonneuve, Montréal")
                 }
             }.navigationBarTitle("Feuilles de temps")
+            .gesture(
+                DragGesture()
+                    .onEnded{_ in
+                        self.worksheet.refresh()
+                    }
+            )
         }
     }
 }
