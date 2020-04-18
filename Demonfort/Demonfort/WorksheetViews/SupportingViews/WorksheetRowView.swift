@@ -15,21 +15,27 @@ struct WorksheetRowView: View {
     
     var body: some View {
         VStack{
-            HStack {
-                Text("\(startTime)")
-                    .font(.title)
-                    .fontWeight(.heavy)
-                Spacer()
-                    .frame(width: 10)
-                Text("\(endTime)")
+            HStack{
+                Text("From: \(startTime.asString())")
                     .font(.headline)
                     .fontWeight(.medium)
                 Spacer()
             }
             HStack{
+                Text("To: \(endTime.asString())")
+                    .font(.headline)
+                    .fontWeight(.medium)
+                Spacer()
+            }
+            
+            HStack{
                 Text(workPlace)
                 Spacer()
                 
+            }
+            HStack{
+                Text("Status: MUST RECEIVE STATUS FROM FIREBASE")
+                Spacer()
             }
         }.padding([.all],8)
             .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color("darkBackground"), lineWidth: 1))

@@ -44,6 +44,7 @@ class Worker: ObservableObject{
                 }
             }
         }// end of database.getDocuments
+        
     }//end of init
     
     func refresh() -> Void{

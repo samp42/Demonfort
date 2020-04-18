@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E04CF40244B813000A81E15 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E04CF3F244B813000A81E15 /* TimeFormatter.swift */; };
 		1E2A8AAF242A850900E281E6 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A8AAE242A850900E281E6 /* TasksView.swift */; };
 		1E2A8AB1242A863B00E281E6 /* SendErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A8AB0242A863B00E281E6 /* SendErrorManager.swift */; };
 		1E37106624267F47004CEB8C /* WorkerSheetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E04CF3F244B813000A81E15 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		1E2A8AAE242A850900E281E6 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		1E2A8AB0242A863B00E281E6 /* SendErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendErrorManager.swift; sourceTree = "<group>"; };
 		1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetsListView.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			children = (
 				1EAA1DF32426B14B00123504 /* Worker.swift */,
 				1EAA1DF52426B15700123504 /* Worksheet.swift */,
+				1E04CF3F244B813000A81E15 /* TimeFormatter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				1E487F6C23E67F0A00F01C25 /* AppDelegate.swift in Sources */,
 				1E37106F24269538004CEB8C /* DateHoursInfoView.swift in Sources */,
 				1E37106A24267F67004CEB8C /* WorkerSheetRowView.swift in Sources */,
+				1E04CF40244B813000A81E15 /* TimeFormatter.swift in Sources */,
 				1EAA1DF42426B14B00123504 /* Worker.swift in Sources */,
 				1E37107124269548004CEB8C /* WorkPlaceInfoView.swift in Sources */,
 				1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */,

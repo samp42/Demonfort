@@ -16,7 +16,9 @@ struct StartPickerView: View {
             DatePicker(selection: $worksheet.start, label: {
                 Text("Début")
                     .fontWeight(.semibold).frame(minWidth: 80)
-            }).labelsHidden()
+                }
+                ).labelsHidden()
+            
         }
     }
 }
