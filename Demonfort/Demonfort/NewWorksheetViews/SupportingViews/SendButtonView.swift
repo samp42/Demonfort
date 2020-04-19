@@ -27,7 +27,8 @@ struct SendButtonView: View {
                 //if worksheet exist for this worker on this date:
                 if(true){
                     //self.show2SheetsAlert = true
-                    self.worksheet.database.collection("worksheets").addDocument(data: ["Employee": "Samuel Proulx", "StartTime": self.worksheet.start, "EndTime": self.worksheet.end, "Tasks": self.worksheet.tasks])
+                    self.worksheet.status = Status.sent
+                    self.worksheet.database.collection("worksheets").addDocument(data: ["Employee": "Samuel Proulx", "StartTime": self.worksheet.start, "EndTime": self.worksheet.end, "Tasks": self.worksheet.tasks, "Status": self.worksheet.status.rawValue])
                     self.worksheet.reset()
                 }
                 

@@ -34,17 +34,17 @@ class Worker: ObservableObject{
                     //display alert to user HERE
                 } else {
                     for document in querySnapshot!.documents {
-                        print("\(document.documentID) => \(document.data())")
+                        //print("\(document.documentID) => \(document.data())")
                         //append to workerWorksheets
-                        self.fields.merge(document.data(), uniquingKeysWith: {(_,new) in new})
+                        self.fields.merge(document.data(), uniquingKeysWith: {(old,_) in old})
                         self.workerWorksheets.append(self.fields)
-                        self.forCount+=1
-                        print(self.forCount)
                     }
                 }
             }
         }// end of database.getDocuments
-        
+        for (key, value) in fields{
+            print("YOOOOOO::\(key):\(value)")
+        }
     }//end of init
     
     func refresh() -> Void{
@@ -60,8 +60,6 @@ class Worker: ObservableObject{
                         //append to workerWorksheets
                         self.fields.merge(document.data(), uniquingKeysWith: {(_,new) in new})
                         self.workerWorksheets.append(self.fields)
-                        self.forCount+=1
-                        print(self.forCount)
                     }
                 }
             }
