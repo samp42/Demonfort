@@ -17,7 +17,22 @@ enum Status: String{
     
     func makeColor(state: String) -> Color{
         //recode this ugly function
-        switch self{
+        switch state{
+            
+        case "Envoyée":
+            return Color.yellow
+            
+        case "Approuvée":
+            return Color.green
+            
+        default: //"Non Envoyée"
+            return Color.red
+        }
+    }
+    
+    func makeColor(state: Status) -> Color{
+        //recode this ugly function
+        switch state{
         case .notSent:
             return Color.red
             
@@ -94,6 +109,7 @@ class Worksheet: Worker{
     func reset() -> Void{
         start = Date()
         end = Date()
+        selectedWorkPlace = 0
         tasks = ""
     }
     

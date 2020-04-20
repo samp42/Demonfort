@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WorksheetRowView: View {
+    @EnvironmentObject var worksheet: Worksheet
     var startTime: Date
     var endTime: Date
     var workPlace: String
@@ -35,6 +36,8 @@ struct WorksheetRowView: View {
             }
             HStack{
                 Text("Status: MUST RECEIVE STATUS FROM FIREBASE")
+                    .fontWeight(.bold)
+                    //.foregroundColor(Status.makeColor(/*self.worksheet.workerWorksheets.*/state: "Envoyée"))
                 Spacer()
             }
         }.padding([.all],8)

@@ -11,6 +11,15 @@ import SwiftUI
 struct WorksheetView: View {
     @EnvironmentObject var worksheet: Worksheet
     
+//    var drag: some Gesture{
+//        DragGesture(){_ in
+//            .onEnded{
+//                self.worksheet.refresh()
+//                
+//            }
+//        }
+//    }
+    
     var body: some View {
         NavigationView{
             /**
@@ -21,7 +30,7 @@ struct WorksheetView: View {
                     *Make the list adjust for the number of documents retrieved from firebase
              */
             List{
-                ForEach(0..<25){_ in
+                ForEach(0..<worksheet.workerWorksheets.count){_ in
                     WorksheetRowView(startTime: self.worksheet.start, endTime: self.worksheet.end, workPlace: "123, rue Maisonneuve, Montréal")
                 }
             }.navigationBarTitle("Feuilles de temps")

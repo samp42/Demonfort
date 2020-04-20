@@ -13,17 +13,17 @@ import FirebaseFirestore
 //IMPLEMENT SWIPE TO REFRESH
 
 class Worker: ObservableObject{
+    @Published var name: String
     @Published var workPlaces: [String] //workplaces of the employee retrieved from database
-    @Published var fields: [String:Any]
-    @Published var workerWorksheets: [[String:Any]]
-    var forCount: Int
+    @Published var workerWorksheets: [String:[String:Any]] //Dictionary with DocumentID:DocumentData<String,Any> where DocumentData<String> is the document field and DocumentData<Any> is the value
+    @Published var numOfDocuments: Int8
     let database = Firestore.firestore()
     
     init(){
-        self.workerWorksheets = []
+        self.name = "Simon Fonseca"
+        self.workerWorksheets = [:]
         self.workPlaces = ["123 rue Maisonneuve, Montréal", "456 rue Waverly, Montréal"]
-        self.fields = [:]
-        forCount = 0
+        self.numOfDocuments = 0
         
         //initialise user worksheets
         database.collection("worksheets").whereField("Employee", isEqualTo: "Samuel Proulx").order(by: "StartTime", descending: true).getDocuments{ (querySnapshot, error) in
@@ -33,18 +33,20 @@ class Worker: ObservableObject{
                     print("Error getting documents: \(error)")
                     //display alert to user HERE
                 } else {
+                    var i=0
                     for document in querySnapshot!.documents {
                         //print("\(document.documentID) => \(document.data())")
                         //append to workerWorksheets
-                        self.fields.merge(document.data(), uniquingKeysWith: {(old,_) in old})
-                        self.workerWorksheets.append(self.fields)
+                        //self.fields.merge(document.data(), uniquingKeysWith: {(old,_) in old})
+                        self.workerWorksheets.updateValue(document.data(), forKey: document.documentID)
+                        //self.fields
+                        i+=1
+                        print(i)
                     }
                 }
             }
         }// end of database.getDocuments
-        for (key, value) in fields{
-            print("YOOOOOO::\(key):\(value)")
-        }
+        self.numOfDocuments = Int8(workerWorksheets.count)
     }//end of init
     
     func refresh() -> Void{
@@ -58,8 +60,6 @@ class Worker: ObservableObject{
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
                         //append to workerWorksheets
-                        self.fields.merge(document.data(), uniquingKeysWith: {(_,new) in new})
-                        self.workerWorksheets.append(self.fields)
                     }
                 }
             }
