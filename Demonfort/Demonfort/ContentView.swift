@@ -15,6 +15,7 @@ struct ContentView: View {
      init() {
         //UITabBar.appearance().barTextColor = UIColor.gray
      }
+    
     var body: some View {
         VStack{
             HeaderView()
@@ -29,7 +30,7 @@ struct ContentView: View {
                         }
                     }
                     .tag(0)
-                    NewWorksheetView().environmentObject(Worksheet())
+                    NewWorksheetView()
                 .tabItem {
                     VStack {
                         Image(systemName: "plus.square.fill").background(Color.black)
@@ -39,7 +40,7 @@ struct ContentView: View {
                 .tag(1)
                 
                 ScrollView(.vertical){
-                    AccountView().environmentObject(Worksheet())
+                    AccountView()
                 }
                     .tabItem {
                         VStack {
@@ -48,7 +49,7 @@ struct ContentView: View {
                         }
                 }
                 .tag(2)
-            }//End of TabView
+            }.environmentObject(Worksheet())//End of TabView
                 .accentColor(Color.red)
         }
     }

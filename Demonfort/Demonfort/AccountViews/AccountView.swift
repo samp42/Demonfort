@@ -29,7 +29,7 @@ struct AccountView: View {
                     .fontWeight(.bold)
                 Spacer()
             }
-            UserWorkPlacesView()
+//            UserWorkPlacesView()
             Spacer()
                 .frame(height: 20)
             WorkerSheetsListView()

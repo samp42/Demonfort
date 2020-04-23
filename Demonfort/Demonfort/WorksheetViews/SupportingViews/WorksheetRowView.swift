@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct WorksheetRowView: View {
-    @EnvironmentObject var worksheet: Worksheet
     var startTime: Date
     var endTime: Date
     var workPlace: String

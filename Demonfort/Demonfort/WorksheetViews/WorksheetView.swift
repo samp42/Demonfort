@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WorksheetView: View {
+    //change to worker when will be able to retrieve data from workerWorksheets
     @EnvironmentObject var worksheet: Worksheet
     
 //    var drag: some Gesture{
@@ -24,21 +25,21 @@ struct WorksheetView: View {
         NavigationView{
             /**
                 *To do:
-                    *Lock Navigation View title so that it scrolls with the list instead of staying in place
-                    *Insert optionnal error message under Navigation View title if loading documents from firebase was to fail
-                    *Make WorksheetRowView() retrieve its data from Worksheet.worksheets
-                    *Make the list adjust for the number of documents retrieved from firebase
+                - Lock Navigation View title so that it scrolls with the list instead of staying in place
+                - Insert optionnal error message under Navigation View title if loading documents from firebase was to fail
+                - Make WorksheetRowView() retrieve its data from Worksheet.worksheets
+                - Make the list adjust for the number of documents retrieved from firebase
              */
+            //self.worksheet.workerWorksheets.first(where: ("Simon Fonseca0" ))
+            //for each:::::worksheet.workerWorksheets.count
             List{
-                ForEach(0..<worksheet.workerWorksheets.count){_ in
+                ForEach(0..<3){_ in
                     WorksheetRowView(startTime: self.worksheet.start, endTime: self.worksheet.end, workPlace: "123, rue Maisonneuve, Montréal")
                 }
             }.navigationBarTitle("Feuilles de temps")
             .gesture(
                 DragGesture()
-                    .onEnded{_ in
-                        self.worksheet.refresh()
-                    }
+                    //refresh festure
             )
         }
     }

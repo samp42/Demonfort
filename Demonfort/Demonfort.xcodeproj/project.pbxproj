@@ -10,6 +10,7 @@
 		1E04CF40244B813000A81E15 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E04CF3F244B813000A81E15 /* TimeFormatter.swift */; };
 		1E2A8AAF242A850900E281E6 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A8AAE242A850900E281E6 /* TasksView.swift */; };
 		1E2A8AB1242A863B00E281E6 /* SendErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A8AB0242A863B00E281E6 /* SendErrorManager.swift */; };
+		1E2EB04D244F704000CC95DF /* WorkerWorksheetAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2EB04C244F704000CC95DF /* WorkerWorksheetAccess.swift */; };
 		1E37106624267F47004CEB8C /* WorkerSheetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */; };
 		1E37106A24267F67004CEB8C /* WorkerSheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */; };
 		1E37106C24267F83004CEB8C /* WorkerSheetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */; };
@@ -34,7 +35,6 @@
 		1E823017242171860029F974 /* SendButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E823016242171860029F974 /* SendButtonView.swift */; };
 		1E82301B2421B8340029F974 /* WorksheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82301A2421B8340029F974 /* WorksheetRowView.swift */; };
 		1EAA1DF22426B13200123504 /* TestResources in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA1DF12426B13200123504 /* TestResources */; };
-		1EAA1DF42426B14B00123504 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA1DF32426B14B00123504 /* Worker.swift */; };
 		1EAA1DF62426B15700123504 /* Worksheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA1DF52426B15700123504 /* Worksheet.swift */; };
 		1EAB04B023F32AE40031B9EE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAB04AF23F32AE40031B9EE /* HeaderView.swift */; };
 		1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB6003423E688CC00AB9CD1 /* NewWorksheetView.swift */; };
@@ -48,6 +48,8 @@
 		1EDD79422423F52600A9CF70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDD79402423F52600A9CF70 /* LoginView.swift */; };
 		1EDD79432423F52600A9CF70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDD79402423F52600A9CF70 /* LoginView.swift */; };
 		1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF9762242120DB00228FA8 /* WeekDaysView.swift */; };
+		1EFF494C2450DC0A007D17E6 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF494B2450DC0A007D17E6 /* Worker.swift */; };
+		1EFF494E2450F308007D17E6 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF494D2450F308007D17E6 /* DatabaseManager.swift */; };
 		8EDF9F02F169A035750124F0 /* Pods_DemonfortTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF8499968ECDA145798328B /* Pods_DemonfortTests.framework */; };
 		A7FEA02CE3A4941622E43F64 /* Pods_Demonfort_DemonfortUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA582A871FE758CFEA9B4DF0 /* Pods_Demonfort_DemonfortUITests.framework */; };
 		C144243451153758F0357F47 /* Pods_Demonfort.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D86E9A62BC2B3335E3D9F /* Pods_Demonfort.framework */; };
@@ -74,6 +76,7 @@
 		1E04CF3F244B813000A81E15 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		1E2A8AAE242A850900E281E6 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		1E2A8AB0242A863B00E281E6 /* SendErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendErrorManager.swift; sourceTree = "<group>"; };
+		1E2EB04C244F704000CC95DF /* WorkerWorksheetAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerWorksheetAccess.swift; sourceTree = "<group>"; };
 		1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetsListView.swift; sourceTree = "<group>"; };
 		1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetRowView.swift; sourceTree = "<group>"; };
 		1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetDetailView.swift; sourceTree = "<group>"; };
@@ -104,7 +107,6 @@
 		1E823016242171860029F974 /* SendButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButtonView.swift; sourceTree = "<group>"; };
 		1E82301A2421B8340029F974 /* WorksheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksheetRowView.swift; sourceTree = "<group>"; };
 		1EAA1DF12426B13200123504 /* TestResources */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestResources; sourceTree = SOURCE_ROOT; };
-		1EAA1DF32426B14B00123504 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		1EAA1DF52426B15700123504 /* Worksheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worksheet.swift; sourceTree = "<group>"; };
 		1EAB04AF23F32AE40031B9EE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		1EB6003423E688CC00AB9CD1 /* NewWorksheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorksheetView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,8 @@
 		1EDD793C2423EB9500A9CF70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1EDD79402423F52600A9CF70 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1EDF9762242120DB00228FA8 /* WeekDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysView.swift; sourceTree = "<group>"; };
+		1EFF494B2450DC0A007D17E6 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		1EFF494D2450F308007D17E6 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		553DF69DBC7FC04F102BB172 /* Pods-Demonfort.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demonfort.release.xcconfig"; path = "Target Support Files/Pods-Demonfort/Pods-Demonfort.release.xcconfig"; sourceTree = "<group>"; };
 		6FF8499968ECDA145798328B /* Pods_DemonfortTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemonfortTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78ED5CDA71EB30855BEA9D93 /* Pods-DemonfortTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemonfortTests.release.xcconfig"; path = "Target Support Files/Pods-DemonfortTests/Pods-DemonfortTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +174,14 @@
 			path = SupportingButtonFiles;
 			sourceTree = "<group>";
 		};
+		1E2EB04B244F702300CC95DF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1E2EB04C244F704000CC95DF /* WorkerWorksheetAccess.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		1E37106424267EBA004CEB8C /* CorrectionViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 			children = (
 				1E487F6B23E67F0900F01C25 /* AppDelegate.swift */,
 				1E487F6D23E67F0A00F01C25 /* SceneDelegate.swift */,
+				1E2EB04B244F702300CC95DF /* Tests */,
 				1EBC110A2426B074009E5AF9 /* Model */,
 				1EDD79442423F52F00A9CF70 /* Login */,
 				1EB6003223E6884800AB9CD1 /* WorksheetViews */,
@@ -317,8 +330,9 @@
 		1EBC110A2426B074009E5AF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1EAA1DF32426B14B00123504 /* Worker.swift */,
 				1EAA1DF52426B15700123504 /* Worksheet.swift */,
+				1EFF494B2450DC0A007D17E6 /* Worker.swift */,
+				1EFF494D2450F308007D17E6 /* DatabaseManager.swift */,
 				1E04CF3F244B813000A81E15 /* TimeFormatter.swift */,
 			);
 			path = Model;
@@ -598,10 +612,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EFF494E2450F308007D17E6 /* DatabaseManager.swift in Sources */,
+				1E2EB04D244F704000CC95DF /* WorkerWorksheetAccess.swift in Sources */,
 				1EAB04B023F32AE40031B9EE /* HeaderView.swift in Sources */,
 				1E37106624267F47004CEB8C /* WorkerSheetsListView.swift in Sources */,
 				1E672D1024207466003E501D /* DayView.swift in Sources */,
 				1E37106C24267F83004CEB8C /* WorkerSheetDetailView.swift in Sources */,
+				1EFF494C2450DC0A007D17E6 /* Worker.swift in Sources */,
 				1E2A8AB1242A863B00E281E6 /* SendErrorManager.swift in Sources */,
 				1E82301B2421B8340029F974 /* WorksheetRowView.swift in Sources */,
 				1E3710732426962B004CEB8C /* TaskInfoView.swift in Sources */,
@@ -612,7 +629,6 @@
 				1E37106F24269538004CEB8C /* DateHoursInfoView.swift in Sources */,
 				1E37106A24267F67004CEB8C /* WorkerSheetRowView.swift in Sources */,
 				1E04CF40244B813000A81E15 /* TimeFormatter.swift in Sources */,
-				1EAA1DF42426B14B00123504 /* Worker.swift in Sources */,
 				1E37107124269548004CEB8C /* WorkPlaceInfoView.swift in Sources */,
 				1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */,
 				1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */,
@@ -797,6 +813,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Demonfort/Preview Content\"";
+				DEVELOPMENT_TEAM = 7Y6U5WA8XQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Demonfort/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -818,6 +835,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Demonfort/Preview Content\"";
+				DEVELOPMENT_TEAM = 7Y6U5WA8XQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Demonfort/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

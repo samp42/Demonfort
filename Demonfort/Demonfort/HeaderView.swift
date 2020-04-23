@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct HeaderView: View {
+
     var body: some View {
         HStack(alignment: .top){
             Spacer()

@@ -7,12 +7,8 @@
 //
 
 import SwiftUI
-import Firebase
-import FirebaseFirestore
 
 struct NewWorksheetView: View {
-    @EnvironmentObject var worksheet: Worksheet
-    
     var body: some View {
         VStack(alignment: .leading){
             Text("Nouvelle feuille de temps")
@@ -22,7 +18,7 @@ struct NewWorksheetView: View {
             Spacer()
                 .frame(height: 10)
             
-            WorksheetFormView().environmentObject(Worksheet())
+            WorksheetFormView()
             
             
         }//End of VStack

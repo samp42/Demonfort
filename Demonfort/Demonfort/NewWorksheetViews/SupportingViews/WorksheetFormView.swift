@@ -10,8 +10,6 @@ import SwiftUI
 import Firebase
 
 struct WorksheetFormView: View {
-    @EnvironmentObject var worksheet: Worksheet
-
     //let dateComponents = DateComponents( hour: 9, minute: 0)
     //let date = Calendar.current.date(from: dateComponents)
     
@@ -56,7 +54,8 @@ struct WorksheetFormView: View {
 }
 
 struct WorksheetFormView_Previews: PreviewProvider {
+    static let worksheet = Worksheet()
     static var previews: some View {
-        WorksheetFormView()
+        WorksheetFormView().environmentObject(Worksheet())
     }
 }

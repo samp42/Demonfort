@@ -24,7 +24,8 @@ struct StartPickerView: View {
 }
 
 struct StartPickerView_Previews: PreviewProvider {
+    static let worksheet = Worksheet()
     static var previews: some View {
-        StartPickerView()
+        StartPickerView().environmentObject(Worksheet())
     }
 }
