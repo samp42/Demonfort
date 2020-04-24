@@ -21,13 +21,39 @@ class DatabaseManager{
     }
     
     //used to fetch data about worksheets
-    func fetchWorksheets() -> Void{
+    func fetchWorksheets(employee: String, worksheets: [String:[String:Any]]) -> [String:[String:Any]]{
+        //copy of worksheets
+        var worksheetsCopy: [String:[String:Any]] = worksheets
         
+        //query
+        database.collection("worksheets").whereField("Employee", isEqualTo: employee)
+            .getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        //print("\(document.documentID) => \(document.data())")
+                        //store documents in dictionary
+                        worksheetsCopy.updateValue(document.data(), forKey: "\(document.documentID)")
+                    }
+                    //sort documents by time
+                        //must sort here
+                    for key in worksheetsCopy.keys{
+                        print(key)
+                    }
+                    if(worksheetsCopy.isEmpty){
+                        print("Empty")
+                    }
+                }
+        }
+        return worksheetsCopy
     }
     
     //used to send data about user
-    func sendUser() -> Void{
-        
+    func sendUser(employee: String, workPlaces: [String]) -> Void{
+        if(true){
+            database.collection(workerCollection).document(employee).setData(["Workplaces":workPlaces])
+        }
     }
     
     //used to send worksheet

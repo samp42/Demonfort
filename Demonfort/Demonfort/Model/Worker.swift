@@ -6,7 +6,6 @@
 //  Copyright © 2020 Demonfort. All rights reserved.
 //
 
-import Foundation
 import Firebase
 import FirebaseFirestore
 
@@ -34,16 +33,20 @@ class Worker: DatabaseManager, ObservableObject{
     //worker's workplaces
     var workPlaces: [String]
     //worker's worksheets
-    
+    var worksheets: [String:[String:Any]]//[documentName:[key:value]]
+    //number of documents
+    var numOfDocuments: Int8
     
     override init(){
-        self.workerName = ""
+        self.workerName = "Samuel Proulx"
         self.workerRole = .worker
         self.workPlaces = ["123 rue Maisonneuve, Montréal", "456 rue Waverly, Montréal"]
         self.workerStatusWeekly = []
-        //for i in 0..<1{
-            self.workerStatusWeekly.append(.notSent)
-            print(self.workerStatusWeekly[0].rawValue)
-        //}
+        self.worksheets=[:]
+        self.numOfDocuments=12
+        super.init()
+        self.worksheets = fetchWorksheets(employee: self.workerName, worksheets: self.worksheets)
+        self.numOfDocuments = Int8(self.worksheets.keys.count)
+        print(self.numOfDocuments)
     }
 }
