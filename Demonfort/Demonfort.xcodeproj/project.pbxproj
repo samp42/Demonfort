@@ -11,7 +11,7 @@
 		1E2A8AAF242A850900E281E6 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A8AAE242A850900E281E6 /* TasksView.swift */; };
 		1E2A8AB1242A863B00E281E6 /* SendErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A8AB0242A863B00E281E6 /* SendErrorManager.swift */; };
 		1E2EB04D244F704000CC95DF /* WorkerWorksheetAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2EB04C244F704000CC95DF /* WorkerWorksheetAccess.swift */; };
-		1E37106624267F47004CEB8C /* WorkerSheetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */; };
+		1E37106624267F47004CEB8C /* WorkerSheetsApprovalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106524267F47004CEB8C /* WorkerSheetsApprovalListView.swift */; };
 		1E37106A24267F67004CEB8C /* WorkerSheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */; };
 		1E37106C24267F83004CEB8C /* WorkerSheetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */; };
 		1E37106F24269538004CEB8C /* DateHoursInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106E24269538004CEB8C /* DateHoursInfoView.swift */; };
@@ -28,6 +28,7 @@
 		1E487F8E23E67F0B00F01C25 /* DemonfortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F8D23E67F0B00F01C25 /* DemonfortUITests.swift */; };
 		1E4EE786241DA20200855E41 /* UserWorkPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */; };
 		1E672D1024207466003E501D /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E672D0F24207466003E501D /* DayView.swift */; };
+		1E6A632B24537066001CFF04 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A632A24537066001CFF04 /* SettingsView.swift */; };
 		1E7AA12F241AF666006CA1BC /* AccountImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA12E241AF665006CA1BC /* AccountImageView.swift */; };
 		1E7AA131241AF681006CA1BC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA130241AF681006CA1BC /* ProfileView.swift */; };
 		1E7AA133241AF6E7006CA1BC /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA132241AF6E7006CA1BC /* AccountView.swift */; };
@@ -77,7 +78,7 @@
 		1E2A8AAE242A850900E281E6 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		1E2A8AB0242A863B00E281E6 /* SendErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendErrorManager.swift; sourceTree = "<group>"; };
 		1E2EB04C244F704000CC95DF /* WorkerWorksheetAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerWorksheetAccess.swift; sourceTree = "<group>"; };
-		1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetsListView.swift; sourceTree = "<group>"; };
+		1E37106524267F47004CEB8C /* WorkerSheetsApprovalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetsApprovalListView.swift; sourceTree = "<group>"; };
 		1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetRowView.swift; sourceTree = "<group>"; };
 		1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetDetailView.swift; sourceTree = "<group>"; };
 		1E37106E24269538004CEB8C /* DateHoursInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHoursInfoView.swift; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 		1E487F8F23E67F0B00F01C25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserWorkPlacesView.swift; path = Demonfort/AccountViews/SupportingViews/UserWorkPlacesView.swift; sourceTree = SOURCE_ROOT; };
 		1E672D0F24207466003E501D /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		1E6A632A24537066001CFF04 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1E7AA12E241AF665006CA1BC /* AccountImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImageView.swift; sourceTree = "<group>"; };
 		1E7AA130241AF681006CA1BC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1E7AA132241AF6E7006CA1BC /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -185,7 +187,7 @@
 		1E37106424267EBA004CEB8C /* CorrectionViews */ = {
 			isa = PBXGroup;
 			children = (
-				1E37106524267F47004CEB8C /* WorkerSheetsListView.swift */,
+				1E37106524267F47004CEB8C /* WorkerSheetsApprovalListView.swift */,
 				1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */,
 				1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */,
 				1E37106D242694DC004CEB8C /* Supporting Views */,
@@ -282,6 +284,7 @@
 				1E672D0F24207466003E501D /* DayView.swift */,
 				1EDF9762242120DB00228FA8 /* WeekDaysView.swift */,
 				1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */,
+				1E6A632A24537066001CFF04 /* SettingsView.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				1E487F6523E67F0900F01C25 /* Frameworks */,
 				1E487F6623E67F0900F01C25 /* Resources */,
 				9EA60921AB58F7D9E26D7246 /* [CP] Embed Pods Frameworks */,
+				1630A395A288320AF2FC7E19 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -419,6 +423,7 @@
 				1E487F8623E67F0B00F01C25 /* Frameworks */,
 				1E487F8723E67F0B00F01C25 /* Resources */,
 				233088EC61076A4003C9DCF9 /* [CP] Embed Pods Frameworks */,
+				09E732458C6024270E8E431B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -505,6 +510,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09E732458C6024270E8E431B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demonfort-DemonfortUITests/Pods-Demonfort-DemonfortUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demonfort-DemonfortUITests/Pods-Demonfort-DemonfortUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demonfort-DemonfortUITests/Pods-Demonfort-DemonfortUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		103E2ED74566F4A4322E5A97 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -525,6 +547,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1630A395A288320AF2FC7E19 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demonfort/Pods-Demonfort-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demonfort/Pods-Demonfort-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demonfort/Pods-Demonfort-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		233088EC61076A4003C9DCF9 /* [CP] Embed Pods Frameworks */ = {
@@ -615,7 +654,7 @@
 				1EFF494E2450F308007D17E6 /* DatabaseManager.swift in Sources */,
 				1E2EB04D244F704000CC95DF /* WorkerWorksheetAccess.swift in Sources */,
 				1EAB04B023F32AE40031B9EE /* HeaderView.swift in Sources */,
-				1E37106624267F47004CEB8C /* WorkerSheetsListView.swift in Sources */,
+				1E37106624267F47004CEB8C /* WorkerSheetsApprovalListView.swift in Sources */,
 				1E672D1024207466003E501D /* DayView.swift in Sources */,
 				1E37106C24267F83004CEB8C /* WorkerSheetDetailView.swift in Sources */,
 				1EFF494C2450DC0A007D17E6 /* Worker.swift in Sources */,
@@ -633,6 +672,7 @@
 				1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */,
 				1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */,
 				1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */,
+				1E6A632B24537066001CFF04 /* SettingsView.swift in Sources */,
 				1EC692C82429310100105F23 /* StartPickerView.swift in Sources */,
 				1E7AA133241AF6E7006CA1BC /* AccountView.swift in Sources */,
 				1E4EE786241DA20200855E41 /* UserWorkPlacesView.swift in Sources */,

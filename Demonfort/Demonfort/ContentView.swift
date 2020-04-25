@@ -15,9 +15,9 @@ struct ContentView: View {
     var body: some View {
         VStack{
             HeaderView()
-            
-            TabView(selection: $selection){
-                WorksheetView()
+            if(self.worksheet.workerRole==Role.worker) {
+                TabView(selection: $selection){
+                    WorksheetView()
                     .tabItem {
                         VStack {
                             Image(systemName: "tray.fill")
@@ -27,26 +27,33 @@ struct ContentView: View {
                     }
                     .tag(0)
                     NewWorksheetView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "plus.square.fill").background(Color.black)
-                        Text("Nouvelle feuille")
+                    .tabItem {
+                        VStack {
+                            
+                            Image(systemName: "plus.square.fill").background(Color.black)
+                            Text("Nouvelle feuille")
+                        }
                     }
-                }
-                .tag(1)
+                    .tag(1)
                 
-                ScrollView(.vertical){
-                    AccountView()
-                }
+                
+                    ScrollView(.vertical){
+                        AccountView()
+                    }
                     .tabItem {
                         VStack {
                             Image(systemName: "person.fill")
                             Text("Compte")
                         }
-                }
-                .tag(2)
-            }.environmentObject(Worksheet())//End of TabView
+                    }
+                    .tag(2)
+                }.environmentObject(Worksheet())//End of TabView
                 .accentColor(Color.red)
+            } else {
+                 ScrollView(.vertical){
+                    AccountView()
+                }
+            }
         }
     }
 }

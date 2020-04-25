@@ -9,18 +9,21 @@
 import SwiftUI
 
 struct AccountView: View {
+    @EnvironmentObject var worksheet: Worksheet
     var body: some View {
         VStack{
             ProfileView()
             Spacer()
             .frame(height: 20)
-            HStack {
-                Text("Jours de la semaine")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
+            if(self.worksheet.workerRole==Role.worker){
+                HStack {
+                    Text("Jours de la semaine")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Spacer()
+                }
+                WeekDaysView()
             }
-            WeekDaysView()
             Spacer()
                 .frame(height: 20)
             HStack {
@@ -29,10 +32,12 @@ struct AccountView: View {
                     .fontWeight(.bold)
                 Spacer()
             }
-//            UserWorkPlacesView()
+            UserWorkPlacesView()
             Spacer()
                 .frame(height: 20)
-            WorkerSheetsListView()
+            if(self.worksheet.workerRole==Role.superintendent){
+                WorkerSheetsApprovalListView()
+            }
             Spacer()
         }.padding([.horizontal], 8)
     }
@@ -40,6 +45,6 @@ struct AccountView: View {
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
+        AccountView().environmentObject(Worksheet())
     }
 }

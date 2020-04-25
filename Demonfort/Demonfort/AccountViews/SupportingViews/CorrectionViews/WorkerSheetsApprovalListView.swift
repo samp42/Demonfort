@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct WorkerSheetsListView: View {
+struct WorkerSheetsApprovalListView: View {
     var body: some View {
         VStack {
             HStack {
@@ -28,6 +28,6 @@ struct WorkerSheetsListView: View {
 
 struct WorkerSheetsListView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkerSheetsListView()
+        WorkerSheetsApprovalListView()
     }
 }

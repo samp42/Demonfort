@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ProfileView: View {
     var body: some View {
@@ -24,7 +25,14 @@ struct ProfileView: View {
                     Text("Surintendant")
                         .font(.headline)
                     Spacer()
-                    Button(action:{/*signout + toggle signout alert IF successful*/}){
+                    Button(action:{/*signout + toggle signout alert IF successful*/
+                            let firebaseAuth = Auth.auth()
+                        do {
+                          try firebaseAuth.signOut()
+                        } catch let signOutError as NSError {
+                          print ("Error signing out: %@", signOutError)
+                        }
+                    }){
                         Text("Déconnexion")
                             .foregroundColor(Color("lightText"))
                             .fontWeight(.medium)

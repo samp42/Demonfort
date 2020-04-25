@@ -8,6 +8,7 @@ target 'Demonfort' do
   # Pods for Demonfort
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'FirebaseUI/Auth'
   pod 'Firebase/Firestore'
   
   target 'DemonfortTests' do

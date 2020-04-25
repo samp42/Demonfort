@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseUI
 
 struct LoginView: View {
     var body: some View {
@@ -16,14 +18,41 @@ struct LoginView: View {
                 Image("Demonfort")
                 Spacer()
             }
-            Button(action:{}){
-                Text("Se connecter")
-                    .font(.headline)
-                    .foregroundColor(Color.black)
+            NavigationView {
+                NavigationLink(destination: ContentView()){
+                    Text("Se connecter")
                     .padding([.vertical], 10)
                     .padding([.horizontal], 60)
-            }.background(Color.white)
-                .cornerRadius(10)
+                    .font(.headline)
+                    .foregroundColor(Color.black)
+                    .background(Color.white)
+                }.cornerRadius(10)
+            }                
+//            Button(action:{
+//                //connect user with Firebase magic
+//                //Get the default auth UI object
+//                let authUI = FUIAuth.defaultAuthUI()
+//
+//                guard authUI != nil else{
+//                    //log the error
+//                    return
+//                }
+//
+//                //Set ourselves as the delegate
+//                //authUI?.delegate = self
+//
+//                //Get a reference to the auth UI view
+//
+//
+//                //Show it....
+//            }){
+//                Text("Se connecter")
+//                    .font(.headline)
+//                    .foregroundColor(Color.black)
+//                    .padding([.vertical], 10)
+//                    .padding([.horizontal], 60)
+//            }.background(Color.white)
+//                .cornerRadius(10)
             Spacer()
         }.background(Color.black).edgesIgnoringSafeArea(.all)
     }

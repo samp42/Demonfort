@@ -12,8 +12,10 @@ import FirebaseFirestore
 
 class DatabaseManager{
     let database = Firestore.firestore()
-    let workerCollection = "workers"
-    let worksheetCollection = "worksheets"
+    let workerCollection = "workers" //documentID: name, document.data: Role
+    //future:
+        //let workPlacesCollection = "workPlaces" //documentID: address
+    let worksheetCollection = "worksheets" //documentID: employee+sheet number, document.data: start, end, workplace, status, tasks
     
     //used to fetch data about user
     func fetchWorker() -> Void{
@@ -50,9 +52,9 @@ class DatabaseManager{
     }
     
     //used to send data about user
-    func sendUser(employee: String, workPlaces: [String]) -> Void{
+    func sendUser(employee: String, workPlaces: [String], role: Role) -> Void{
         if(true){
-            database.collection(workerCollection).document(employee).setData(["Workplaces":workPlaces])
+            database.collection(workerCollection).document(employee).setData(["Workplaces":workPlaces, "Role": role.toString()])
         }
     }
     
