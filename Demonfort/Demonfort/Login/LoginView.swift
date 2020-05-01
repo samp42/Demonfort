@@ -10,6 +10,7 @@ import FirebaseAuth
 import FirebaseUI
 
 struct LoginView: View {
+    @State private var isAppPresented = false
     var body: some View {
         VStack{
             Spacer()
@@ -18,16 +19,15 @@ struct LoginView: View {
                 Image("Demonfort")
                 Spacer()
             }
-            NavigationView {
-                NavigationLink(destination: ContentView()){
-                    Text("Se connecter")
+            
+            Button(action: {self.isAppPresented = true}){
+                Text("Se connecter")
                     .padding([.vertical], 10)
-                    .padding([.horizontal], 60)
+                    .padding([.horizontal], 12)
                     .font(.headline)
                     .foregroundColor(Color.black)
                     .background(Color.white)
-                }.cornerRadius(10)
-            }                
+            }.sheet(isPresented: $isAppPresented, content: {ContentView()}).cornerRadius(10)
 //            Button(action:{
 //                //connect user with Firebase magic
 //                //Get the default auth UI object
@@ -60,6 +60,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView().environmentObject(Worksheet())
     }
 }

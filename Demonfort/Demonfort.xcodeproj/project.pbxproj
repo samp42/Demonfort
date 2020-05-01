@@ -27,6 +27,7 @@
 		1E487F8323E67F0B00F01C25 /* DemonfortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F8223E67F0B00F01C25 /* DemonfortTests.swift */; };
 		1E487F8E23E67F0B00F01C25 /* DemonfortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F8D23E67F0B00F01C25 /* DemonfortUITests.swift */; };
 		1E4EE786241DA20200855E41 /* UserWorkPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */; };
+		1E5D7620245CD660008F81A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D761F245CD660008F81A4 /* User.swift */; };
 		1E672D1024207466003E501D /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E672D0F24207466003E501D /* DayView.swift */; };
 		1E6A632B24537066001CFF04 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A632A24537066001CFF04 /* SettingsView.swift */; };
 		1E7AA12F241AF666006CA1BC /* AccountImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA12E241AF665006CA1BC /* AccountImageView.swift */; };
@@ -100,6 +101,7 @@
 		1E487F8D23E67F0B00F01C25 /* DemonfortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemonfortUITests.swift; sourceTree = "<group>"; };
 		1E487F8F23E67F0B00F01C25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserWorkPlacesView.swift; path = Demonfort/AccountViews/SupportingViews/UserWorkPlacesView.swift; sourceTree = SOURCE_ROOT; };
+		1E5D761F245CD660008F81A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1E672D0F24207466003E501D /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		1E6A632A24537066001CFF04 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1E7AA12E241AF665006CA1BC /* AccountImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImageView.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			children = (
 				1EAA1DF52426B15700123504 /* Worksheet.swift */,
 				1EFF494B2450DC0A007D17E6 /* Worker.swift */,
+				1E5D761F245CD660008F81A4 /* User.swift */,
 				1EFF494D2450F308007D17E6 /* DatabaseManager.swift */,
 				1E04CF3F244B813000A81E15 /* TimeFormatter.swift */,
 			);
@@ -675,6 +678,7 @@
 				1E6A632B24537066001CFF04 /* SettingsView.swift in Sources */,
 				1EC692C82429310100105F23 /* StartPickerView.swift in Sources */,
 				1E7AA133241AF6E7006CA1BC /* AccountView.swift in Sources */,
+				1E5D7620245CD660008F81A4 /* User.swift in Sources */,
 				1E4EE786241DA20200855E41 /* UserWorkPlacesView.swift in Sources */,
 				1E7AA12F241AF666006CA1BC /* AccountImageView.swift in Sources */,
 				1EC692CA2429310A00105F23 /* EndPickerView.swift in Sources */,

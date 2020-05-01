@@ -21,6 +21,15 @@ enum Role{
         }
     }
     
+    func toStringFrench() -> String{
+        switch self {
+        case .superintendent:
+            return "Superintendant"
+        case .worker:
+            return "Ouvrier"
+        }
+    }
+    
 }
 
 class Worker: DatabaseManager, ObservableObject{
@@ -42,8 +51,8 @@ class Worker: DatabaseManager, ObservableObject{
         self.workerRole = .worker
         self.workPlaces = ["123 rue Maisonneuve, Montréal", "456 rue Waverly, Montréal"]
         self.workerStatusWeekly = []
-        self.worksheets=[:]
-        self.numOfDocuments=12
+        self.worksheets = [:]
+        self.numOfDocuments = 12
         super.init()
         self.worksheets = fetchWorksheets(employee: self.workerName, worksheets: self.worksheets)
         self.numOfDocuments = Int8(self.worksheets.keys.count)

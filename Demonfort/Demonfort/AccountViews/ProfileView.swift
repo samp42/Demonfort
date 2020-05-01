@@ -10,19 +10,21 @@ import SwiftUI
 import FirebaseAuth
 
 struct ProfileView: View {
+    @EnvironmentObject var worksheet: Worksheet
     var body: some View {
 
             HStack{
-                ZStack{
-                    AccountImageView()
-                        //.overlay(Circle().stroke(Color.gray, lineWidth: 2))
-                }
-                
+//                ZStack{
+//                    AccountImageView()
+//                        //.overlay(Circle().stroke(Color.gray, lineWidth: 2))
+//                }
+                Spacer()
+                    .frame(width: 10)
                 VStack(alignment: .leading){
-                    Text("Simon Fonseca")
+                    Text("\(self.worksheet.workerName)")
                         .fontWeight(.heavy)
                         .font(.title)
-                    Text("Surintendant")
+                    Text("\(self.worksheet.workerRole.toStringFrench())")
                         .font(.headline)
                     Spacer()
                     Button(action:{/*signout + toggle signout alert IF successful*/
@@ -33,13 +35,15 @@ struct ProfileView: View {
                           print ("Error signing out: %@", signOutError)
                         }
                     }){
-                        Text("Déconnexion")
-                            .foregroundColor(Color("lightText"))
-                            .fontWeight(.medium)
+                    Button(action: {}){
+                        Text("Déconnexion").foregroundColor(Color("lightText"))
+                                .fontWeight(.medium)
+                    }
+                            
                     }
                 }
                 Spacer()
-            }.padding([.all], 8).frame(height: 136).frame(minWidth:360)
+            }.padding([.all], 8).frame(height: 100).frame(minWidth:360)
                 .background(Color("lightGray")
                     .cornerRadius(20)
         )
@@ -49,6 +53,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView().environmentObject(Worksheet())
     }
 }

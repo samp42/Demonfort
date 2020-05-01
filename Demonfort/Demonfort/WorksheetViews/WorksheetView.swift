@@ -33,8 +33,9 @@ struct WorksheetView: View {
             //self.worksheet.workerWorksheets.first(where: ("Simon Fonseca0" ))
             //for each:::::worksheet.workerWorksheets.count
             List{
-                ForEach(0..<3){_ in
-                    WorksheetRowView(startTime: self.worksheet.start, endTime: self.worksheet.end, workPlace: "123, rue Maisonneuve, Montréal")
+                ForEach(0..<Int(self.worksheet.numOfDocuments)){_ in
+                    Text("hello")
+//                    WorksheetRowView(startTime: self.worksheet.worksheets, endTime: self.worksheet.end, workPlace: "123, rue Maisonneuve, Montréal")
                 }
             }.navigationBarTitle("Feuilles de temps")
             .gesture(
@@ -47,6 +48,6 @@ struct WorksheetView: View {
 
 struct WorksheetView_Previews: PreviewProvider {
     static var previews: some View {
-        WorksheetView()
+        WorksheetView().environmentObject(Worksheet())
     }
 }

@@ -11,35 +11,55 @@ import SwiftUI
 struct AccountView: View {
     @EnvironmentObject var worksheet: Worksheet
     var body: some View {
-        VStack{
-            ProfileView()
-            Spacer()
-            .frame(height: 20)
-            if(self.worksheet.workerRole==Role.worker){
+        NavigationView {
+            VStack{
+                Spacer()
+                    .frame(height: 100)
                 HStack {
-                    Text("Jours de la semaine")
-                        .font(.title)
-                        .fontWeight(.bold)
+                    Text("\(self.worksheet.workerRole.toStringFrench())")
                     Spacer()
                 }
-                WeekDaysView()
-            }
-            Spacer()
-                .frame(height: 20)
-            HStack {
-                Text("Chantiers")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-            }
-            UserWorkPlacesView()
-            Spacer()
-                .frame(height: 20)
-            if(self.worksheet.workerRole==Role.superintendent){
-                WorkerSheetsApprovalListView()
-            }
-            Spacer()
-        }.padding([.horizontal], 8)
+                    NavigationLink(destination: SettingsView()){
+                        HStack {
+                            Spacer()
+                            Text("Gérer les utilisateurs")
+                                .font(.headline)
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color.red)
+                                .padding([.vertical], 6)
+                            Spacer()
+                        }.background(Color("darkBackground"))
+                        .cornerRadius(8)
+                    }
+                    Spacer()
+                    .frame(height: 20)
+                    if(self.worksheet.workerRole==Role.worker){
+                        HStack {
+                            Text("Jours de la semaine")
+                                .font(.title)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
+                        WeekDaysView()
+                    }
+                    Spacer()
+                        .frame(height: 20)
+                    HStack {
+                        Text("Chantiers")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    UserWorkPlacesView()
+                    Spacer()
+                        .frame(height: 20)
+                    if(self.worksheet.workerRole==Role.superintendent){
+                        WorkerSheetsApprovalListView()
+                    }
+                    //Spacer()
+                }.padding([.horizontal], 16)
+                .navigationBarTitle(self.worksheet.workerName)
+        }
     }
 }
 

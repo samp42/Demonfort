@@ -17,9 +17,26 @@ class DatabaseManager{
         //let workPlacesCollection = "workPlaces" //documentID: address
     let worksheetCollection = "worksheets" //documentID: employee+sheet number, document.data: start, end, workplace, status, tasks
     
-    //used to fetch data about user
-    func fetchWorker() -> Void{
-        
+    //used to fetch data about a specific user
+    func fetchWorker(employee: String) -> Void{
+        database.collection(workerCollection).document(employee).getDocument() {(querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                //get info about user
+            }
+        }
+    }
+    
+    //used to fetch data about all workers
+    func fetchWorkers() -> Void{
+        database.collection(workerCollection).document().getDocument() {(querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                //get info about users
+            }
+        }
     }
     
     //used to fetch data about worksheets
@@ -28,7 +45,7 @@ class DatabaseManager{
         var worksheetsCopy: [String:[String:Any]] = worksheets
         
         //query
-        database.collection("worksheets").whereField("Employee", isEqualTo: employee)
+        database.collection(worksheetCollection).whereField("Employee", isEqualTo: employee)
             .getDocuments() { (querySnapshot, error) in
                 if let error = error {
                     print("Error getting documents: \(error)")
