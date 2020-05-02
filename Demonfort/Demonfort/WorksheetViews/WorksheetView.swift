@@ -21,6 +21,7 @@ struct WorksheetView: View {
 //        }
 //    }
     
+    
     var body: some View {
         NavigationView{
             /**
@@ -33,7 +34,7 @@ struct WorksheetView: View {
             //self.worksheet.workerWorksheets.first(where: ("Simon Fonseca0" ))
             //for each:::::worksheet.workerWorksheets.count
             List{
-                ForEach(0..<Int(self.worksheet.numOfDocuments)){_ in
+                ForEach(0..<Int(self.worksheet.worksheets.keys.count)){_ in
                     Text("hello")
 //                    WorksheetRowView(startTime: self.worksheet.worksheets, endTime: self.worksheet.end, workPlace: "123, rue Maisonneuve, Montréal")
                 }

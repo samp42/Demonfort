@@ -14,6 +14,10 @@ class SessionStore: ObservableObject{
     @Published var session: User? {didSet {self.didChange.send(self)}}
     var handle: AuthStateDidChangeListenerHandle?
     
+    init(){
+        print("SessionStore initialized")
+    }
+    
     func listen(){
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if let user = user{

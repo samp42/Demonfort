@@ -52,10 +52,14 @@ class Worker: DatabaseManager, ObservableObject{
         self.workPlaces = ["123 rue Maisonneuve, Montréal", "456 rue Waverly, Montréal"]
         self.workerStatusWeekly = []
         self.worksheets = [:]
-        self.numOfDocuments = 12
+        self.numOfDocuments = 0
         super.init()
         self.worksheets = fetchWorksheets(employee: self.workerName, worksheets: self.worksheets)
+    }
+    
+    func getNumOfDocuments(){
         self.numOfDocuments = Int8(self.worksheets.keys.count)
         print(self.numOfDocuments)
     }
+    
 }

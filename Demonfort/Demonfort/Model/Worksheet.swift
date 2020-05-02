@@ -15,7 +15,7 @@ enum Status: String{
     case sent = "Envoyée"
     case approved = "Approuvée"
     
-    func makeColor(state: String) -> Color{
+    static func makeColor(state: String) -> Color{
         //recode this ugly function
         switch state{
             
@@ -26,11 +26,11 @@ enum Status: String{
             return Color.green
             
         default: //"Non Envoyée"
-            return Color.red
+            return Color("customRed")
         }
     }
     
-    func makeColor(state: Status) -> Color{
+    static func makeColor(state: Status) -> Color{
         //recode this ugly function
         switch state{
         case .notSent:
@@ -67,10 +67,4 @@ class Worksheet: Worker{
         tasks = ""
     }
     
-}
-
-struct Worksheet_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
 }

@@ -50,6 +50,9 @@
 		1EDD79422423F52600A9CF70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDD79402423F52600A9CF70 /* LoginView.swift */; };
 		1EDD79432423F52600A9CF70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDD79402423F52600A9CF70 /* LoginView.swift */; };
 		1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF9762242120DB00228FA8 /* WeekDaysView.swift */; };
+		1EF7CB9F245E07270057C6BB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF7CB9E245E07270057C6BB /* SignUpView.swift */; };
+		1EF7CBA1245E0BF80057C6BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF7CBA0245E0BF80057C6BB /* MainView.swift */; };
+		1EF7CBA3245E35570057C6BB /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF7CBA2245E35570057C6BB /* Sort.swift */; };
 		1EFF494C2450DC0A007D17E6 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF494B2450DC0A007D17E6 /* Worker.swift */; };
 		1EFF494E2450F308007D17E6 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFF494D2450F308007D17E6 /* DatabaseManager.swift */; };
 		8EDF9F02F169A035750124F0 /* Pods_DemonfortTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF8499968ECDA145798328B /* Pods_DemonfortTests.framework */; };
@@ -120,6 +123,9 @@
 		1EDD793C2423EB9500A9CF70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1EDD79402423F52600A9CF70 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1EDF9762242120DB00228FA8 /* WeekDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysView.swift; sourceTree = "<group>"; };
+		1EF7CB9E245E07270057C6BB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		1EF7CBA0245E0BF80057C6BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1EF7CBA2245E35570057C6BB /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		1EFF494B2450DC0A007D17E6 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		1EFF494D2450F308007D17E6 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		553DF69DBC7FC04F102BB172 /* Pods-Demonfort.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demonfort.release.xcconfig"; path = "Target Support Files/Pods-Demonfort/Pods-Demonfort.release.xcconfig"; sourceTree = "<group>"; };
@@ -241,6 +247,7 @@
 				1E277F9F241D65FC0052FEFB /* NewWorksheetViews */,
 				1EB6003323E6886400AB9CD1 /* AccountViews */,
 				1E487F6F23E67F0A00F01C25 /* ContentView.swift */,
+				1EF7CBA0245E0BF80057C6BB /* MainView.swift */,
 				1EAB04AF23F32AE40031B9EE /* HeaderView.swift */,
 				1EDD793C2423EB9500A9CF70 /* GoogleService-Info.plist */,
 				1EAA1DF12426B13200123504 /* TestResources */,
@@ -339,6 +346,7 @@
 				1EFF494B2450DC0A007D17E6 /* Worker.swift */,
 				1E5D761F245CD660008F81A4 /* User.swift */,
 				1EFF494D2450F308007D17E6 /* DatabaseManager.swift */,
+				1EF7CBA2245E35570057C6BB /* Sort.swift */,
 				1E04CF3F244B813000A81E15 /* TimeFormatter.swift */,
 			);
 			path = Model;
@@ -348,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				1EDD79402423F52600A9CF70 /* LoginView.swift */,
+				1EF7CB9E245E07270057C6BB /* SignUpView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -655,9 +664,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EFF494E2450F308007D17E6 /* DatabaseManager.swift in Sources */,
+				1EF7CBA1245E0BF80057C6BB /* MainView.swift in Sources */,
 				1E2EB04D244F704000CC95DF /* WorkerWorksheetAccess.swift in Sources */,
 				1EAB04B023F32AE40031B9EE /* HeaderView.swift in Sources */,
 				1E37106624267F47004CEB8C /* WorkerSheetsApprovalListView.swift in Sources */,
+				1EF7CBA3245E35570057C6BB /* Sort.swift in Sources */,
 				1E672D1024207466003E501D /* DayView.swift in Sources */,
 				1E37106C24267F83004CEB8C /* WorkerSheetDetailView.swift in Sources */,
 				1EFF494C2450DC0A007D17E6 /* Worker.swift in Sources */,
@@ -685,6 +696,7 @@
 				1E2A8AAF242A850900E281E6 /* TasksView.swift in Sources */,
 				1E7AA131241AF681006CA1BC /* ProfileView.swift in Sources */,
 				1E823017242171860029F974 /* SendButtonView.swift in Sources */,
+				1EF7CB9F245E07270057C6BB /* SignUpView.swift in Sources */,
 				1EC692CC2429319400105F23 /* WorkPlacePickerView.swift in Sources */,
 				1EDD79412423F52600A9CF70 /* LoginView.swift in Sources */,
 				1E487F7023E67F0A00F01C25 /* ContentView.swift in Sources */,

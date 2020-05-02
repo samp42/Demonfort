@@ -52,7 +52,9 @@ struct ProfileView: View {
 
 
 struct ProfileView_Previews: PreviewProvider {
+    static let worksheet = Worksheet()
+    
     static var previews: some View {
-        ProfileView().environmentObject(Worksheet())
+        ProfileView().environmentObject(worksheet)
     }
 }

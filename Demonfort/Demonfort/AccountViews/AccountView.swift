@@ -11,14 +11,12 @@ import SwiftUI
 struct AccountView: View {
     @EnvironmentObject var worksheet: Worksheet
     var body: some View {
-        NavigationView {
+            
+        ScrollView(.vertical) {
             VStack{
+                ProfileView()
                 Spacer()
-                    .frame(height: 100)
-                HStack {
-                    Text("\(self.worksheet.workerRole.toStringFrench())")
-                    Spacer()
-                }
+                .frame(height: 10)
                     NavigationLink(destination: SettingsView()){
                         HStack {
                             Spacer()
@@ -29,7 +27,7 @@ struct AccountView: View {
                                 .padding([.vertical], 6)
                             Spacer()
                         }.background(Color("darkBackground"))
-                        .cornerRadius(8)
+                            .cornerRadius(8)
                     }
                     Spacer()
                     .frame(height: 20)
@@ -56,15 +54,15 @@ struct AccountView: View {
                     if(self.worksheet.workerRole==Role.superintendent){
                         WorkerSheetsApprovalListView()
                     }
-                    //Spacer()
-                }.padding([.horizontal], 16)
-                .navigationBarTitle(self.worksheet.workerName)
+            }.padding([.horizontal], 16)
         }
     }
 }
 
 struct AccountView_Previews: PreviewProvider {
+    static let worksheet = Worksheet()
+    
     static var previews: some View {
-        AccountView().environmentObject(Worksheet())
+        AccountView().environmentObject(worksheet)
     }
 }

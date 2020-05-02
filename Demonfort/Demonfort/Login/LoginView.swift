@@ -10,7 +10,22 @@ import FirebaseAuth
 import FirebaseUI
 
 struct LoginView: View {
-    @State private var isAppPresented = false
+    @EnvironmentObject var session: SessionStore
+    @State private var email: String = ""
+    @State private var password: String = ""
+    @State private var error: String = ""
+    
+    func signIn(){
+        session.signIn(email: email, password: password){(result, error) in
+            if let error = error{
+                self.error = error.localizedDescription
+            } else {
+                self.email = ""
+                self.password = ""
+            }
+        }
+    }
+    
     var body: some View {
         VStack{
             Spacer()
@@ -19,47 +34,56 @@ struct LoginView: View {
                 Image("Demonfort")
                 Spacer()
             }
-            
-            Button(action: {self.isAppPresented = true}){
-                Text("Se connecter")
-                    .padding([.vertical], 10)
-                    .padding([.horizontal], 12)
-                    .font(.headline)
-                    .foregroundColor(Color.black)
-                    .background(Color.white)
-            }.sheet(isPresented: $isAppPresented, content: {ContentView()}).cornerRadius(10)
-//            Button(action:{
-//                //connect user with Firebase magic
-//                //Get the default auth UI object
-//                let authUI = FUIAuth.defaultAuthUI()
-//
-//                guard authUI != nil else{
-//                    //log the error
-//                    return
-//                }
-//
-//                //Set ourselves as the delegate
-//                //authUI?.delegate = self
-//
-//                //Get a reference to the auth UI view
-//
-//
-//                //Show it....
-//            }){
-//                Text("Se connecter")
-//                    .font(.headline)
-//                    .foregroundColor(Color.black)
-//                    .padding([.vertical], 10)
-//                    .padding([.horizontal], 60)
-//            }.background(Color.white)
-//                .cornerRadius(10)
             Spacer()
+                .frame(height: 20)
+            VStack{
+                if(error != ""){
+                    Text(error)
+                        .foregroundColor(Color.red)
+                }
+                HStack {
+                    TextField("Email", text: $email)
+                        .padding(12)
+                        .background(Color.white)
+                        .cornerRadius(12)
+                }.padding([.horizontal], 12)
+                HStack {
+                    SecureField("Password", text: $password)
+                        .padding(12)
+                        .background(Color.white)
+                        .cornerRadius(12)
+                }.padding([.horizontal], 12)
+                Button(action: {
+                    //sign in
+                }){
+                    Text("Connexion")
+                        .fontWeight(.bold)
+                        .padding([.vertical], 12)
+                        .padding([.horizontal], 54)
+                        .foregroundColor(Color.black)
+                        .background(Color.red)
+                        .cornerRadius(12)
+                }
+                Spacer()
+                    .frame(height: 8)
+                Button(action:{}){
+                    Text("Mot de passe oublié")
+                        .foregroundColor(Color.gray)
+                }
+            
+            }
+            Spacer()
+            NavigationLink(destination: SignUpView()){
+                Text("Inscription")
+            }
         }.background(Color.black).edgesIgnoringSafeArea(.all)
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
+    static let session = SessionStore()
+    
     static var previews: some View {
-        LoginView().environmentObject(Worksheet())
+        LoginView().environmentObject(session)
     }
 }
