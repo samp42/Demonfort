@@ -16,6 +16,7 @@ class DatabaseManager{
     //future:
         //let workPlacesCollection = "workPlaces" //documentID: address
     let worksheetCollection = "worksheets" //documentID: employee+sheet number, document.data: start, end, workplace, status, tasks
+    var numOfDocs: Int = 0
     
     //used to fetch data about a specific user
     func fetchWorker(employee: String) -> Void{
@@ -59,6 +60,7 @@ class DatabaseManager{
                         //must sort here
                     for key in worksheetsCopy.keys{
                         print(key)
+                        self.numOfDocs += 1
                     }
                     if(worksheetsCopy.isEmpty){
                         print("Empty")

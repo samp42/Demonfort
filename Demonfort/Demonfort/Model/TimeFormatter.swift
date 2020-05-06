@@ -12,7 +12,7 @@ extension Date{
     func asString() -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d, HH:mm"
-        dateFormatter.locale = Locale(identifier: "en_CA")
+        dateFormatter.locale = Locale(identifier: "fr_CA")
         return dateFormatter.string(from: self)
     }
     /*

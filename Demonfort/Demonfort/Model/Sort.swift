@@ -8,8 +8,9 @@
 
 func sort(dictionary: [String:[String:Any]], ascending: Bool) -> [String:Any]{
     var dict = dictionary
-    
+    print("SORTING")
     //sort keys
+    //sort by starting dates
     
     return["":0]
 }

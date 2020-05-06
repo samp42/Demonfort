@@ -43,8 +43,7 @@ class Worker: DatabaseManager, ObservableObject{
     var workPlaces: [String]
     //worker's worksheets
     var worksheets: [String:[String:Any]]//[documentName:[key:value]]
-    //number of documents
-    var numOfDocuments: Int8
+    //number of documents is handled by class DatabaseManager
     
     override init(){
         self.workerName = "Samuel Proulx"
@@ -52,14 +51,8 @@ class Worker: DatabaseManager, ObservableObject{
         self.workPlaces = ["123 rue Maisonneuve, Montréal", "456 rue Waverly, Montréal"]
         self.workerStatusWeekly = []
         self.worksheets = [:]
-        self.numOfDocuments = 0
         super.init()
         self.worksheets = fetchWorksheets(employee: self.workerName, worksheets: self.worksheets)
-    }
-    
-    func getNumOfDocuments(){
-        self.numOfDocuments = Int8(self.worksheets.keys.count)
-        print(self.numOfDocuments)
     }
     
 }

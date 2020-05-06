@@ -50,6 +50,7 @@
 		1EDD79422423F52600A9CF70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDD79402423F52600A9CF70 /* LoginView.swift */; };
 		1EDD79432423F52600A9CF70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDD79402423F52600A9CF70 /* LoginView.swift */; };
 		1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF9762242120DB00228FA8 /* WeekDaysView.swift */; };
+		1EF04EE22461EC6B0056C166 /* WorksheetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF04EE12461EC6B0056C166 /* WorksheetDetailView.swift */; };
 		1EF7CB9F245E07270057C6BB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF7CB9E245E07270057C6BB /* SignUpView.swift */; };
 		1EF7CBA1245E0BF80057C6BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF7CBA0245E0BF80057C6BB /* MainView.swift */; };
 		1EF7CBA3245E35570057C6BB /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF7CBA2245E35570057C6BB /* Sort.swift */; };
@@ -123,6 +124,7 @@
 		1EDD793C2423EB9500A9CF70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1EDD79402423F52600A9CF70 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1EDF9762242120DB00228FA8 /* WeekDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysView.swift; sourceTree = "<group>"; };
+		1EF04EE12461EC6B0056C166 /* WorksheetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksheetDetailView.swift; sourceTree = "<group>"; };
 		1EF7CB9E245E07270057C6BB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		1EF7CBA0245E0BF80057C6BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1EF7CBA2245E35570057C6BB /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				1E82301A2421B8340029F974 /* WorksheetRowView.swift */,
+				1EF04EE12461EC6B0056C166 /* WorksheetDetailView.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				1E37106A24267F67004CEB8C /* WorkerSheetRowView.swift in Sources */,
 				1E04CF40244B813000A81E15 /* TimeFormatter.swift in Sources */,
 				1E37107124269548004CEB8C /* WorkPlaceInfoView.swift in Sources */,
+				1EF04EE22461EC6B0056C166 /* WorksheetDetailView.swift in Sources */,
 				1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */,
 				1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */,
 				1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */,

@@ -16,13 +16,13 @@ struct WorksheetRowView: View {
     var body: some View {
         VStack{
             HStack{
-                Text("From: \(startTime.asString())")
+                Text("Début: \(startTime.asString())")
                     .font(.headline)
                     .fontWeight(.medium)
                 Spacer()
             }
             HStack{
-                Text("To: \(endTime.asString())")
+                Text("Fin: \(endTime.asString())")
                     .font(.headline)
                     .fontWeight(.medium)
                 Spacer()
@@ -33,14 +33,8 @@ struct WorksheetRowView: View {
                 Spacer()
                 
             }
-            HStack{
-                Text("Status: MUST RECEIVE STATUS FROM FIREBASE")
-                    .fontWeight(.bold)
-                    //.foregroundColor(Status.makeColor(/*self.worksheet.workerWorksheets.*/state: "Envoyée"))
-                Spacer()
-            }
         }.padding([.all],8)
-            .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color("darkBackground"), lineWidth: 1))
+//            .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color("darkBackground"), lineWidth: 1))
     }
 }
 
