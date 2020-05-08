@@ -45,6 +45,13 @@ struct WorksheetDetailView: View {
                     .fontWeight(.heavy)
                 Text("Envoyée")
             }
+            
+            Group {
+                Spacer()
+                    .frame(height: 10)
+                WorksheetCorrectionView()
+            }
+            
             Spacer()
         }
     }

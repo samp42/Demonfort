@@ -11,12 +11,7 @@
 		1E2A8AAF242A850900E281E6 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A8AAE242A850900E281E6 /* TasksView.swift */; };
 		1E2A8AB1242A863B00E281E6 /* SendErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A8AB0242A863B00E281E6 /* SendErrorManager.swift */; };
 		1E2EB04D244F704000CC95DF /* WorkerWorksheetAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2EB04C244F704000CC95DF /* WorkerWorksheetAccess.swift */; };
-		1E37106624267F47004CEB8C /* WorkerSheetsApprovalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106524267F47004CEB8C /* WorkerSheetsApprovalListView.swift */; };
-		1E37106A24267F67004CEB8C /* WorkerSheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */; };
-		1E37106C24267F83004CEB8C /* WorkerSheetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */; };
-		1E37106F24269538004CEB8C /* DateHoursInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37106E24269538004CEB8C /* DateHoursInfoView.swift */; };
-		1E37107124269548004CEB8C /* WorkPlaceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37107024269548004CEB8C /* WorkPlaceInfoView.swift */; };
-		1E3710732426962B004CEB8C /* TaskInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3710722426962B004CEB8C /* TaskInfoView.swift */; };
+		1E2FCCC62464AC8A004F4BB2 /* WorksheetCorrectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FCCC52464AC8A004F4BB2 /* WorksheetCorrectionView.swift */; };
 		1E3E78BB241DC37C00730C63 /* WorksheetFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E78BA241DC37C00730C63 /* WorksheetFormView.swift */; };
 		1E487F6C23E67F0A00F01C25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F6B23E67F0900F01C25 /* AppDelegate.swift */; };
 		1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F6D23E67F0A00F01C25 /* SceneDelegate.swift */; };
@@ -83,12 +78,7 @@
 		1E2A8AAE242A850900E281E6 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		1E2A8AB0242A863B00E281E6 /* SendErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendErrorManager.swift; sourceTree = "<group>"; };
 		1E2EB04C244F704000CC95DF /* WorkerWorksheetAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerWorksheetAccess.swift; sourceTree = "<group>"; };
-		1E37106524267F47004CEB8C /* WorkerSheetsApprovalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetsApprovalListView.swift; sourceTree = "<group>"; };
-		1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetRowView.swift; sourceTree = "<group>"; };
-		1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerSheetDetailView.swift; sourceTree = "<group>"; };
-		1E37106E24269538004CEB8C /* DateHoursInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHoursInfoView.swift; sourceTree = "<group>"; };
-		1E37107024269548004CEB8C /* WorkPlaceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkPlaceInfoView.swift; sourceTree = "<group>"; };
-		1E3710722426962B004CEB8C /* TaskInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoView.swift; sourceTree = "<group>"; };
+		1E2FCCC52464AC8A004F4BB2 /* WorksheetCorrectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksheetCorrectionView.swift; sourceTree = "<group>"; };
 		1E3E78BA241DC37C00730C63 /* WorksheetFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksheetFormView.swift; sourceTree = "<group>"; };
 		1E487F6823E67F0900F01C25 /* Demonfort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demonfort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E487F6B23E67F0900F01C25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,27 +184,6 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		1E37106424267EBA004CEB8C /* CorrectionViews */ = {
-			isa = PBXGroup;
-			children = (
-				1E37106524267F47004CEB8C /* WorkerSheetsApprovalListView.swift */,
-				1E37106924267F67004CEB8C /* WorkerSheetRowView.swift */,
-				1E37106B24267F83004CEB8C /* WorkerSheetDetailView.swift */,
-				1E37106D242694DC004CEB8C /* Supporting Views */,
-			);
-			path = CorrectionViews;
-			sourceTree = "<group>";
-		};
-		1E37106D242694DC004CEB8C /* Supporting Views */ = {
-			isa = PBXGroup;
-			children = (
-				1E37106E24269538004CEB8C /* DateHoursInfoView.swift */,
-				1E37107024269548004CEB8C /* WorkPlaceInfoView.swift */,
-				1E3710722426962B004CEB8C /* TaskInfoView.swift */,
-			);
-			path = "Supporting Views";
-			sourceTree = "<group>";
-		};
 		1E487F5F23E67F0900F01C25 = {
 			isa = PBXGroup;
 			children = (
@@ -290,7 +259,6 @@
 		1E672D0E2420744F003E501D /* SupportingViews */ = {
 			isa = PBXGroup;
 			children = (
-				1E37106424267EBA004CEB8C /* CorrectionViews */,
 				1E7AA12E241AF665006CA1BC /* AccountImageView.swift */,
 				1E672D0F24207466003E501D /* DayView.swift */,
 				1EDF9762242120DB00228FA8 /* WeekDaysView.swift */,
@@ -319,8 +287,10 @@
 			children = (
 				1E82301A2421B8340029F974 /* WorksheetRowView.swift */,
 				1EF04EE12461EC6B0056C166 /* WorksheetDetailView.swift */,
+				1E2FCCC52464AC8A004F4BB2 /* WorksheetCorrectionView.swift */,
 			);
-			path = SupportingViews;
+			name = SupportingViews;
+			path = Superintendent/SupportingViews;
 			sourceTree = "<group>";
 		};
 		1EB6003223E6884800AB9CD1 /* WorksheetViews */ = {
@@ -670,22 +640,16 @@
 				1EF7CBA1245E0BF80057C6BB /* MainView.swift in Sources */,
 				1E2EB04D244F704000CC95DF /* WorkerWorksheetAccess.swift in Sources */,
 				1EAB04B023F32AE40031B9EE /* HeaderView.swift in Sources */,
-				1E37106624267F47004CEB8C /* WorkerSheetsApprovalListView.swift in Sources */,
 				1EF7CBA3245E35570057C6BB /* Sort.swift in Sources */,
 				1E672D1024207466003E501D /* DayView.swift in Sources */,
-				1E37106C24267F83004CEB8C /* WorkerSheetDetailView.swift in Sources */,
 				1EFF494C2450DC0A007D17E6 /* Worker.swift in Sources */,
 				1E2A8AB1242A863B00E281E6 /* SendErrorManager.swift in Sources */,
 				1E82301B2421B8340029F974 /* WorksheetRowView.swift in Sources */,
-				1E3710732426962B004CEB8C /* TaskInfoView.swift in Sources */,
 				1EAA1DF62426B15700123504 /* Worksheet.swift in Sources */,
 				1E82301524214CFF0029F974 /* WorksheetView.swift in Sources */,
 				1E3E78BB241DC37C00730C63 /* WorksheetFormView.swift in Sources */,
 				1E487F6C23E67F0A00F01C25 /* AppDelegate.swift in Sources */,
-				1E37106F24269538004CEB8C /* DateHoursInfoView.swift in Sources */,
-				1E37106A24267F67004CEB8C /* WorkerSheetRowView.swift in Sources */,
 				1E04CF40244B813000A81E15 /* TimeFormatter.swift in Sources */,
-				1E37107124269548004CEB8C /* WorkPlaceInfoView.swift in Sources */,
 				1EF04EE22461EC6B0056C166 /* WorksheetDetailView.swift in Sources */,
 				1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */,
 				1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */,
@@ -696,6 +660,7 @@
 				1E5D7620245CD660008F81A4 /* User.swift in Sources */,
 				1E4EE786241DA20200855E41 /* UserWorkPlacesView.swift in Sources */,
 				1E7AA12F241AF666006CA1BC /* AccountImageView.swift in Sources */,
+				1E2FCCC62464AC8A004F4BB2 /* WorksheetCorrectionView.swift in Sources */,
 				1EC692CA2429310A00105F23 /* EndPickerView.swift in Sources */,
 				1E2A8AAF242A850900E281E6 /* TasksView.swift in Sources */,
 				1E7AA131241AF681006CA1BC /* ProfileView.swift in Sources */,

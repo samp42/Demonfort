@@ -21,30 +21,35 @@ struct WorksheetView: View {
 //        }
 //    }
     
-    
+    /**
+        *To do:
+        - Lock Navigation View title so that it scrolls with the list instead of staying in place
+        - Insert optionnal error message under Navigation View title if loading documents from firebase was to fail
+        - Make WorksheetRowView() retrieve its data from Worksheet.worksheets
+     */
+
+    //if no error
     var body: some View {
-        NavigationView{
-            /**
-                *To do:
-                - Lock Navigation View title so that it scrolls with the list instead of staying in place
-                - Insert optionnal error message under Navigation View title if loading documents from firebase was to fail
-                - Make WorksheetRowView() retrieve its data from Worksheet.worksheets
-                - Make the list adjust for the number of documents retrieved from firebase
-             */
-            //self.worksheet.workerWorksheets.first(where: ("Simon Fonseca0" ))
-            //for each:::::worksheet.workerWorksheets.count
-            List{
-                ForEach(0..<self.worksheet.numOfDocs){_ in
-                    NavigationLink(destination: WorksheetDetailView()){
-                        WorksheetRowView(startTime: Date(), endTime: Date(), workPlace: "Some place")
+         NavigationView{
+            if self.worksheet.worksheets.isEmpty {
+                //if successfully retrieves worksheets from firebase
+            
+                List{
+                    ForEach(0..<self.worksheet.numOfDocs){_ in
+                        NavigationLink(destination: WorksheetDetailView()){
+                            WorksheetRowView(startTime: Date(), endTime: Date(), workPlace: "Some place")
+                        }
+
                     }
-//                    WorksheetRowView(startTime: self.worksheet.worksheets, endTime: self.worksheet.end, workPlace: "123, rue Maisonneuve, Montréal")
-                }
-            }.navigationBarTitle("Feuilles de temps")
-            .gesture(
-                DragGesture()
-                    //refresh festure
-            )
+                }.navigationBarTitle("Feuilles de temps")
+                    .gesture(
+                        DragGesture()
+                        //refresh festure
+                    )
+            } else {
+                //error fetching documents
+                Text("Error loading documents from database.")
+            }
         }
     }
 }

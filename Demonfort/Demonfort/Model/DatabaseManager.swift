@@ -40,7 +40,7 @@ class DatabaseManager{
         }
     }
     
-    //used to fetch data about worksheets
+    //used by worker to fetch data about own worksheets
     func fetchWorksheets(employee: String, worksheets: [String:[String:Any]]) -> [String:[String:Any]]{
         //copy of worksheets
         var worksheetsCopy: [String:[String:Any]] = worksheets
@@ -70,6 +70,47 @@ class DatabaseManager{
         return worksheetsCopy
     }
     
+    //used by superintendent to retrieve documents from workers
+    func fetchWorksheetsWithStatusSent(worksheets: [String:[String:Any]]) -> [String:[String:Any]]{
+        //copy of worksheets
+        var worksheetsCopy: [String:[String:Any]] = worksheets
+        
+        //query
+        database.collection(worksheetCollection).whereField("Status", isEqualTo: "Envoyée")
+            .getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        //print("\(document.documentID) => \(document.data())")
+                        //store documents in dictionary
+                        worksheetsCopy.updateValue(document.data(), forKey: "\(document.documentID)")
+                    }
+                    //sort documents by time
+                        //must sort here
+                    for key in worksheetsCopy.keys{
+                        print(key)
+                        self.numOfDocs += 1
+                    }
+                    if(worksheetsCopy.isEmpty){
+                        print("Empty")
+                    }
+                }
+        }
+        
+        return worksheetsCopy
+    }
+    
+    //used to fetch worksheets for this current week(worker)
+    func fetchWeeklyWorksheetsForWorker() -> Void{
+        
+    }
+    
+    //used to fetch worksheets for this current week(superintendent)
+    func fetchWeeklyWorksheetsForSuperintendent() -> Void{
+        
+    }
+    
     //used to send data about user
     func sendUser(employee: String, workPlaces: [String], role: Role) -> Void{
         if(true){
@@ -87,6 +128,8 @@ class DatabaseManager{
             //send flag to display alert to user
         }
     }
+    
+    //used by superintendent to 
     
     enum FieldsErrorType: Error {
         case incompleteFields //if tasks description is empty
@@ -109,6 +152,7 @@ class DatabaseManager{
         }
     }
     
+    //used internally (private) to validate that worksheet sent by user on creation of new worksheet is complete and that there is no confusion
     private func validateWorksheet(start: Date, end: Date, tasks: String) -> Error?{
         var error: Error? = nil
 

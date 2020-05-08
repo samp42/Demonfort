@@ -37,22 +37,23 @@ class Worker: DatabaseManager, ObservableObject{
     let workerName: String
     //worker role (superintendent/worker)
     let workerRole: Role
-    //worker status
-    var workerStatusWeekly: [Status]
     //worker's workplaces
     var workPlaces: [String]
     //worker's worksheets
     var worksheets: [String:[String:Any]]//[documentName:[key:value]]
     //number of documents is handled by class DatabaseManager
+    //woksheets for the week
+    var weeklyWorksheets: [String:[String:Any]]//[documentName:[key:value]]
     
     override init(){
         self.workerName = "Samuel Proulx"
         self.workerRole = .worker
         self.workPlaces = ["123 rue Maisonneuve, Montréal", "456 rue Waverly, Montréal"]
-        self.workerStatusWeekly = []
         self.worksheets = [:]
+        self.weeklyWorksheets = [:]
         super.init()
-        self.worksheets = fetchWorksheets(employee: self.workerName, worksheets: self.worksheets)
+        self.worksheets = self.workerRole == .worker ? fetchWorksheets(employee: self.workerName, worksheets: self.worksheets) : fetchWorksheetsWithStatusSent(worksheets: self.worksheets)
+        //self.worksheets = sort(dictionary: self.worksheets, ascending: true)
     }
     
 }

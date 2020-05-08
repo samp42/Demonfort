@@ -22,17 +22,16 @@ struct DayView: View {
                 Spacer()
                 Text(approvalState)
                     .fontWeight(.bold)
-                    .foregroundColor(Status.makeColor(state: approvalState))
+                    .padding(10)
                 
             }.padding([.horizontal],12)
         }.frame(height: 54)
-            .background(Color("lightGray"))
+            .background(Status.makeColor(state: approvalState))
             .cornerRadius(12)
     }
 }
 
 struct DayView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
     
     static var previews: some View {
         DayView(day: "Lundi")

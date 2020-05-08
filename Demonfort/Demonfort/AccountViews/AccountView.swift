@@ -51,9 +51,6 @@ struct AccountView: View {
                     UserWorkPlacesView()
                     Spacer()
                         .frame(height: 20)
-                    if(self.worksheet.workerRole==Role.superintendent){
-                        WorkerSheetsApprovalListView()
-                    }
             }.padding([.horizontal], 16)
         }
     }

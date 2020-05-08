@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+//used by superintendents to handle users
 struct SettingsView: View {
     var body: some View {
         /**

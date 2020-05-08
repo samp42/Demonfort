@@ -13,34 +13,39 @@ import FirebaseFirestore
 enum Status: String{
     case notSent = "Non envoyée"
     case sent = "Envoyée"
+    case pendingApproval = "En attente d'approbation"
     case approved = "Approuvée"
     
     static func makeColor(state: String) -> Color{
         //recode this ugly function
         switch state{
+            case "Envoyée":
+                return Color.yellow
             
-        case "Envoyée":
-            return Color.yellow
+            case "En attente d'approbation":
+                return Color.yellow
             
-        case "Approuvée":
-            return Color.green
+            case "Approuvée":
+                return Color.green
             
-        default: //"Non Envoyée"
-            return Color("customRed")
+            default:
+                return Color.red
         }
     }
     
     static func makeColor(state: Status) -> Color{
-        //recode this ugly function
         switch state{
-        case .notSent:
-            return Color.red
+            case .notSent:
+                return Color.red
             
-        case .sent:
-            return Color.yellow
+            case .sent:
+                return Color.yellow
             
-        case .approved:
-            return Color.green
+            case .pendingApproval:
+                return Color.yellow
+            
+            case .approved:
+                return Color.green
         }
     }
 }
