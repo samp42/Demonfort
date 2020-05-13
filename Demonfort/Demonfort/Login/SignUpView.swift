@@ -10,10 +10,73 @@ import SwiftUI
 
 struct SignUpView: View {
     @EnvironmentObject var session: SessionStore
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    @State private var email: String = ""
+    @State private var password: String = ""
+    @State private var error: String = ""
+    
+    func signUp(){
+        session.signUp(email: email, password: password){(result, error) in
+            if let error = error{
+                self.error = error.localizedDescription
+            } else {
+                self.email = ""
+                self.password = ""
+            }
+        }
     }
-}
+    var body: some View {
+        VStack{
+            Spacer()
+            
+            HStack {
+                Spacer()
+                Image("Demonfort")
+                Spacer()
+            }
+            Spacer()
+                .frame(height: 20)
+            VStack{
+                
+                if(error != ""){
+                    Text(error)
+                        .foregroundColor(Color.red)
+                        .padding([.horizontal])
+                }
+                
+                HStack {
+                    TextField("Email", text: $email)
+                        .autocapitalization(.none)
+                        .keyboardType(.emailAddress)
+                        .padding(12)
+                        .background(Color.white)
+                        .cornerRadius(12)
+                }.padding([.horizontal], 12)
+                
+                HStack {
+                    SecureField("Password", text: $password)
+                        .padding(12)
+                        .background(Color.white)
+                        .cornerRadius(12)
+                }.padding([.horizontal], 12)
+                
+                Button(action: {
+                    self.signUp()
+
+                }){
+                    Text("Inscription")
+                        .fontWeight(.bold)
+                        .padding([.vertical], 12)
+                        .padding([.horizontal], 54)
+                        .foregroundColor(Color.black)
+                        .background(Color.red)
+                        .cornerRadius(12)
+                }
+            }
+            
+            Spacer()
+        }.background(Color.black).edgesIgnoringSafeArea(.all)
+    }//End of var body
+}//End of SignUpView
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {

@@ -37,24 +37,32 @@ struct LoginView: View {
             Spacer()
                 .frame(height: 20)
             VStack{
+                
                 if(error != ""){
                     Text(error)
                         .foregroundColor(Color.red)
+                        .padding([.horizontal])
                 }
+                
                 HStack {
                     TextField("Email", text: $email)
+                        .autocapitalization(.none)
+                        .keyboardType(.emailAddress)
                         .padding(12)
                         .background(Color.white)
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
+                
                 HStack {
                     SecureField("Password", text: $password)
                         .padding(12)
                         .background(Color.white)
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
+                
                 Button(action: {
-                    //sign in
+                    self.signIn()
+
                 }){
                     Text("Connexion")
                         .fontWeight(.bold)
@@ -64,18 +72,25 @@ struct LoginView: View {
                         .background(Color.red)
                         .cornerRadius(12)
                 }
+                
                 Spacer()
-                    .frame(height: 8)
+                    .frame(height: 12)
+                
                 Button(action:{}){
                     Text("Mot de passe oublié")
                         .foregroundColor(Color.gray)
                 }
             
             }
+            
             Spacer()
+            
             NavigationLink(destination: SignUpView()){
                 Text("Inscription")
             }
+            
+            Spacer()
+                .frame(height: 12)
         }.background(Color.black).edgesIgnoringSafeArea(.all)
     }
 }

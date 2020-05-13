@@ -31,6 +31,8 @@
 		1E82301524214CFF0029F974 /* WorksheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82301424214CFF0029F974 /* WorksheetView.swift */; };
 		1E823017242171860029F974 /* SendButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E823016242171860029F974 /* SendButtonView.swift */; };
 		1E82301B2421B8340029F974 /* WorksheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82301A2421B8340029F974 /* WorksheetRowView.swift */; };
+		1E932314246C6CFE00CAE905 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E932313246C6CFE00CAE905 /* AuthView.swift */; };
+		1E932316246C6ED800CAE905 /* ForgottenPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E932315246C6ED800CAE905 /* ForgottenPasswordView.swift */; };
 		1EAA1DF22426B13200123504 /* TestResources in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA1DF12426B13200123504 /* TestResources */; };
 		1EAA1DF62426B15700123504 /* Worksheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA1DF52426B15700123504 /* Worksheet.swift */; };
 		1EAB04B023F32AE40031B9EE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAB04AF23F32AE40031B9EE /* HeaderView.swift */; };
@@ -104,6 +106,8 @@
 		1E82301424214CFF0029F974 /* WorksheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksheetView.swift; sourceTree = "<group>"; };
 		1E823016242171860029F974 /* SendButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButtonView.swift; sourceTree = "<group>"; };
 		1E82301A2421B8340029F974 /* WorksheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksheetRowView.swift; sourceTree = "<group>"; };
+		1E932313246C6CFE00CAE905 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		1E932315246C6ED800CAE905 /* ForgottenPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordView.swift; sourceTree = "<group>"; };
 		1EAA1DF12426B13200123504 /* TestResources */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestResources; sourceTree = SOURCE_ROOT; };
 		1EAA1DF52426B15700123504 /* Worksheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worksheet.swift; sourceTree = "<group>"; };
 		1EAB04AF23F32AE40031B9EE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -328,8 +332,10 @@
 		1EDD79442423F52F00A9CF70 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				1E932313246C6CFE00CAE905 /* AuthView.swift */,
 				1EDD79402423F52600A9CF70 /* LoginView.swift */,
 				1EF7CB9E245E07270057C6BB /* SignUpView.swift */,
+				1E932315246C6ED800CAE905 /* ForgottenPasswordView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -650,12 +656,14 @@
 				1E3E78BB241DC37C00730C63 /* WorksheetFormView.swift in Sources */,
 				1E487F6C23E67F0A00F01C25 /* AppDelegate.swift in Sources */,
 				1E04CF40244B813000A81E15 /* TimeFormatter.swift in Sources */,
+				1E932314246C6CFE00CAE905 /* AuthView.swift in Sources */,
 				1EF04EE22461EC6B0056C166 /* WorksheetDetailView.swift in Sources */,
 				1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */,
 				1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */,
 				1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */,
 				1E6A632B24537066001CFF04 /* SettingsView.swift in Sources */,
 				1EC692C82429310100105F23 /* StartPickerView.swift in Sources */,
+				1E932316246C6ED800CAE905 /* ForgottenPasswordView.swift in Sources */,
 				1E7AA133241AF6E7006CA1BC /* AccountView.swift in Sources */,
 				1E5D7620245CD660008F81A4 /* User.swift in Sources */,
 				1E4EE786241DA20200855E41 /* UserWorkPlacesView.swift in Sources */,

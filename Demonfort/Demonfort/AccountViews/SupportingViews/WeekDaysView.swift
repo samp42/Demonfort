@@ -10,6 +10,11 @@ import SwiftUI
 
 struct WeekDaysView: View {
     let days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+    var states: [String]
+    
+    init(){
+        self.states = []
+    }
     
     var body: some View {
         ForEach(0..<days.count){day in

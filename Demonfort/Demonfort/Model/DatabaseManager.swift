@@ -122,6 +122,7 @@ class DatabaseManager{
     func sendWorksheet(employee: String, start: Date, end: Date, status: Status, tasks: String) -> Void{
         //if error is nil send
         if(validateWorksheet(start: start, end: end, tasks: tasks)==nil){
+            //NUMBER = NUMBER OF THE NEW WORKSHEET (IF USER HAS 4, NUMBER = 5 (+1))
             database.collection("\(self.worksheetCollection)").document("\(employee)NUMBER")
             .setData(["Employee": employee, "StartTime": start, "EndTime": end, "Tasks": tasks, "Status": status.rawValue], merge: true)
         } else {

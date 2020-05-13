@@ -20,10 +20,11 @@ struct ContentView: View {
         VStack{
             Group{
                 if(session.session == nil){
+                    AuthView()
+                } else {
                     HeaderView()
                     MainView().environmentObject(worksheet)
-                } else {
-                    LoginView()
+                    
                 }
             }
         }.onAppear(perform: getUser)//outer group

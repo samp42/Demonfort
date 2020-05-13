@@ -11,15 +11,14 @@ import FirebaseAuth
 
 struct ProfileView: View {
     @EnvironmentObject var worksheet: Worksheet
+    @EnvironmentObject var session: SessionStore
+    
     var body: some View {
 
             HStack{
-//                ZStack{
-//                    AccountImageView()
-//                        //.overlay(Circle().stroke(Color.gray, lineWidth: 2))
-//                }
                 Spacer()
                     .frame(width: 10)
+                
                 VStack(alignment: .leading){
                     Text("\(self.worksheet.workerName)")
                         .fontWeight(.heavy)
@@ -27,20 +26,21 @@ struct ProfileView: View {
                     Text("\(self.worksheet.workerRole.toStringFrench())")
                         .font(.headline)
                     Spacer()
-                    Button(action:{/*signout + toggle signout alert IF successful*/
-                            let firebaseAuth = Auth.auth()
-                        do {
-                          try firebaseAuth.signOut()
-                        } catch let signOutError as NSError {
-                          print ("Error signing out: %@", signOutError)
-                        }
+//                    Button(action:{/*signout + toggle signout alert IF successful*/
+//                            let firebaseAuth = Auth.auth()
+//                        do {
+//                          try firebaseAuth.signOut()
+//                        } catch let signOutError as NSError {
+//                          print ("Error signing out: %@", signOutError)
+//                        }
+//                    }){
+                    Button(action: {
+                        self.session.signOut()
                     }){
-                    Button(action: {}){
                         Text("Déconnexion").foregroundColor(Color("lightText"))
                                 .fontWeight(.medium)
                     }
                             
-                    }
                 }
                 Spacer()
             }.padding([.all], 8).frame(height: 100).frame(minWidth:360)
