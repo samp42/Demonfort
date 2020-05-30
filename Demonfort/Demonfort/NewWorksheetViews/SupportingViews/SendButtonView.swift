@@ -31,7 +31,7 @@ struct SendButtonView: View {
                  - setData method allows to name the document, but document can be overriden which we don't want to happen when sending a **NEW** worksheet
                  */
   
-                self.worksheet.sendWorksheet(employee: "Simon Fonseca", start: self.worksheet.start, end: self.worksheet.end, status: self.worksheet.status, tasks: self.worksheet.tasks)
+                self.worksheet.sendWorksheet(employee: self.worksheet.workerName, start: self.worksheet.start, end: self.worksheet.end, status: self.worksheet.status, tasks: self.worksheet.tasks)
                 self.worksheet.reset()
                 
             }/*End of button action*/) {

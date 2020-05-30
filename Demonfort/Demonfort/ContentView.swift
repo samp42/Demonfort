@@ -22,9 +22,10 @@ struct ContentView: View {
                 if(session.session == nil){
                     AuthView()
                 } else {
-                    HeaderView()
-                    MainView().environmentObject(worksheet)
-                    
+                    Group {
+                        HeaderView()
+                        MainView().environmentObject(worksheet)
+                    }
                 }
             }
         }.onAppear(perform: getUser)//outer group

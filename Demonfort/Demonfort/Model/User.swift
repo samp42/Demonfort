@@ -9,13 +9,26 @@
 import Firebase
 import Combine
 
-class SessionStore: ObservableObject{
+class SessionStore: DatabaseManager, ObservableObject{
     var didChange = PassthroughSubject<SessionStore, Never>()
     @Published var session: User? {didSet {self.didChange.send(self)}}
     var handle: AuthStateDidChangeListenerHandle?
+    lazy var userName: User = { return Auth.auth().currentUser }
     
-    init(){
+    override init(){
         print("SessionStore initialized")
+    }
+    
+    func getUserName(user: User) -> String?{
+        
+        //check if there is user logged in (user exists)
+        if Auth.auth().currentUser != nil{
+            //find the name of the user from the workers collection
+            
+            return ""
+        }
+        
+        return nil
     }
     
     func listen(){
@@ -28,8 +41,14 @@ class SessionStore: ObservableObject{
         })
     }
     
-    func signUp(email: String, password: String, handler: @escaping AuthDataResultCallback){
+    func signUp(employee: String, email: String, password: String, handler: @escaping AuthDataResultCallback){
+        //Sign Up use with firebase Auth
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
+        
+        //add user to workers collection
+        sendUserName(employee: employee)
+        sendUserRole(employee: employee, role: .worker)
+        sendUserMail(employee: employee, email: email)
     }
     
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback){

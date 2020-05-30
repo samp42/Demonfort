@@ -10,12 +10,13 @@ import SwiftUI
 
 struct SignUpView: View {
     @EnvironmentObject var session: SessionStore
+    @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var error: String = ""
     
     func signUp(){
-        session.signUp(email: email, password: password){(result, error) in
+        session.signUp(employee: name, email: email, password: password){(result, error) in
             if let error = error{
                 self.error = error.localizedDescription
             } else {
@@ -24,6 +25,7 @@ struct SignUpView: View {
             }
         }
     }
+    
     var body: some View {
         VStack{
             Spacer()
@@ -44,6 +46,15 @@ struct SignUpView: View {
                 }
                 
                 HStack {
+                    TextField("Nom", text: $name)
+                        .keyboardType(.alphabet)
+                        .disableAutocorrection(true)
+                        .padding(12)
+                        .background(Color.white)
+                        .cornerRadius(12)
+                }.padding([.horizontal], 12)
+                
+                HStack {
                     TextField("Email", text: $email)
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
@@ -53,7 +64,7 @@ struct SignUpView: View {
                 }.padding([.horizontal], 12)
                 
                 HStack {
-                    SecureField("Password", text: $password)
+                    SecureField("Mot de passe", text: $password)
                         .padding(12)
                         .background(Color.white)
                         .cornerRadius(12)

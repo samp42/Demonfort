@@ -54,7 +54,7 @@ struct LoginView: View {
                 }.padding([.horizontal], 12)
                 
                 HStack {
-                    SecureField("Password", text: $password)
+                    SecureField("Mot de passe", text: $password)
                         .padding(12)
                         .background(Color.white)
                         .cornerRadius(12)
@@ -87,6 +87,7 @@ struct LoginView: View {
             
             NavigationLink(destination: SignUpView()){
                 Text("Inscription")
+                    .foregroundColor(Color.gray)
             }
             
             Spacer()

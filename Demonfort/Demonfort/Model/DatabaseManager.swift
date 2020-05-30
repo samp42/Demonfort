@@ -19,14 +19,33 @@ class DatabaseManager{
     var numOfDocs: Int = 0
     
     //used to fetch data about a specific user
-    func fetchWorker(employee: String) -> Void{
+    func fetchWorker(employee: String) -> (firstName: String, lastName: String, email: String, role: Role)?{
+        var worker: [String:Any]
+        var firstName: String
+        var lastName: String
+        var email: String
+        var role: Role
+        
+        //query
         database.collection(workerCollection).document(employee).getDocument() {(querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
                 //get info about user
+                //store documents in dictionary
+                if querySnapshot != nil{
+                    worker.updateValue(querySnapshot!.data()!, forKey: employee)
+                } else {
+                    print("Failed to get data about user from Firebase")
+                }
+                
+                firstName = worker["FirstName"] == nil ? "" : String(worker["FirstName"])
+                lastName = worker["LastName"] == nil ? "" : String(worker["LastName"])
+                email = worker["Email"] == nil ? "" : String(worker["Email"])
             }
         }
+        
+        return (firstName, lastName, email, role)
     }
     
     //used to fetch data about all workers
@@ -36,6 +55,7 @@ class DatabaseManager{
                 print("Error getting documents: \(error)")
             } else {
                 //get info about users
+                
             }
         }
     }
@@ -111,10 +131,27 @@ class DatabaseManager{
         
     }
     
-    //used to send data about user
-    func sendUser(employee: String, workPlaces: [String], role: Role) -> Void{
+    //used to send data about user's name
+    func sendUserName(employee: String) -> Void{
+        database.collection(workerCollection).document(employee).setData(["Name": employee])
+    }
+    
+    //used to send data about user's mail
+    func sendUserMail(employee: String, email: String) -> Void{
+        database.collection(workerCollection).document(employee).setData(["Email": email])
+    }
+    
+    //used to send data about user's workplaces
+    func sendUserWorkPlaces(employee: String, workPlaces: [String]) -> Void{
         if(true){
-            database.collection(workerCollection).document(employee).setData(["Workplaces":workPlaces, "Role": role.toString()])
+            database.collection(workerCollection).document(employee).setData(["Workplaces": workPlaces])
+        }
+    }
+    
+    //used to send data about user's role
+    func sendUserRole(employee: String, role: Role) -> Void{
+        if(true){
+            database.collection(workerCollection).document(employee).setData(["Role": role.toString()])
         }
     }
     
@@ -123,7 +160,7 @@ class DatabaseManager{
         //if error is nil send
         if(validateWorksheet(start: start, end: end, tasks: tasks)==nil){
             //NUMBER = NUMBER OF THE NEW WORKSHEET (IF USER HAS 4, NUMBER = 5 (+1))
-            database.collection("\(self.worksheetCollection)").document("\(employee)NUMBER")
+            database.collection("\(worksheetCollection)").document("\(employee)NUMBER")
             .setData(["Employee": employee, "StartTime": start, "EndTime": end, "Tasks": tasks, "Status": status.rawValue], merge: true)
         } else {
             //send flag to display alert to user

@@ -15,21 +15,25 @@ struct AccountView: View {
         ScrollView(.vertical) {
             VStack{
                 ProfileView()
+                
                 Spacer()
-                .frame(height: 10)
-                    NavigationLink(destination: SettingsView()){
-                        HStack {
-                            Spacer()
-                            Text("Gérer les utilisateurs")
-                                .font(.headline)
-                                .fontWeight(.heavy)
-                                .foregroundColor(Color.red)
-                                .padding([.vertical], 6)
-                            Spacer()
-                        }.background(Color("darkBackground"))
-                            .cornerRadius(8)
-                    }
-                    Spacer()
+                    .frame(height: 10)
+                
+                NavigationLink(destination: SettingsView()){
+                    SettingsButtonView()
+                }
+                
+                Spacer()
+                    .frame(height: 10)
+                
+                //if superintendent
+                               if /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/ {
+                                   NavigationLink(destination: EditUsersView()){
+                                       EditUsersButtonView()
+                                   }
+                               }
+                
+                Spacer()
                     .frame(height: 20)
                     if(self.worksheet.workerRole==Role.worker){
                         HStack {
@@ -49,8 +53,7 @@ struct AccountView: View {
                         Spacer()
                     }
                     UserWorkPlacesView()
-                    Spacer()
-                        .frame(height: 20)
+                
             }.padding([.horizontal], 16)
         }
     }

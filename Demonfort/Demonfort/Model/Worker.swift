@@ -32,7 +32,7 @@ enum Role{
     
 }
 
-class Worker: DatabaseManager, ObservableObject{
+class Worker: SessionStore{
     //worker name
     let workerName: String
     //worker role (superintendent/worker)
@@ -45,8 +45,8 @@ class Worker: DatabaseManager, ObservableObject{
     //woksheets for the week
     var weeklyWorksheets: [String:[String:Any]]//[documentName:[key:value]]
     
-    override init(){
-        self.workerName = "Samuel Proulx"
+    init(email: String){
+        self.workerName = email
         self.workerRole = .worker
         self.workPlaces = ["123 rue Maisonneuve, Montréal", "456 rue Waverly, Montréal"]
         self.worksheets = [:]

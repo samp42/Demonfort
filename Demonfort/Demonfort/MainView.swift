@@ -35,15 +35,19 @@ struct MainView: View {
                     }
                     .tag(1)
                 }
-            
-                AccountView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "person.fill")
-                        Text("Compte")
-                    }
+                NavigationView{
+                    AccountView()
+                        .navigationBarTitle("Compte")
+                        .navigationBarHidden(true)
                 }
-                .tag(2)
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "person.fill")
+                            Text("Compte")
+                        }
+                    }
+                    .tag(2)
+                
             }//End of TabView
                 .accentColor(Color.red)
         }//inner group

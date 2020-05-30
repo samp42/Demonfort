@@ -28,6 +28,9 @@
 		1E7AA12F241AF666006CA1BC /* AccountImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA12E241AF665006CA1BC /* AccountImageView.swift */; };
 		1E7AA131241AF681006CA1BC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA130241AF681006CA1BC /* ProfileView.swift */; };
 		1E7AA133241AF6E7006CA1BC /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AA132241AF6E7006CA1BC /* AccountView.swift */; };
+		1E7C97C8246CBE360087D93E /* EditUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7C97C7246CBE360087D93E /* EditUsersView.swift */; };
+		1E7C97CA246CBE560087D93E /* EditUsersButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7C97C9246CBE560087D93E /* EditUsersButtonView.swift */; };
+		1E7C97CC246CBE9A0087D93E /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7C97CB246CBE9A0087D93E /* SettingsButtonView.swift */; };
 		1E82301524214CFF0029F974 /* WorksheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82301424214CFF0029F974 /* WorksheetView.swift */; };
 		1E823017242171860029F974 /* SendButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E823016242171860029F974 /* SendButtonView.swift */; };
 		1E82301B2421B8340029F974 /* WorksheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82301A2421B8340029F974 /* WorksheetRowView.swift */; };
@@ -103,6 +106,9 @@
 		1E7AA12E241AF665006CA1BC /* AccountImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImageView.swift; sourceTree = "<group>"; };
 		1E7AA130241AF681006CA1BC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1E7AA132241AF6E7006CA1BC /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		1E7C97C7246CBE360087D93E /* EditUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUsersView.swift; sourceTree = "<group>"; };
+		1E7C97C9246CBE560087D93E /* EditUsersButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUsersButtonView.swift; sourceTree = "<group>"; };
+		1E7C97CB246CBE9A0087D93E /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
 		1E82301424214CFF0029F974 /* WorksheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksheetView.swift; sourceTree = "<group>"; };
 		1E823016242171860029F974 /* SendButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButtonView.swift; sourceTree = "<group>"; };
 		1E82301A2421B8340029F974 /* WorksheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksheetRowView.swift; sourceTree = "<group>"; };
@@ -263,11 +269,14 @@
 		1E672D0E2420744F003E501D /* SupportingViews */ = {
 			isa = PBXGroup;
 			children = (
+				1E7C97C7246CBE360087D93E /* EditUsersView.swift */,
+				1E7C97C9246CBE560087D93E /* EditUsersButtonView.swift */,
+				1E6A632A24537066001CFF04 /* SettingsView.swift */,
+				1E7C97CB246CBE9A0087D93E /* SettingsButtonView.swift */,
 				1E7AA12E241AF665006CA1BC /* AccountImageView.swift */,
 				1E672D0F24207466003E501D /* DayView.swift */,
 				1EDF9762242120DB00228FA8 /* WeekDaysView.swift */,
 				1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */,
-				1E6A632A24537066001CFF04 /* SettingsView.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -659,6 +668,8 @@
 				1E932314246C6CFE00CAE905 /* AuthView.swift in Sources */,
 				1EF04EE22461EC6B0056C166 /* WorksheetDetailView.swift in Sources */,
 				1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */,
+				1E7C97C8246CBE360087D93E /* EditUsersView.swift in Sources */,
+				1E7C97CA246CBE560087D93E /* EditUsersButtonView.swift in Sources */,
 				1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */,
 				1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */,
 				1E6A632B24537066001CFF04 /* SettingsView.swift in Sources */,
@@ -675,6 +686,7 @@
 				1E823017242171860029F974 /* SendButtonView.swift in Sources */,
 				1EF7CB9F245E07270057C6BB /* SignUpView.swift in Sources */,
 				1EC692CC2429319400105F23 /* WorkPlacePickerView.swift in Sources */,
+				1E7C97CC246CBE9A0087D93E /* SettingsButtonView.swift in Sources */,
 				1EDD79412423F52600A9CF70 /* LoginView.swift in Sources */,
 				1E487F7023E67F0A00F01C25 /* ContentView.swift in Sources */,
 			);
