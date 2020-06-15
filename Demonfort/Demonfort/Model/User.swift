@@ -13,7 +13,7 @@ class SessionStore: DatabaseManager, ObservableObject{
     var didChange = PassthroughSubject<SessionStore, Never>()
     @Published var session: User? {didSet {self.didChange.send(self)}}
     var handle: AuthStateDidChangeListenerHandle?
-    lazy var userName: User = { return Auth.auth().currentUser }
+    //lazy var userName: User? = { return Auth.auth().currentUser }
     
     override init(){
         print("SessionStore initialized")
@@ -25,7 +25,7 @@ class SessionStore: DatabaseManager, ObservableObject{
         if Auth.auth().currentUser != nil{
             //find the name of the user from the workers collection
             
-            return ""
+            return fetchWorker(email: user.email!).name
         }
         
         return nil

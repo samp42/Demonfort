@@ -19,33 +19,59 @@ class DatabaseManager{
     var numOfDocs: Int = 0
     
     //used to fetch data about a specific user
-    func fetchWorker(employee: String) -> (firstName: String, lastName: String, email: String, role: Role)?{
-        var worker: [String:Any]
-        var firstName: String
-        var lastName: String
-        var email: String
-        var role: Role
+    func fetchWorker(email: String) -> (name: String, workplaces: [String], role: Role) {
+        var name: String = ""
+        var workplaces: [String] = []
+        var role: Role = .worker
         
-        //query
-        database.collection(workerCollection).document(employee).getDocument() {(querySnapshot, error) in
+        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
-                //get info about user
-                //store documents in dictionary
-                if querySnapshot != nil{
-                    worker.updateValue(querySnapshot!.data()!, forKey: employee)
-                } else {
-                    print("Failed to get data about user from Firebase")
+                //get info about users
+                if (querySnapshot != nil && querySnapshot!.exists){
+                    let documentData = querySnapshot!.data()!
+                    if let nameData = (documentData["Name"] as! String?){
+                        name = nameData
+                    }
+                    print(name)
                 }
-                
-                firstName = worker["FirstName"] == nil ? "" : String(worker["FirstName"])
-                lastName = worker["LastName"] == nil ? "" : String(worker["LastName"])
-                email = worker["Email"] == nil ? "" : String(worker["Email"])
             }
         }
         
-        return (firstName, lastName, email, role)
+        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                //get info about users
+                if (querySnapshot != nil && querySnapshot!.exists){
+                    let documentData = querySnapshot!.data()!
+                    if let workplacesData = (documentData["Workplaces"] as! [String]?){
+                        workplaces = workplacesData
+                    }
+                    for workplace in workplaces{
+                        print(workplace)
+                    }
+                }
+            }
+        }
+        
+        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                //get info about users
+                if (querySnapshot != nil && querySnapshot!.exists){
+                    let documentData = querySnapshot!.data()!
+                    if let roleData = (documentData["Role"] as! String?){
+                        role = role.stringToRole(role: roleData)
+                    }
+                    print(role.toString())
+                }
+            }
+        }
+        
+        return (name, workplaces, role)
     }
     
     //used to fetch data about all workers

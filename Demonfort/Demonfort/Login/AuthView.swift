@@ -18,7 +18,9 @@ struct AuthView: View {
 }
 
 struct AuthView_Previews: PreviewProvider {
+    static let session = SessionStore()
+    
     static var previews: some View {
-        AuthView().environmentObject(SessionStore())
+        AuthView().environmentObject(session)
     }
 }

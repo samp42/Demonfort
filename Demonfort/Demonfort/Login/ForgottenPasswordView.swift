@@ -10,11 +10,14 @@ import SwiftUI
 
 struct ForgottenPasswordView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Hello, World!")
+        }.background(Color.black)
     }
 }
 
 struct ForgottenPasswordView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ForgottenPasswordView()
     }

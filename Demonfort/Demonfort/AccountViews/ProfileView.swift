@@ -20,15 +20,20 @@ struct ProfileView: View {
                     .frame(width: 10)
                 
                 VStack(alignment: .leading){
-                    
-                    Text("\(self.worksheet.workerName)")
-                        .fontWeight(.heavy)
-                        .font(.title)
+                    //double check that currentUser is never nil
+                    //otherwise error when signing out
+                    if(session != nil){
+                        
+                    Text("\(worksheet.fetchWorker(email: Auth.auth().currentUser!.email!).name)")
+                        .fontWeight(.semibold)
+                        .font(.headline)
                     
                     Text("\(self.worksheet.workerRole.toStringFrench())")
-                        .font(.headline)
-
+                        .font(.subheadline)
+                    
                     Spacer()
+                        
+                    }
                 }
                 Spacer()
                 
@@ -52,8 +57,9 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static let worksheet = Worksheet()
+    static let session = SessionStore()
     
     static var previews: some View {
-        ProfileView().environmentObject(worksheet)
+        ProfileView().environmentObject(worksheet).environmentObject(session)
     }
 }

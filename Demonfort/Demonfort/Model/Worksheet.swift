@@ -63,7 +63,10 @@ class Worksheet: Worker{
         end = Date().addingTimeInterval(100000)
         selectedWorkPlace = 0
         tasks = ""
-        super.init(email: "")
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //ERROR
+        //Unexpectedly found nil while unwrapping an Optional value
+        super.init(email: Auth.auth().currentUser!.email!)
     }
     
     func reset() -> Void{
@@ -72,5 +75,4 @@ class Worksheet: Worker{
         selectedWorkPlace = 0
         tasks = ""
     }
-    
 }

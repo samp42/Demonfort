@@ -30,13 +30,20 @@ enum Role{
         }
     }
     
+    func stringToRole(role: String) -> Role{
+        if(role=="Superintendent"||role=="superintendent"){
+            return .superintendent
+        }
+        return .worker
+    }
+    
 }
 
 class Worker: SessionStore{
     //worker name
-    let workerName: String
+    var workerName: String
     //worker role (superintendent/worker)
-    let workerRole: Role
+    var workerRole: Role
     //worker's workplaces
     var workPlaces: [String]
     //worker's worksheets
@@ -46,12 +53,19 @@ class Worker: SessionStore{
     var weeklyWorksheets: [String:[String:Any]]//[documentName:[key:value]]
     
     init(email: String){
-        self.workerName = email
+        //first initialisation
+        self.workerName = ""
         self.workerRole = .worker
-        self.workPlaces = ["123 rue Maisonneuve, Montréal", "456 rue Waverly, Montréal"]
+        self.workPlaces = []
         self.worksheets = [:]
         self.weeklyWorksheets = [:]
+        //true initialisation
         super.init()
+        self.workerName = fetchWorker(email: email).name
+        self.workerRole = fetchWorker(email: email).role
+        self.workPlaces = fetchWorker(email: email).workplaces
+        self.worksheets = [:]
+        self.weeklyWorksheets = [:]
         self.worksheets = self.workerRole == .worker ? fetchWorksheets(employee: self.workerName, worksheets: self.worksheets) : fetchWorksheetsWithStatusSent(worksheets: self.worksheets)
         //self.worksheets = sort(dictionary: self.worksheets, ascending: true)
     }
