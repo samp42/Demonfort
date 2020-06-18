@@ -52,7 +52,7 @@ class Worker: SessionStore{
     //woksheets for the week
     var weeklyWorksheets: [String:[String:Any]]//[documentName:[key:value]]
     
-    init(email: String){
+    init(_email: String){
         //first initialisation
         self.workerName = ""
         self.workerRole = .worker
@@ -61,12 +61,12 @@ class Worker: SessionStore{
         self.weeklyWorksheets = [:]
         //true initialisation
         super.init()
-        self.workerName = fetchWorker(email: email).name
-        self.workerRole = fetchWorker(email: email).role
-        self.workPlaces = fetchWorker(email: email).workplaces
+        self.workerName = fetchWorker(email: _email).name
+        self.workerRole = fetchWorker(email: _email).role
+        //self.workPlaces = fetchWorker(email: _email).workplaces
         self.worksheets = [:]
         self.weeklyWorksheets = [:]
-        self.worksheets = self.workerRole == .worker ? fetchWorksheets(employee: self.workerName, worksheets: self.worksheets) : fetchWorksheetsWithStatusSent(worksheets: self.worksheets)
+        //self.worksheets = self.workerRole == .worker ? fetchWorksheets(employee: self.workerName, worksheets: self.worksheets) : fetchWorksheetsWithStatusSent(worksheets: self.worksheets)
         //self.worksheets = sort(dictionary: self.worksheets, ascending: true)
     }
     

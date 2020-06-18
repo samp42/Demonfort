@@ -28,7 +28,9 @@ struct UserWorkPlacesView: View {
 }
 
 struct UserWorkPlacesView_Previews: PreviewProvider {
+    static let worksheet = Worksheet(email: "samuelproulx26@gmail.com")
+    
     static var previews: some View {
-        UserWorkPlacesView().environmentObject(Worksheet())
+        UserWorkPlacesView().environmentObject(worksheet)
     }
 }

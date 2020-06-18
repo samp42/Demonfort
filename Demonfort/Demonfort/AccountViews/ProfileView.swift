@@ -20,11 +20,8 @@ struct ProfileView: View {
                     .frame(width: 10)
                 
                 VStack(alignment: .leading){
-                    //double check that currentUser is never nil
-                    //otherwise error when signing out
-                    if(session != nil){
                         
-                    Text("\(worksheet.fetchWorker(email: Auth.auth().currentUser!.email!).name)")
+                    Text("\(self.worksheet.workerName)")
                         .fontWeight(.semibold)
                         .font(.headline)
                     
@@ -32,8 +29,6 @@ struct ProfileView: View {
                         .font(.subheadline)
                     
                     Spacer()
-                        
-                    }
                 }
                 Spacer()
                 
@@ -56,7 +51,7 @@ struct ProfileView: View {
 
 
 struct ProfileView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
+    static let worksheet = Worksheet(email: "samuelproulx26@gmail.com")
     static let session = SessionStore()
     
     static var previews: some View {

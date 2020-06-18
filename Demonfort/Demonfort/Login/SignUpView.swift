@@ -43,6 +43,7 @@ struct SignUpView: View {
                     Text(error)
                         .foregroundColor(Color.red)
                         .padding([.horizontal])
+                        .lineLimit(nil)
                 }
                 
                 HStack {

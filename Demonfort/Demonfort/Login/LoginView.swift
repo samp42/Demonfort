@@ -11,6 +11,7 @@ import FirebaseUI
 
 struct LoginView: View {
     @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var worksheet: Worksheet
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var error: String = ""
@@ -42,6 +43,7 @@ struct LoginView: View {
                     Text(error)
                         .foregroundColor(Color.red)
                         .padding([.horizontal])
+                        .lineLimit(nil)
                 }
                 
                 HStack {

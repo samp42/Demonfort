@@ -26,7 +26,8 @@ struct WorkPlacePickerView: View {
 }
 
 struct WorkPlacePickerView_Previews: PreviewProvider {
+    static let worksheet = Worksheet(email: "samuelproulx26@gmail.com")
     static var previews: some View {
-        WorkPlacePickerView()
+        WorkPlacePickerView().environmentObject(worksheet)
     }
 }

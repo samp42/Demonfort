@@ -19,7 +19,8 @@ struct TasksView: View {
 }
 
 struct TasksView_Previews: PreviewProvider {
+    static let worksheet = Worksheet(email: "samuelproulx26@gmail.com")
     static var previews: some View {
-        TasksView()
+        TasksView().environmentObject(worksheet)
     }
 }

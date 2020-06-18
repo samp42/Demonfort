@@ -55,7 +55,7 @@ struct MainView: View {
 }
 
 struct MainView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
+    static let worksheet = Worksheet(email: "samuelproulx26@gmail.com")
     
     static var previews: some View {
         MainView().environmentObject(worksheet)

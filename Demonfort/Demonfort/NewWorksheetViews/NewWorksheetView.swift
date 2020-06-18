@@ -28,6 +28,6 @@ struct NewWorksheetView: View {
 
 struct NewWorksheetView_Previews: PreviewProvider {
     static var previews: some View {
-        NewWorksheetView().environmentObject(Worksheet())
+        NewWorksheetView().environmentObject(Worksheet(email: "samuelproulx26@gmail.com"))
     }
 }

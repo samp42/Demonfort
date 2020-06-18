@@ -46,9 +46,10 @@ class SessionStore: DatabaseManager, ObservableObject{
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
         
         //add user to workers collection
-        sendUserName(employee: employee)
-        sendUserRole(employee: employee, role: .worker)
-        sendUserMail(employee: employee, email: email)
+        //send email first!!! (creates document)
+        sendUserEmail(email: email)
+        sendUserName(email: email, employee: employee)
+        sendUserRole(email: email, role: .worker)//worker by default
     }
     
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback){

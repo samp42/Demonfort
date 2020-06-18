@@ -87,21 +87,36 @@ class DatabaseManager{
     }
     
     //used by worker to fetch data about own worksheets
-    func fetchWorksheets(employee: String, worksheets: [String:[String:Any]]) -> [String:[String:Any]]{
+    func fetchWorksheets(employee: String) -> [String:[String:Any]]{
         //copy of worksheets
-        var worksheetsCopy: [String:[String:Any]] = worksheets
+        var worksheets: [String:[String:Any]]
+        
+//        example w name
+//        if (querySnapshot != nil && querySnapshot!.exists){
+//            let documentData = querySnapshot!.data()!
+//            if let nameData = (documentData["Name"] as! String?){
+//                name = nameData
+//            }
+//            print(name)
+//        }
         
         //query
-        database.collection(worksheetCollection).whereField("Employee", isEqualTo: employee)
-            .getDocuments() { (querySnapshot, error) in
+        database.collection(worksheetCollection).whereField("Employee", isEqualTo: employee).getDocuments() { (querySnapshot, error) in
                 if let error = error {
                     print("Error getting documents: \(error)")
                 } else {
-                    for document in querySnapshot!.documents {
-                        //print("\(document.documentID) => \(document.data())")
-                        //store documents in dictionary
-                        worksheetsCopy.updateValue(document.data(), forKey: "\(document.documentID)")
+                    if(querySnapshot != nil && querySnapshot!.exists){
+                        let documentData = querySnapshot!.data()!
+                        if let worksheetsData = (documentData["Worksheets"] as! [String:Any]?){
+                            for worksheet in worksheetsData {
+                                //print("\(document.documentID) => \(document.data())")
+                                //store documents in dictionary
+                                //worksheets
+                            }
+                        }
+                        
                     }
+                    
                     //sort documents by time
                         //must sort here
                     for key in worksheetsCopy.keys{
@@ -113,7 +128,7 @@ class DatabaseManager{
                     }
                 }
         }
-        return worksheetsCopy
+        return worksheets
     }
     
     //used by superintendent to retrieve documents from workers
@@ -158,26 +173,27 @@ class DatabaseManager{
     }
     
     //used to send data about user's name
-    func sendUserName(employee: String) -> Void{
-        database.collection(workerCollection).document(employee).setData(["Name": employee])
+    func sendUserName(email: String, employee: String) -> Void{
+        database.collection(workerCollection).document(email).setData(["Name": employee])
     }
     
-    //used to send data about user's mail
-    func sendUserMail(employee: String, email: String) -> Void{
-        database.collection(workerCollection).document(employee).setData(["Email": email])
+    //used to send data about user's mail (creates new document with email as documentId)
+    func sendUserEmail(email: String) -> Void{
+        //creates new empty document
+        database.collection(workerCollection).document(email).setData([:])
     }
     
     //used to send data about user's workplaces
-    func sendUserWorkPlaces(employee: String, workPlaces: [String]) -> Void{
+    func sendUserWorkPlaces(email: String, workPlaces: [String]) -> Void{
         if(true){
-            database.collection(workerCollection).document(employee).setData(["Workplaces": workPlaces])
+            database.collection(workerCollection).document(email).setData(["Workplaces": workPlaces])
         }
     }
     
     //used to send data about user's role
-    func sendUserRole(employee: String, role: Role) -> Void{
+    func sendUserRole(email: String, role: Role) -> Void{
         if(true){
-            database.collection(workerCollection).document(employee).setData(["Role": role.toString()])
+            database.collection(workerCollection).document(email).setData(["Role": role.toString()])
         }
     }
     

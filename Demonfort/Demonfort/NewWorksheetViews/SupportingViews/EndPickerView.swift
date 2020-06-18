@@ -22,7 +22,8 @@ struct EndPickerView: View {
 }
 
 struct EndPickerView_Previews: PreviewProvider {
+    static let worksheet = Worksheet(email: "samuelproulx26@gmail.com")
     static var previews: some View {
-        EndPickerView()
+        EndPickerView().environmentObject(worksheet)
     }
 }
