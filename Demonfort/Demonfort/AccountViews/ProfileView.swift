@@ -20,7 +20,8 @@ struct ProfileView: View {
                     .frame(width: 10)
                 
                 VStack(alignment: .leading){
-                        
+                    Spacer()
+                    
                     Text("\(self.worksheet.workerName)")
                         .fontWeight(.semibold)
                         .font(.headline)

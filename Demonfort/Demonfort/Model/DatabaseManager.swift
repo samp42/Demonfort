@@ -87,49 +87,36 @@ class DatabaseManager{
     }
     
     //used by worker to fetch data about own worksheets
-    func fetchWorksheets(employee: String) -> [String:[String:Any]]{
-        //copy of worksheets
-        var worksheets: [String:[String:Any]]
-        
-//        example w name
-//        if (querySnapshot != nil && querySnapshot!.exists){
-//            let documentData = querySnapshot!.data()!
-//            if let nameData = (documentData["Name"] as! String?){
-//                name = nameData
-//            }
-//            print(name)
+//    func fetchWorksheets(employee: String) -> [String:[String:Any]]{
+//        //copy of worksheets
+//        var worksheets : [String:[String:Any]] = [:["Employee":employee, "StartTime":, "EndTime":, "Status":, "Description":]]
+//        
+//        //query
+//        database.collection(worksheetCollection).whereField("Employee", isEqualTo: employee).getDocuments() { (querySnapshot, error) in
+//                if let error = error {
+//                    print("Error getting documents: \(error)")
+//                } else {
+//                    if(querySnapshot != nil){
+//                        //key = Employee + #
+//                        for key in querySnapshot!.documents{
+//                            worksheets.updateValue(field, forKey: key)
+//                        }
+//                        
+//                    }
+//                    
+//                    //sort documents by time
+//                        //must sort here
+//                    for key in worksheets.keys{
+//                        print(key)
+//                        self.numOfDocs += 1
+//                    }
+//                    if(worksheets.isEmpty){
+//                        print("Empty")
+//                    }
+//                }
 //        }
-        
-        //query
-        database.collection(worksheetCollection).whereField("Employee", isEqualTo: employee).getDocuments() { (querySnapshot, error) in
-                if let error = error {
-                    print("Error getting documents: \(error)")
-                } else {
-                    if(querySnapshot != nil && querySnapshot!.exists){
-                        let documentData = querySnapshot!.data()!
-                        if let worksheetsData = (documentData["Worksheets"] as! [String:Any]?){
-                            for worksheet in worksheetsData {
-                                //print("\(document.documentID) => \(document.data())")
-                                //store documents in dictionary
-                                //worksheets
-                            }
-                        }
-                        
-                    }
-                    
-                    //sort documents by time
-                        //must sort here
-                    for key in worksheetsCopy.keys{
-                        print(key)
-                        self.numOfDocs += 1
-                    }
-                    if(worksheetsCopy.isEmpty){
-                        print("Empty")
-                    }
-                }
-        }
-        return worksheets
-    }
+//        return worksheets
+//    }
     
     //used by superintendent to retrieve documents from workers
     func fetchWorksheetsWithStatusSent(worksheets: [String:[String:Any]]) -> [String:[String:Any]]{

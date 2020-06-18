@@ -67,6 +67,7 @@ class Worksheet: Worker{
         //ERROR
         //Unexpectedly found nil while unwrapping an Optional value
         super.init(_email: email)
+        print("INITIALIZED: \(workerName)")
     }
     
     func reset() -> Void{

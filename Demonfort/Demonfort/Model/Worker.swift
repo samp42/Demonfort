@@ -54,7 +54,7 @@ class Worker: SessionStore{
     
     init(_email: String){
         //first initialisation
-        self.workerName = ""
+        self.workerName = "xx"
         self.workerRole = .worker
         self.workPlaces = []
         self.worksheets = [:]
@@ -63,7 +63,7 @@ class Worker: SessionStore{
         super.init()
         self.workerName = fetchWorker(email: _email).name
         self.workerRole = fetchWorker(email: _email).role
-        //self.workPlaces = fetchWorker(email: _email).workplaces
+        self.workPlaces = fetchWorker(email: _email).workplaces
         self.worksheets = [:]
         self.weeklyWorksheets = [:]
         //self.worksheets = self.workerRole == .worker ? fetchWorksheets(employee: self.workerName, worksheets: self.worksheets) : fetchWorksheetsWithStatusSent(worksheets: self.worksheets)
