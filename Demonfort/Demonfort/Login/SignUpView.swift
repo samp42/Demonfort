@@ -51,6 +51,7 @@ struct SignUpView: View {
                         .keyboardType(.alphabet)
                         .disableAutocorrection(true)
                         .padding(12)
+                        .foregroundColor(Color.black)
                         .background(Color.white)
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
@@ -60,6 +61,7 @@ struct SignUpView: View {
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
                         .padding(12)
+                        .foregroundColor(Color.black)
                         .background(Color.white)
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
@@ -67,6 +69,7 @@ struct SignUpView: View {
                 HStack {
                     SecureField("Mot de passe", text: $password)
                         .padding(12)
+                        .foregroundColor(Color.black)
                         .background(Color.white)
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
