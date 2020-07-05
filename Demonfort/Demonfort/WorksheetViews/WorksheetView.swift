@@ -55,7 +55,9 @@ struct WorksheetView: View {
 }
 
 struct WorksheetView_Previews: PreviewProvider {
+    static let worksheet = Worksheet()
+    
     static var previews: some View {
-        WorksheetView().environmentObject(Worksheet(email: "samuelproulx26@gmail.com"))
+        WorksheetView().environmentObject(worksheet)
     }
 }

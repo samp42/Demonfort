@@ -9,9 +9,12 @@
 import SwiftUI
 
 struct ForgottenPasswordView: View {
+    @State private var email: String = ""
+    
     var body: some View {
         VStack{
             Text("Hello, World!")
+            TextField("Email", text: $email)
         }.background(Color.black)
     }
 }

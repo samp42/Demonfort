@@ -60,7 +60,7 @@ struct AccountView: View {
 }
 
 struct AccountView_Previews: PreviewProvider {
-    static let worksheet = Worksheet(email: "samuelproulx26@gmail.com")
+    static let worksheet = Worksheet()
     
     static var previews: some View {
         AccountView().environmentObject(worksheet)

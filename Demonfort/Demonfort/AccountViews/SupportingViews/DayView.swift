@@ -32,7 +32,7 @@ struct DayView: View {
 }
 
 struct DayView_Previews: PreviewProvider {
-    static let worksheet = Worksheet(email: "samuelproulx26@gmail.com")
+    static let worksheet = Worksheet()
     static var previews: some View {
         DayView(day: "Lundi").environmentObject(worksheet)
         //, approvalState: "Approuvée"

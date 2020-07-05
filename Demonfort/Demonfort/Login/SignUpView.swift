@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SignUpView: View {
     @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var worksheet: Worksheet
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
@@ -24,6 +25,7 @@ struct SignUpView: View {
                 self.password = ""
             }
         }
+        worksheet.getWorker(email: email)
     }
     
     var body: some View {
@@ -51,8 +53,7 @@ struct SignUpView: View {
                         .keyboardType(.alphabet)
                         .disableAutocorrection(true)
                         .padding(12)
-                        .foregroundColor(Color.black)
-                        .background(Color.white)
+                        .background(Color("textFieldBackground"))
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
                 
@@ -61,16 +62,14 @@ struct SignUpView: View {
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
                         .padding(12)
-                        .foregroundColor(Color.black)
-                        .background(Color.white)
+                        .background(Color("textFieldBackground"))
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
                 
                 HStack {
                     SecureField("Mot de passe", text: $password)
                         .padding(12)
-                        .foregroundColor(Color.black)
-                        .background(Color.white)
+                        .background(Color("textFieldBackground"))
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
                 
@@ -94,7 +93,10 @@ struct SignUpView: View {
 }//End of SignUpView
 
 struct SignUpView_Previews: PreviewProvider {
+    static let session = SessionStore()
+    static let worksheet = Worksheet()
+    
     static var previews: some View {
-        SignUpView().environmentObject(SessionStore())
+        SignUpView().environmentObject(session).environmentObject(worksheet)
     }
 }

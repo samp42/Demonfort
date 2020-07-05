@@ -5,3 +5,4 @@
 - handle instances (fetchWorker method does not work because of an instance problem)
 - allow workplaces of employee to be displayed in account view and in picker view when
     creating new worksheet
+- logos to svg

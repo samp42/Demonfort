@@ -33,7 +33,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static let worksheet = Worksheet(email: "samuelproulx26@gmail.com")
+    static let worksheet = Worksheet()
     static let session = SessionStore()
     
     static var previews: some View {

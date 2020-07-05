@@ -52,20 +52,22 @@ class Worker: SessionStore{
     //woksheets for the week
     var weeklyWorksheets: [String:[String:Any]]//[documentName:[key:value]]
     
-    init(_email: String){
+    func getWorker(email: String) -> Void{
+        self.workerName = fetchWorker(email: email).name
+        self.workerRole = fetchWorker(email: email).role
+        self.workPlaces = fetchWorker(email: email).workPlaces
+        self.worksheets = [:]
+        self.weeklyWorksheets = [:]
+    }
+    
+    override init(){
         //first initialisation
-        self.workerName = "xx"
+        self.workerName = ""
         self.workerRole = .worker
         self.workPlaces = []
         self.worksheets = [:]
         self.weeklyWorksheets = [:]
-        //true initialisation
         super.init()
-        self.workerName = fetchWorker(email: _email).name
-        self.workerRole = fetchWorker(email: _email).role
-        self.workPlaces = fetchWorker(email: _email).workplaces
-        self.worksheets = [:]
-        self.weeklyWorksheets = [:]
         //self.worksheets = self.workerRole == .worker ? fetchWorksheets(employee: self.workerName, worksheets: self.worksheets) : fetchWorksheetsWithStatusSent(worksheets: self.worksheets)
         //self.worksheets = sort(dictionary: self.worksheets, ascending: true)
     }

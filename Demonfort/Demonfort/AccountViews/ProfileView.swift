@@ -9,9 +9,24 @@
 import SwiftUI
 import FirebaseAuth
 
+struct CurrentUser{
+    var userName: String = ""
+    var userWorkPlaces: [String] = []
+    var userRole: Role = .worker
+}
+
 struct ProfileView: View {
     @EnvironmentObject var worksheet: Worksheet
     @EnvironmentObject var session: SessionStore
+    @State private var currentUser: CurrentUser = CurrentUser()
+    
+    func getInfoOfCurrentUser(email: String) -> Void{
+        if let _ = Auth.auth().currentUser{
+            self.currentUser.userName = self.worksheet.fetchWorkerName(email: Auth.auth().currentUser!.email!)
+            self.currentUser.userWorkPlaces = self.worksheet.fetchWorkerWorkPlaces(email: Auth.auth().currentUser!.email!)
+            self.currentUser.userRole = self.worksheet.fetchWorkerRole(email: Auth.auth().currentUser!.email!)
+        }
+    }
     
     var body: some View {
 
@@ -22,15 +37,16 @@ struct ProfileView: View {
                 VStack(alignment: .leading){
                     Spacer()
                     
-                    Text("\(self.worksheet.workerName)")
+                    Text("\(self.currentUser.userName)")
                         .fontWeight(.semibold)
                         .font(.headline)
                     
-                    Text("\(self.worksheet.workerRole.toStringFrench())")
+                    Text("\(self.currentUser.userRole.toStringFrench())")
                         .font(.subheadline)
                     
                     Spacer()
-                }
+                } 
+                
                 Spacer()
                 
                 Button(action: {
@@ -45,14 +61,16 @@ struct ProfileView: View {
                 
             }.padding([.all], 8).frame(height: 72).frame(minWidth:360)
                 .background(Color("lightGray"))
-                    .cornerRadius(12)
-                    
+                .cornerRadius(12)
+                .onAppear{
+                    self.getInfoOfCurrentUser(email: Auth.auth().currentUser!.email!)
+                }
     }
 }
 
 
 struct ProfileView_Previews: PreviewProvider {
-    static let worksheet = Worksheet(email: "samuelproulx26@gmail.com")
+    static let worksheet = Worksheet()
     static let session = SessionStore()
     
     static var previews: some View {

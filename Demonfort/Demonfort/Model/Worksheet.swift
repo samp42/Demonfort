@@ -58,7 +58,7 @@ class Worksheet: Worker{
     @Published var tasks: String // tasks description for the current worksheet
     @Published var status: Status = .notSent // status of the worksheet
     
-    init(email: String){
+    override init(){
         start = Date()
         end = Date().addingTimeInterval(100000)
         selectedWorkPlace = 0
@@ -66,7 +66,7 @@ class Worksheet: Worker{
         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         //ERROR
         //Unexpectedly found nil while unwrapping an Optional value
-        super.init(_email: email)
+        super.init()
         print("INITIALIZED: \(workerName)")
     }
     

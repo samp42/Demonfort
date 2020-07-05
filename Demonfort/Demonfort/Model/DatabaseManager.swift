@@ -18,10 +18,74 @@ class DatabaseManager{
     let worksheetCollection = "worksheets" //documentID: employee+sheet number, document.data: start, end, workplace, status, tasks
     var numOfDocs: Int = 0
     
-    //used to fetch data about a specific user
-    func fetchWorker(email: String) -> (name: String, workplaces: [String], role: Role) {
+    public func fetchWorkerName(email: String) -> String {
         var name: String = ""
-        var workplaces: [String] = []
+    
+        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                //get info about users
+                if (querySnapshot != nil && querySnapshot!.exists){
+                    let documentData = querySnapshot!.data()!
+                    if let nameData = (documentData["Name"] as! String?){
+                        name = nameData
+                    }
+                    print(name)
+                }
+            }
+        }
+        return name
+    }
+    
+    public func fetchWorkerRole(email: String) -> Role {
+        var role: Role = .worker
+    
+        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                //get info about users
+                if (querySnapshot != nil && querySnapshot!.exists){
+                    let documentData = querySnapshot!.data()!
+                    if let roleData = (documentData["Role"] as! String?){
+                        role = role.stringToRole(role: roleData)
+                    }
+                    print(role.toString())
+                }
+            }
+        }
+        
+        return role
+    }
+    
+    public func fetchWorkerWorkPlaces(email: String) -> [String] {
+        var workPlaces: [String] = []
+    
+        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                //get info about users
+                if (querySnapshot != nil && querySnapshot!.exists){
+                    let documentData = querySnapshot!.data()!
+                    if let workPlacesData = (documentData["Workplaces"] as! [String]?){
+                        workPlaces = workPlacesData
+                    }
+                    for workPlace in workPlaces{
+                        print(workPlace)
+                    }
+                }
+            }
+        }
+        
+        return workPlaces
+    }
+        
+    //used to fetch data about a specific user
+    public func fetchWorker(email: String) -> (name: String, workPlaces: [String], role: Role) {
+        var name: String = ""
+        var workPlaces: [String] = []
         var role: Role = .worker
         
         database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
@@ -46,11 +110,11 @@ class DatabaseManager{
                 //get info about users
                 if (querySnapshot != nil && querySnapshot!.exists){
                     let documentData = querySnapshot!.data()!
-                    if let workplacesData = (documentData["Workplaces"] as! [String]?){
-                        workplaces = workplacesData
+                    if let workPlacesData = (documentData["Workplaces"] as! [String]?){
+                        workPlaces = workPlacesData
                     }
-                    for workplace in workplaces{
-                        print(workplace)
+                    for workPlace in workPlaces{
+                        print(workPlace)
                     }
                 }
             }
@@ -71,11 +135,11 @@ class DatabaseManager{
             }
         }
         
-        return (name, workplaces, role)
+        return (name, workPlaces, role)
     }
     
     //used to fetch data about all workers
-    func fetchWorkers() -> Void{
+    public func fetchWorkers() -> Void{
         database.collection(workerCollection).document().getDocument() {(querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -119,7 +183,7 @@ class DatabaseManager{
 //    }
     
     //used by superintendent to retrieve documents from workers
-    func fetchWorksheetsWithStatusSent(worksheets: [String:[String:Any]]) -> [String:[String:Any]]{
+    public func fetchWorksheetsWithStatusSent(worksheets: [String:[String:Any]]) -> [String:[String:Any]]{
         //copy of worksheets
         var worksheetsCopy: [String:[String:Any]] = worksheets
         
@@ -150,42 +214,42 @@ class DatabaseManager{
     }
     
     //used to fetch worksheets for this current week(worker)
-    func fetchWeeklyWorksheetsForWorker() -> Void{
+    public func fetchWeeklyWorksheetsForWorker() -> Void{
         
     }
     
     //used to fetch worksheets for this current week(superintendent)
-    func fetchWeeklyWorksheetsForSuperintendent() -> Void{
+    public func fetchWeeklyWorksheetsForSuperintendent() -> Void{
         
     }
     
     //used to send data about user's name
-    func sendUserName(email: String, employee: String) -> Void{
+    public func sendUserName(email: String, employee: String) -> Void{
         database.collection(workerCollection).document(email).setData(["Name": employee])
     }
     
     //used to send data about user's mail (creates new document with email as documentId)
-    func sendUserEmail(email: String) -> Void{
+    public func sendUserEmail(email: String) -> Void{
         //creates new empty document
         database.collection(workerCollection).document(email).setData([:])
     }
     
     //used to send data about user's workplaces
-    func sendUserWorkPlaces(email: String, workPlaces: [String]) -> Void{
+    public func sendUserWorkPlaces(email: String, workPlaces: [String]) -> Void{
         if(true){
             database.collection(workerCollection).document(email).setData(["Workplaces": workPlaces])
         }
     }
     
     //used to send data about user's role
-    func sendUserRole(email: String, role: Role) -> Void{
+    public func sendUserRole(email: String, role: Role) -> Void{
         if(true){
             database.collection(workerCollection).document(email).setData(["Role": role.toString()])
         }
     }
     
     //used to send worksheet
-    func sendWorksheet(employee: String, start: Date, end: Date, status: Status, tasks: String) -> Void{
+    public func sendWorksheet(employee: String, start: Date, end: Date, status: Status, tasks: String) -> Void{
         //if error is nil send
         if(validateWorksheet(start: start, end: end, tasks: tasks)==nil){
             //NUMBER = NUMBER OF THE NEW WORKSHEET (IF USER HAS 4, NUMBER = 5 (+1))

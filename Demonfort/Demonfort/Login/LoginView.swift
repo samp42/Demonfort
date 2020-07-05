@@ -25,6 +25,7 @@ struct LoginView: View {
                 self.password = ""
             }
         }
+        worksheet.getWorker(email: email)
     }
     
     var body: some View {
@@ -51,15 +52,14 @@ struct LoginView: View {
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
                         .padding(12)
-                        .foregroundColor(Color.black)
-                        .background(Color.white)
+                        .background(Color("textFieldBackground"))
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
                 
                 HStack {
                     SecureField("Mot de passe", text: $password)
                         .padding(12)
-                        .background(Color.white)
+                        .background(Color("textFieldBackground"))
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
                 
@@ -101,8 +101,9 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static let session = SessionStore()
+    static let worksheet = Worksheet()
     
     static var previews: some View {
-        LoginView().environmentObject(session)
+        LoginView().environmentObject(session).environmentObject(worksheet)
     }
 }
