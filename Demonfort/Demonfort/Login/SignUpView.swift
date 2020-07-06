@@ -14,6 +14,7 @@ struct SignUpView: View {
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var passwordCnfrm: String = ""
     @State private var error: String = ""
     
     func signUp(){
@@ -73,9 +74,19 @@ struct SignUpView: View {
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
                 
+                HStack {
+                    SecureField("Confirmez le mot de passe", text: $passwordCnfrm)
+                        .padding(12)
+                        .background(Color("textFieldBackground"))
+                        .cornerRadius(12)
+                }.padding([.horizontal], 12)
+                
                 Button(action: {
-                    self.signUp()
-
+                    if(self.password==self.passwordCnfrm){
+                        self.signUp()
+                    } else {
+                        self.error = "Different passwords"
+                    }
                 }){
                     Text("Inscription")
                         .fontWeight(.bold)
