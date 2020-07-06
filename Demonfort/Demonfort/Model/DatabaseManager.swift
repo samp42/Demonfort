@@ -10,6 +10,48 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
+/*
+ 1. fetchName(email: String) -> String >>> takes current user's email and gets its name
+        Status: Ok
+ 2. fetchRole(email: String) -> Role >>> takes current user's email and gets its role
+        Status: Ok
+ 3. fetchWorkPlaces(email: String) -> [String] >>> takes current user's email and gets its work places
+        Status: Ok
+ 4. fetchEmployee(email: String) -> (name: String, workPlaces: [String], role: Role) >>> takes current user's email and gets its name, workPlaces and role
+        Status: Ok
+ 5. fetchWorkers() -> Void >>>                      ?????????????
+        Status: IDK WTF is going on
+ 6. fetchWorksheetsOfWorker(email: String) -> [String:[String:Any]] >>> takes current user's email and gets all its worksheets
+        Status: Errors
+ 7. fetchWorksheetsOfWorkerWithStatusSent(email: String, worksheets: [String:[String:Any]]) -> [String:[String:Any]] >>> takes current user's email and worksheets and gets all its worksheets that have status 'sent'
+        Status: TBD
+ 8. fetchWorksheetsWithStatusSent() -> [String:[String:Any]] >>> takes all worksheets from database and updates it in app for superintendant
+        **SUPERINTENDANT ONLY**
+        Status: TBD
+ 9. fetchWeeklyWorksheetsOfWorker(email: String) -> [String:[String:Any]] >>> takes email of current user's and gets all worksheets from the current week
+        Status: TBD
+ 10. fetchWorksheetsWithStatusSent() -> [String:[String:Any]] >>>
+        Status: TBD
+ 11. fetchWeeklyWorksheetsForSuperintendent() -> [String:[String:Any]] >>> gets all worksheets of all workers from the current week
+        **SUPERINTENDANT ONLY**
+        Status: TBD
+ 12. sendUserName(email: String, employee: String) -> Void >>> takes current user's email and name and creates or updates document about user's info and places or updates name into it
+        Status: OK
+ 13. sendUserEmail(email: String) -> Void >>> takes current user's email and creates or updates document about user's info
+        Status: OK
+ 14. sendUserWorkPlaces(email: String, workPlaces: [String]) -> Void >>> takes current user's email and work places and creates or updates document about user's info and places or updates work places into it
+        Status: OK
+ 15. sendUserRole(email: String, role: Role, allowed: Bool) -> Void >>> takes current user's email and role and a superintendant's permission to update the user's role
+        Status: TBD
+ 16. sendWorksheet(employee: String, start: Date, end: Date, status: Status, tasks: String) -> Void >>> takes fields of worksheet and creates new document about worksheet in database
+        Status: OK
+ 17. correctWorksheet() -> Void >>> sends back worksheet to be validated..                    ???????????????????? HELP PLZ
+        **SUPERINTENDANT ONLY**
+        Status: TBD
+ 18. validateWorksheet(start: Date, end: Date, tasks: String) -> Error? >>> takes start and end times with tasks entered and verify that inputs are valids
+        Status: OK
+ */
+
 class DatabaseManager{
     let database = Firestore.firestore()
     let workerCollection = "workers" //documentID: name, document.data: Role
@@ -18,7 +60,7 @@ class DatabaseManager{
     let worksheetCollection = "worksheets" //documentID: employee+sheet number, document.data: start, end, workplace, status, tasks
     var numOfDocs: Int = 0
     
-    public func fetchWorkerName(email: String) -> String {
+    public func fetchName(email: String) -> String {
         var name: String = ""
     
         database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
@@ -38,7 +80,7 @@ class DatabaseManager{
         return name
     }
     
-    public func fetchWorkerRole(email: String) -> Role {
+    public func fetchRole(email: String) -> Role {
         var role: Role = .worker
     
         database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
@@ -59,7 +101,7 @@ class DatabaseManager{
         return role
     }
     
-    public func fetchWorkerWorkPlaces(email: String) -> [String] {
+    public func fetchWorkPlaces(email: String) -> [String] {
         var workPlaces: [String] = []
     
         database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
@@ -83,7 +125,7 @@ class DatabaseManager{
     }
         
     //used to fetch data about a specific user
-    public func fetchWorker(email: String) -> (name: String, workPlaces: [String], role: Role) {
+    public func fetchEmployee(email: String) -> (name: String, workPlaces: [String], role: Role) {
         var name: String = ""
         var workPlaces: [String] = []
         var role: Role = .worker
@@ -151,12 +193,12 @@ class DatabaseManager{
     }
     
     //used by worker to fetch data about own worksheets
-//    func fetchWorksheets(employee: String) -> [String:[String:Any]]{
+//    func fetchWorksheetsOfWorker(email: String, worksheets: [String:[String:Any]]) -> [String:[String:Any]]{
 //        //copy of worksheets
-//        var worksheets : [String:[String:Any]] = [:["Employee":employee, "StartTime":, "EndTime":, "Status":, "Description":]]
-//        
+//        var worksheets : [String:[String:Any]] = [:["Email":email, "StartTime":, "EndTime":, "Status":, "Description":]]
+//
 //        //query
-//        database.collection(worksheetCollection).whereField("Employee", isEqualTo: employee).getDocuments() { (querySnapshot, error) in
+//        database.collection(worksheetCollection).whereField("Email", isEqualTo: email).getDocuments() { (querySnapshot, error) in
 //                if let error = error {
 //                    print("Error getting documents: \(error)")
 //                } else {
@@ -165,9 +207,9 @@ class DatabaseManager{
 //                        for key in querySnapshot!.documents{
 //                            worksheets.updateValue(field, forKey: key)
 //                        }
-//                        
+//
 //                    }
-//                    
+//
 //                    //sort documents by time
 //                        //must sort here
 //                    for key in worksheets.keys{
@@ -182,10 +224,22 @@ class DatabaseManager{
 //        return worksheets
 //    }
     
+    public func fetchWorksheetsOfWorkerWithStatusSent(email: String) -> [String:[String:Any]]{
+        var worksheetsCopy: [String:[String:Any]] = ["":["":""]]
+        
+        database.collection(worksheetCollection).whereField("Email", isEqualTo: email).whereField("Status", isEqualTo: "Sent").getDocuments(){
+            (querySnapshot, error) in
+            //
+            
+        }
+        
+        return worksheetsCopy
+    }
+    
     //used by superintendent to retrieve documents from workers
-    public func fetchWorksheetsWithStatusSent(worksheets: [String:[String:Any]]) -> [String:[String:Any]]{
+    public func fetchWorksheetsWithStatusSent() -> [String:[String:Any]]{
         //copy of worksheets
-        var worksheetsCopy: [String:[String:Any]] = worksheets
+        var worksheets: [String:[String:Any]] = ["":["":""]]
         
         //query
         database.collection(worksheetCollection).whereField("Status", isEqualTo: "Envoyée")
@@ -196,31 +250,33 @@ class DatabaseManager{
                     for document in querySnapshot!.documents {
                         //print("\(document.documentID) => \(document.data())")
                         //store documents in dictionary
-                        worksheetsCopy.updateValue(document.data(), forKey: "\(document.documentID)")
+                        worksheets.updateValue(document.data(), forKey: "\(document.documentID)")
                     }
                     //sort documents by time
                         //must sort here
-                    for key in worksheetsCopy.keys{
+                    for key in worksheets.keys{
                         print(key)
                         self.numOfDocs += 1
                     }
-                    if(worksheetsCopy.isEmpty){
+                    if(worksheets.isEmpty){
                         print("Empty")
                     }
                 }
         }
         
-        return worksheetsCopy
+        return worksheets
     }
     
     //used to fetch worksheets for this current week(worker)
-    public func fetchWeeklyWorksheetsForWorker() -> Void{
-        
+    public func fetchWeeklyWorksheetsOfWorker(email: String) -> [String:[String:Any]]{
+        var weeklyWorksheets: [String:[String:Any]] = ["":["":""]]
+        return weeklyWorksheets
     }
     
     //used to fetch worksheets for this current week(superintendent)
-    public func fetchWeeklyWorksheetsForSuperintendent() -> Void{
-        
+    public func fetchWeeklyWorksheetsForSuperintendent() -> [String:[String:Any]]{
+        var weeklyWorksheets: [String:[String:Any]] = ["":["":""]]
+        return weeklyWorksheets
     }
     
     //used to send data about user's name
@@ -242,8 +298,9 @@ class DatabaseManager{
     }
     
     //used to send data about user's role
-    public func sendUserRole(email: String, role: Role) -> Void{
-        if(true){
+    public func sendUserRole(email: String, role: Role, allowed: Bool) -> Void{
+        //if validated by superintendant
+        if(allowed){
             database.collection(workerCollection).document(email).setData(["Role": role.toString()])
         }
     }

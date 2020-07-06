@@ -53,9 +53,9 @@ class Worker: SessionStore{
     var weeklyWorksheets: [String:[String:Any]]//[documentName:[key:value]]
     
     func getWorker(email: String) -> Void{
-        self.workerName = fetchWorker(email: email).name
-        self.workerRole = fetchWorker(email: email).role
-        self.workPlaces = fetchWorker(email: email).workPlaces
+        self.workerName = fetchName(email: email)
+        self.workerRole = fetchRole(email: email)
+        self.workPlaces = fetchWorkPlaces(email: email)
         self.worksheets = [:]
         self.weeklyWorksheets = [:]
     }

@@ -22,9 +22,9 @@ struct ProfileView: View {
     
     func getInfoOfCurrentUser(email: String) -> Void{
         if let _ = Auth.auth().currentUser{
-            self.currentUser.userName = self.worksheet.fetchWorkerName(email: Auth.auth().currentUser!.email!)
-            self.currentUser.userWorkPlaces = self.worksheet.fetchWorkerWorkPlaces(email: Auth.auth().currentUser!.email!)
-            self.currentUser.userRole = self.worksheet.fetchWorkerRole(email: Auth.auth().currentUser!.email!)
+            self.currentUser.userName = self.worksheet.fetchName(email: Auth.auth().currentUser!.email!)
+            self.currentUser.userWorkPlaces = self.worksheet.fetchWorkPlaces(email: Auth.auth().currentUser!.email!)
+            self.currentUser.userRole = self.worksheet.fetchRole(email: Auth.auth().currentUser!.email!)
         }
     }
     

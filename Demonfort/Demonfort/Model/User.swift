@@ -25,7 +25,7 @@ class SessionStore: DatabaseManager, ObservableObject{
         if Auth.auth().currentUser != nil{
             //find the name of the user from the workers collection
             
-            return fetchWorker(email: user.email!).name
+            return fetchName(email: user.email!)
         }
         
         return nil
@@ -49,7 +49,7 @@ class SessionStore: DatabaseManager, ObservableObject{
         //send email first!!! (creates document)
         sendUserEmail(email: email)
         sendUserName(email: email, employee: employee)
-        sendUserRole(email: email, role: .worker)//worker by default
+        sendUserRole(email: email, role: .worker, allowed: true)//worker by default
     }
     
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback){
