@@ -7,6 +7,7 @@
 //
 
 import Firebase
+import FirebaseAuth
 import Combine
 
 class SessionStore: DatabaseManager, ObservableObject{
@@ -64,6 +65,10 @@ class SessionStore: DatabaseManager, ObservableObject{
             print("Error signing out")
             //SEND ALERT TO USER
         }
+    }
+    
+    func sendResetPassword(email: String){
+        Auth.auth().sendPasswordReset(withEmail: email, completion: nil)
     }
     
     func unbind(){

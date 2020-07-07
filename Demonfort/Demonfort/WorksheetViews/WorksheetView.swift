@@ -7,11 +7,12 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct WorksheetView: View {
     //change to worker when will be able to retrieve data from workerWorksheets
     @EnvironmentObject var worksheet: Worksheet
-    
+    @State private var worksheets: [String:[String:Any]] = ["":["":""]]
 //    var drag: some Gesture{
 //        DragGesture(){_ in
 //            .onEnded{
@@ -42,6 +43,8 @@ struct WorksheetView: View {
 
                     }
                 }.navigationBarTitle("Feuilles de temps")
+                    .onAppear{self.worksheets = self.worksheet.fetchWorksheetsOfWorker(email: Auth.auth().currentUser!.email!)
+                }
                     .gesture(
                         DragGesture()
                         //refresh festure

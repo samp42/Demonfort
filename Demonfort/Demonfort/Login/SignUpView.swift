@@ -22,6 +22,7 @@ struct SignUpView: View {
             if let error = error{
                 self.error = error.localizedDescription
             } else {
+                self.name = ""
                 self.email = ""
                 self.password = ""
             }

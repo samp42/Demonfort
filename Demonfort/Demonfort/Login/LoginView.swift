@@ -79,7 +79,7 @@ struct LoginView: View {
                 Spacer()
                     .frame(height: 12)
                 
-                Button(action:{}){
+                NavigationLink(destination: ForgottenPasswordView()){
                     Text("Mot de passe oublié")
                         .foregroundColor(Color.gray)
                 }

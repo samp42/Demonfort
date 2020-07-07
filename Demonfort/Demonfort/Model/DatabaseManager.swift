@@ -193,39 +193,39 @@ class DatabaseManager{
     }
     
     //used by worker to fetch data about own worksheets
-//    func fetchWorksheetsOfWorker(email: String, worksheets: [String:[String:Any]]) -> [String:[String:Any]]{
-//        //copy of worksheets
-//        var worksheets : [String:[String:Any]] = [:["Email":email, "StartTime":, "EndTime":, "Status":, "Description":]]
-//
-//        //query
-//        database.collection(worksheetCollection).whereField("Email", isEqualTo: email).getDocuments() { (querySnapshot, error) in
-//                if let error = error {
-//                    print("Error getting documents: \(error)")
-//                } else {
-//                    if(querySnapshot != nil){
-//                        //key = Employee + #
-//                        for key in querySnapshot!.documents{
-//                            worksheets.updateValue(field, forKey: key)
-//                        }
-//
-//                    }
-//
-//                    //sort documents by time
-//                        //must sort here
-//                    for key in worksheets.keys{
-//                        print(key)
-//                        self.numOfDocs += 1
-//                    }
-//                    if(worksheets.isEmpty){
-//                        print("Empty")
-//                    }
-//                }
-//        }
-//        return worksheets
-//    }
+    func fetchWorksheetsOfWorker(email: String) -> [String:[String:Any]]{
+        //copy of worksheets
+        var worksheets : [String:[String:Any]] = ["":["Email":email, "StartTime":"", "EndTime":"", "Status":"", "Description":""]]
+
+        //query
+        database.collection(worksheetCollection).whereField("Email", isEqualTo: email).getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    if(querySnapshot != nil){
+                        //key = Employee + #
+                        for document in querySnapshot!.documents{
+                            worksheets.updateValue(document.data(), forKey: "\(document.documentID)")
+                        }
+
+                    }
+
+                    //sort documents by time
+                        //must sort here
+                    for key in worksheets.keys{
+                        print(key)
+                        self.numOfDocs += 1
+                    }
+                    if(worksheets.isEmpty){
+                        print("Empty")
+                    }
+                }
+        }
+        return worksheets
+    }
     
     public func fetchWorksheetsOfWorkerWithStatusSent(email: String) -> [String:[String:Any]]{
-        var worksheetsCopy: [String:[String:Any]] = ["":["":""]]
+        var worksheets: [String:[String:Any]] = ["":["":""]]
         
         database.collection(worksheetCollection).whereField("Email", isEqualTo: email).whereField("Status", isEqualTo: "Sent").getDocuments(){
             (querySnapshot, error) in
@@ -233,7 +233,7 @@ class DatabaseManager{
             
         }
         
-        return worksheetsCopy
+        return worksheets
     }
     
     //used by superintendent to retrieve documents from workers
