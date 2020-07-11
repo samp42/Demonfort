@@ -60,9 +60,30 @@ class DatabaseManager{
     let worksheetCollection = "worksheets" //documentID: employee+sheet number, document.data: start, end, workplace, status, tasks
     var numOfDocs: Int = 0
     
-    public func fetchName(email: String) -> String {
-        var name: String = ""
+//    public func fetchName(email: String) -> String {
+//        var name: String = "First Value"
+//
+//        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
+//            if let error = error {
+//                print("Error getting documents: \(error)")
+//            } else {
+//                //get info about user
+//                if (querySnapshot != nil && querySnapshot!.exists){
+//                    let documentData = querySnapshot!.data()!
+//                    if let nameData = (documentData["Name"] as! String?){
+//                        name = nameData
+//                    }
+//                    print(name)
+//                }
+//            }
+//        }
+//
+//        return name
+//    }
     
+    public func fetchName(email: String, completion: @escaping (String) -> String) -> String {
+        var name: String = ""
+        
         database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -71,9 +92,13 @@ class DatabaseManager{
                 if (querySnapshot != nil && querySnapshot!.exists){
                     let documentData = querySnapshot!.data()!
                     if let nameData = (documentData["Name"] as! String?){
-                        name = nameData
+                        DispatchQueue.main.async() {
+                            name = nameData
+                            let _ = completion(nameData)
+                            print(name)
+                        }
+                        
                     }
-                    print(name)
                 }
             }
         }

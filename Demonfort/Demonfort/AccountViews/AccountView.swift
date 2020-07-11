@@ -10,6 +10,7 @@ import SwiftUI
 
 struct AccountView: View {
     @EnvironmentObject var worksheet: Worksheet
+    //@EnvironmentObject var session: SessionStore
     var body: some View {
             
         ScrollView(.vertical) {
@@ -27,11 +28,11 @@ struct AccountView: View {
                     .frame(height: 10)
                 
                 //if superintendent
-                               if /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/ {
-                                   NavigationLink(destination: EditUsersView()){
-                                       EditUsersButtonView()
-                                   }
-                               }
+                if(self.worksheet.workerRole==Role.superintendent) {
+                    NavigationLink(destination: EditUsersView()){
+                        EditUsersButtonView()
+                    }
+                }
                 
                 Spacer()
                     .frame(height: 20)
@@ -61,8 +62,9 @@ struct AccountView: View {
 
 struct AccountView_Previews: PreviewProvider {
     static let worksheet = Worksheet()
+    //static let session = SessionStore()
     
     static var previews: some View {
-        AccountView().environmentObject(worksheet)
+        AccountView().environmentObject(worksheet)//.environmentObject(session)
     }
 }

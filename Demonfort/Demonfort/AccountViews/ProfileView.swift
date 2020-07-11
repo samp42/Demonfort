@@ -9,24 +9,9 @@
 import SwiftUI
 import FirebaseAuth
 
-struct CurrentUser{
-    var userName: String = ""
-    var userWorkPlaces: [String] = []
-    var userRole: Role = .worker
-}
-
 struct ProfileView: View {
     @EnvironmentObject var worksheet: Worksheet
     @EnvironmentObject var session: SessionStore
-    @State private var currentUser: CurrentUser = CurrentUser()
-    
-    func getInfoOfCurrentUser(email: String) -> Void{
-        if let _ = Auth.auth().currentUser{
-            self.currentUser.userName = self.worksheet.fetchName(email: Auth.auth().currentUser!.email!)
-            self.currentUser.userWorkPlaces = self.worksheet.fetchWorkPlaces(email: Auth.auth().currentUser!.email!)
-            self.currentUser.userRole = self.worksheet.fetchRole(email: Auth.auth().currentUser!.email!)
-        }
-    }
     
     var body: some View {
 
@@ -37,11 +22,11 @@ struct ProfileView: View {
                 VStack(alignment: .leading){
                     Spacer()
                     
-                    Text("\(self.currentUser.userName)")
+                    Text("\(self.worksheet.workerName)")
                         .fontWeight(.semibold)
                         .font(.headline)
                     
-                    Text("\(self.currentUser.userRole.toStringFrench())")
+                    Text("\(self.worksheet.workerRole.toStringFrench())")
                         .font(.subheadline)
                     
                     Spacer()
@@ -62,9 +47,6 @@ struct ProfileView: View {
             }.padding([.all], 8).frame(height: 72).frame(minWidth:360)
                 .background(Color("lightGray"))
                 .cornerRadius(12)
-                .onAppear{
-                    self.getInfoOfCurrentUser(email: Auth.auth().currentUser!.email!)
-                }
     }
 }
 

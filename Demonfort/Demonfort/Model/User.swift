@@ -26,7 +26,7 @@ class SessionStore: DatabaseManager, ObservableObject{
         if Auth.auth().currentUser != nil{
             //find the name of the user from the workers collection
             
-            return fetchName(email: user.email!)
+            return fetchName(email: user.email!){ name in return name }
         }
         
         return nil
@@ -45,7 +45,6 @@ class SessionStore: DatabaseManager, ObservableObject{
     func signUp(employee: String, email: String, password: String, handler: @escaping AuthDataResultCallback){
         //Sign Up use with firebase Auth
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
-        
         //add user to workers collection
         //send email first!!! (creates document)
         sendUserEmail(email: email)
@@ -69,6 +68,10 @@ class SessionStore: DatabaseManager, ObservableObject{
     
     func sendResetPassword(email: String){
         Auth.auth().sendPasswordReset(withEmail: email, completion: nil)
+    }
+    
+    func deleteAccount(){
+        Auth.auth().currentUser!.delete(completion: nil)
     }
     
     func unbind(){

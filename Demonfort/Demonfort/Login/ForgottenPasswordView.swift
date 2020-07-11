@@ -14,15 +14,34 @@ struct ForgottenPasswordView: View {
     
     var body: some View {
         VStack{
-            Text("Un courriel sera envoyé si l'adresse email existe.")
-            TextField("Email", text: $email)
+            HStack {
+                Spacer()
+                Image("Demonfort")
+                Spacer()
+            }
+            Text("A email will be sent if the address exists.")
+                .foregroundColor(Color.red)
+                .padding([.horizontal])
+                .lineLimit(nil)
+            HStack {
+                TextField("Email", text: $email)
+                    .padding(12)
+                    .background(Color("textFieldBackground"))
+                    .cornerRadius(12)
+            }.padding([.horizontal], 12)
             Button(action: {
                 self.session.sendResetPassword(email: self.email)
             }) {
                 Text("Envoyer")
+                    .fontWeight(.bold)
+                    .padding([.vertical], 12)
+                    .padding([.horizontal], 54)
+                    .foregroundColor(Color.black)
+                    .background(Color.red)
+                    .cornerRadius(12)
             }
             
-        }.background(Color.black)
+        }.background(Color.black).edgesIgnoringSafeArea(.all)
     }
 }
 
