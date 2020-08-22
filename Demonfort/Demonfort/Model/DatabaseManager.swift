@@ -189,6 +189,14 @@ class DatabaseManager{
                     let documentData = querySnapshot!.data()!
                     if let roleData = (documentData["Role"] as! String?){
                         //role = role.stringToRole(role: roleData)
+                        switch(roleData){
+                        case "Worker":
+                            role = .worker
+                        case "Superintendant":
+                            role = .superintendent
+                        default:
+                            role = .worker
+                        }
                     }
                     print(role.toString())
                 }
