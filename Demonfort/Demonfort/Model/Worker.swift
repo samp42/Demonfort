@@ -9,8 +9,8 @@
 import Firebase
 import FirebaseFirestore
 
-enum Role{
-    case superintendent, worker
+enum Role: String{
+    case superintendent = "Superintendant", worker = "Worker"
     
     func toString() -> String{
         switch self {
@@ -30,13 +30,6 @@ enum Role{
         }
     }
     
-    func stringToRole(role: String) -> Role{
-        if(role=="Superintendent"||role=="superintendent"){
-            return .superintendent
-        }
-        return .worker
-    }
-    
 }
 
 class Worker: SessionStore{
@@ -53,8 +46,8 @@ class Worker: SessionStore{
     var weeklyWorksheets: [String:[String:Any]]//[documentName:[key:value]]
     
     func getWorker(email: String) -> Void{
-        self.workerName = fetchName(email: email){name in return name}
-        self.workerRole = fetchRole(email: email)
+        fetchName(email: email){name in self.workerName = name}
+        fetchRole(email: email){role in self.workerRole = Role.init(rawValue: role)!}
         self.workPlaces = fetchWorkPlaces(email: email)
         self.worksheets = [:]
         self.weeklyWorksheets = [:]
@@ -68,7 +61,7 @@ class Worker: SessionStore{
         self.worksheets = [:]
         self.weeklyWorksheets = [:]
         super.init()
-        self.getWorker(email: Auth.auth().currentUser!.email!)
+        //self.getWorker(email: Auth.auth().currentUser!.email!)
         
         //self.worksheets = self.workerRole == .worker ? fetchWorksheets(employee: self.workerName, worksheets: self.worksheets) : fetchWorksheetsWithStatusSent(worksheets: self.worksheets)
         //self.worksheets = sort(dictionary: self.worksheets, ascending: true)

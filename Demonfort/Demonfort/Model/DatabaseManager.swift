@@ -11,11 +11,11 @@ import Firebase
 import FirebaseFirestore
 
 /*
- 1. fetchName(email: String) -> String >>> takes current user's email and gets its name
+ 1. public fetchName(email: String, completion: @escaping (String) -> ()) -> Void >>> takes current user's email and gets its name
         Status: Ok
- 2. fetchRole(email: String) -> Role >>> takes current user's email and gets its role
+ 2. public fetchRole(email: String, completion: @escaping (String) -> ()) -> Void >>> takes current user's email and gets its role
         Status: Ok
- 3. fetchWorkPlaces(email: String) -> [String] >>> takes current user's email and gets its work places
+ 3. public fetchWorkPlaces(email: String, completion: @escaping (String) -> ()) -> Void >>> takes current user's email and gets its work places
         Status: Ok
  4. fetchEmployee(email: String) -> (name: String, workPlaces: [String], role: Role) >>> takes current user's email and gets its name, workPlaces and role
         Status: Ok
@@ -81,8 +81,7 @@ class DatabaseManager{
 //        return name
 //    }
     
-    public func fetchName(email: String, completion: @escaping (String) -> String) -> String {
-        var name: String = ""
+    public func fetchName(email: String, completion: @escaping (String) -> ()) -> Void {
         
         database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
             if let error = error {
@@ -93,20 +92,15 @@ class DatabaseManager{
                     let documentData = querySnapshot!.data()!
                     if let nameData = (documentData["Name"] as! String?){
                         DispatchQueue.main.async() {
-                            name = nameData
                             let _ = completion(nameData)
-                            print(name)
                         }
-                        
                     }
                 }
             }
         }
-        return name
     }
     
-    public func fetchRole(email: String) -> Role {
-        var role: Role = .worker
+    public func fetchRole(email: String, completion: @escaping (String) -> ()) -> Void {
     
         database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
             if let error = error {
@@ -116,14 +110,13 @@ class DatabaseManager{
                 if (querySnapshot != nil && querySnapshot!.exists){
                     let documentData = querySnapshot!.data()!
                     if let roleData = (documentData["Role"] as! String?){
-                        role = role.stringToRole(role: roleData)
+                        DispatchQueue.main.async() {
+                            let _ = completion(roleData)
+                        }
                     }
-                    print(role.toString())
                 }
             }
         }
-        
-        return role
     }
     
     public func fetchWorkPlaces(email: String) -> [String] {
@@ -195,7 +188,7 @@ class DatabaseManager{
                 if (querySnapshot != nil && querySnapshot!.exists){
                     let documentData = querySnapshot!.data()!
                     if let roleData = (documentData["Role"] as! String?){
-                        role = role.stringToRole(role: roleData)
+                        //role = role.stringToRole(role: roleData)
                     }
                     print(role.toString())
                 }

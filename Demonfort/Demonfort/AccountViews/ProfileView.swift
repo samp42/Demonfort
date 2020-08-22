@@ -44,7 +44,9 @@ struct ProfileView: View {
                         .cornerRadius(8)
                 }
                 
-            }.padding([.all], 8).frame(height: 72).frame(minWidth:360)
+            }.padding([.all], 8)
+                .frame(height: 72)
+                .frame(minWidth:360)
                 .background(Color("lightGray"))
                 .cornerRadius(12)
     }

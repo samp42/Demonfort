@@ -20,17 +20,17 @@ class SessionStore: DatabaseManager, ObservableObject{
         print("SessionStore initialized")
     }
     
-    func getUserName(user: User) -> String?{
-        
-        //check if there is user logged in (user exists)
-        if Auth.auth().currentUser != nil{
-            //find the name of the user from the workers collection
-            
-            return fetchName(email: user.email!){ name in return name }
-        }
-        
-        return nil
-    }
+//    func getUserName(user: User) -> String?{
+//        
+//        //check if there is user logged in (user exists)
+//        if Auth.auth().currentUser != nil{
+//            //find the name of the user from the workers collection
+//            
+//            return fetchName(email: user.email!){ name in return name }
+//        }
+//        
+//        return nil
+//    }
     
     func listen(){
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
