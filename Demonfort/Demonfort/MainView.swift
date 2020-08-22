@@ -49,7 +49,7 @@ struct MainView: View {
                     .tag(2)
                 
             }//End of TabView
-                .accentColor(Color.red)
+                .accentColor(Color("DevaubanGreen"))
         }//inner group
     }
 }

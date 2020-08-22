@@ -15,7 +15,7 @@ struct SettingsButtonView: View {
             Text("Paramètres")
                 .font(.headline)
                 .fontWeight(.heavy)
-                .foregroundColor(Color.red)
+                .foregroundColor(Color("DevaubanGreen"))
                 .padding([.vertical], 6)
             Spacer()
         }.background(Color("darkBackground"))

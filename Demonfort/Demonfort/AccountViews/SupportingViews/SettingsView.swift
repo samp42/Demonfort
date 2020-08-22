@@ -29,7 +29,7 @@ struct SettingsView: View {
                 .foregroundColor(Color("lightText"))
                 .fontWeight(.medium)
                 .padding(8)
-                .background(Color.red)
+                .background(Color("DevaubanGreen"))
                 .cornerRadius(8)
         }
     }
