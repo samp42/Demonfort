@@ -14,9 +14,14 @@ struct ForgottenPasswordView: View {
     
     var body: some View {
         VStack{
+            Spacer()
             HStack {
                 Spacer()
-                Image("Demonfort")
+                //Image("Demonfort")
+                Text("Devauban")
+                    .foregroundColor(Color("DevaubanGreen"))
+                    .fontWeight(.bold)
+                    .font(.largeTitle)
                 Spacer()
             }
             Text("A email will be sent if the address exists.")
@@ -36,11 +41,11 @@ struct ForgottenPasswordView: View {
                     .fontWeight(.bold)
                     .padding([.vertical], 12)
                     .padding([.horizontal], 54)
-                    .foregroundColor(Color.black)
-                    .background(Color.red)
+                    .foregroundColor(Color("darkText"))
+                    .background(Color("DevaubanGreen"))
                     .cornerRadius(12)
-            }
-            
+            } //HStack
+            Spacer()
         }.background(Color.black).edgesIgnoringSafeArea(.all)
     }
 }

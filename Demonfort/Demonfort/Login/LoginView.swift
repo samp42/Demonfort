@@ -33,7 +33,11 @@ struct LoginView: View {
             Spacer()
             HStack {
                 Spacer()
-                Image("Demonfort")
+                //Image("Demonfort")
+                Text("Devauban")
+                    .foregroundColor(Color("DevaubanGreen"))
+                    .fontWeight(.bold)
+                    .font(.largeTitle)
                 Spacer()
             }
             Spacer()
@@ -71,8 +75,8 @@ struct LoginView: View {
                         .fontWeight(.bold)
                         .padding([.vertical], 12)
                         .padding([.horizontal], 54)
-                        .foregroundColor(Color.black)
-                        .background(Color.red)
+                        .foregroundColor(Color("darkText"))
+                        .background(Color("DevaubanGreen"))
                         .cornerRadius(12)
                 }
                 
