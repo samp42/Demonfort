@@ -33,11 +33,7 @@ struct LoginView: View {
             Spacer()
             HStack {
                 Spacer()
-                //Image("Demonfort")
-                Text("Devauban")
-                    .foregroundColor(Color("DevaubanGreen"))
-                    .fontWeight(.bold)
-                    .font(.largeTitle)
+                Image("Devauban")
                 Spacer()
             }
             Spacer()

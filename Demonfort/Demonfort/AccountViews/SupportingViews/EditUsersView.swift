@@ -18,8 +18,7 @@ struct EditUsersView: View {
                 .foregroundColor(Color.red)
                 .padding([.vertical], 6)
             Spacer()
-        }.background(Color("darkBackground"))
-            .cornerRadius(8)
+        }
     }
 }
 

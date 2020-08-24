@@ -250,6 +250,7 @@ class DatabaseManager{
         return worksheets
     }
     
+    //self explanatory (Used by worker)
     public func fetchWorksheetsOfWorkerWithStatusSent(email: String) -> [String:[String:Any]]{
         var worksheets: [String:[String:Any]] = ["":["":""]]
         
@@ -262,7 +263,7 @@ class DatabaseManager{
         return worksheets
     }
     
-    //used by superintendent to retrieve documents from workers
+    //used by *superintendent* to retrieve documents from workers
     public func fetchWorksheetsWithStatusSent() -> [String:[String:Any]]{
         //copy of worksheets
         var worksheets: [String:[String:Any]] = ["":["":""]]
@@ -279,7 +280,7 @@ class DatabaseManager{
                         worksheets.updateValue(document.data(), forKey: "\(document.documentID)")
                     }
                     //sort documents by time
-                        //must sort here
+                        //MUST SORT HERE
                     for key in worksheets.keys{
                         print(key)
                         self.numOfDocs += 1
@@ -343,7 +344,8 @@ class DatabaseManager{
         }
     }
     
-    //used by superintendent to 
+    //used by superintendent to
+    //tf sam
     
     enum FieldsErrorType: Error {
         case incompleteFields //if tasks description is empty

@@ -35,11 +35,7 @@ struct SignUpView: View {
             
             HStack {
                 Spacer()
-                //Image("Demonfort")
-                Text("Devauban")
-                    .foregroundColor(Color("DevaubanGreen"))
-                    .fontWeight(.bold)
-                    .font(.largeTitle)
+                Image("Devauban")
                 Spacer()
             }
             Spacer()
