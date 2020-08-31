@@ -61,7 +61,9 @@ class Worker: SessionStore{
         self.worksheets = [:]
         self.weeklyWorksheets = [:]
         super.init()
-        //self.getWorker(email: Auth.auth().currentUser!.email!)
+        
+        //this line might cause some problems
+        self.getWorker(email: Auth.auth().currentUser!.email!)
         
         //self.worksheets = self.workerRole == .worker ? fetchWorksheets(employee: self.workerName, worksheets: self.worksheets) : fetchWorksheetsWithStatusSent(worksheets: self.worksheets)
         //self.worksheets = sort(dictionary: self.worksheets, ascending: true)

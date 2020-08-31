@@ -361,7 +361,7 @@ class DatabaseManager{
             case .dateInverted:
                 return "Les dates entrées sont inversées."
             case .futureDate:
-                return "Les dates entrées sont dans le futur."
+                return "Les dates entrées ne se sont pas encore produites."
             case .similarWorksheets:
                 return "Il existe une feuille de temps pour cette journée et ce chantier."
             }

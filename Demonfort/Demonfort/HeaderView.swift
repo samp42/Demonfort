@@ -13,19 +13,11 @@ struct HeaderView: View {
     var body: some View {
         HStack(alignment: .top){
             Spacer()
-            Image("Demonfort")
+            Image("Devauban")
             Spacer()
-                //.position(x: 190, y: 95)
-                //.resizable()
-                //.frame(height: 54)
-                //.aspectRatio(contentMode: .fit)
-            /*NavigationLink(destination: TextingView()){
-                Image(systemName: "bubble.left")
-                
-            }*/
         }.edgesIgnoringSafeArea(.vertical)
             .padding([.vertical], 12)
-            .background(Color.black)
+            .background(Color("darkText"))
             .foregroundColor(Color.white)
         
     }

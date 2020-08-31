@@ -59,8 +59,8 @@ class Worksheet: Worker{
     @Published var status: Status = .notSent // status of the worksheet
     
     override init(){
-        start = Date()
-        end = Date().addingTimeInterval(100000)
+        start = Date().addingTimeInterval(-10800) // remove 3 hours
+        end = Date()
         selectedWorkPlace = 0
         tasks = ""
         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -71,7 +71,7 @@ class Worksheet: Worker{
     }
     
     func reset() -> Void{
-        start = Date()
+        start = Date().addingTimeInterval(-10800)
         end = Date()
         selectedWorkPlace = 0
         tasks = ""
