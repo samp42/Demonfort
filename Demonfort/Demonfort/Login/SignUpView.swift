@@ -10,7 +10,8 @@ import SwiftUI
 
 struct SignUpView: View {
     @EnvironmentObject var session: SessionStore
-    @EnvironmentObject var worksheet: Worksheet
+    @EnvironmentObject var worker: Worker
+    
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
@@ -26,7 +27,7 @@ struct SignUpView: View {
                 self.password = ""
             }
         }
-        worksheet.getWorker(email: email)
+        worker.getWorker(email: email)
     }
     
     var body: some View {
@@ -105,9 +106,9 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static let session = SessionStore()
-    static let worksheet = Worksheet()
+    static let worker = Worker()
     
     static var previews: some View {
-        SignUpView().environmentObject(session).environmentObject(worksheet)
+        SignUpView().environmentObject(session).environmentObject(worker)
     }
 }

@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct StartPickerView: View {
-    @EnvironmentObject var worksheet: Worksheet
+    @State private var start = Date()
     
     var body: some View {
         VStack{
-            DatePicker(selection: $worksheet.start, label: {
+            DatePicker(selection: $start, label: {
                 Text("Début")
                     .fontWeight(.semibold).frame(minWidth: 80)
                 }
@@ -24,9 +24,8 @@ struct StartPickerView: View {
 }
 
 struct StartPickerView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
     
     static var previews: some View {
-        StartPickerView().environmentObject(worksheet)
+        StartPickerView()
     }
 }

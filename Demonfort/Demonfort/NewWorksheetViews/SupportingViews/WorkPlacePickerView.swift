@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct WorkPlacePickerView: View {
-    @EnvironmentObject var worksheet: Worksheet
+    @EnvironmentObject var worker: Worker
+    @State private var selectedWorkPlace = 0
     
     var body: some View {
         
         VStack{
-            Picker(selection: $worksheet.selectedWorkPlace, label: Text("Chantier")) {
-                ForEach(0..<self.worksheet.workPlaces.count) {
-                    Text(self.worksheet.workPlaces[$0])
+            Picker(selection: $selectedWorkPlace, label: Text("Chantier")) {
+                ForEach(0..<self.worker.workPlaces.count) {
+                    Text(self.worker.workPlaces[$0])
                 }
             }.pickerStyle(WheelPickerStyle())
                 .labelsHidden()
@@ -26,9 +27,9 @@ struct WorkPlacePickerView: View {
 }
 
 struct WorkPlacePickerView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
+    static let worker = Worker()
     
     static var previews: some View {
-        WorkPlacePickerView().environmentObject(worksheet)
+        WorkPlacePickerView().environmentObject(worker)
     }
 }

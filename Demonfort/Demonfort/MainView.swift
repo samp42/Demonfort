@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject var worksheet: Worksheet
+    @EnvironmentObject var worker: Worker
     @State private var selection = 1 //open on new worksheet view by default for workers and account for superintendents
     
     var body: some View {
@@ -25,7 +25,7 @@ struct MainView: View {
                 }
                 .tag(0)
                 
-                if(self.worksheet.workerRole==Role.worker) {
+                if(self.worker.workerRole==Role.worker) {
                     NewWorksheetView()
                         .tabItem {
                             VStack {
@@ -55,9 +55,9 @@ struct MainView: View {
 }
 
 struct MainView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
+    static let worker = Worker()
     
     static var previews: some View {
-        MainView().environmentObject(worksheet)
+        MainView().environmentObject(worker)
     }
 }

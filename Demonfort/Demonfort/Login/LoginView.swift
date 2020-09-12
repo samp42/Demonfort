@@ -11,7 +11,8 @@ import FirebaseUI
 
 struct LoginView: View {
     @EnvironmentObject var session: SessionStore
-    @EnvironmentObject var worksheet: Worksheet
+    @EnvironmentObject var worker: Worker
+    
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var error: String = ""
@@ -25,7 +26,7 @@ struct LoginView: View {
                 self.password = ""
             }
         }
-        worksheet.getWorker(email: email)
+        worker.getWorker(email: email)
     }
     
     var body: some View {
@@ -94,16 +95,16 @@ struct LoginView: View {
             }
             
             Spacer()
-                .frame(height: 12)
+                .frame(height: 24)
         }.background(Color.black).edgesIgnoringSafeArea(.all)
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static let session = SessionStore()
-    static let worksheet = Worksheet()
+    static let worker = Worker()
     
     static var previews: some View {
-        LoginView().environmentObject(session).environmentObject(worksheet)
+        LoginView().environmentObject(session).environmentObject(worker)
     }
 }

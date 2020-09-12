@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct DayView: View {
-    @EnvironmentObject var worksheet: Worksheet
+    @EnvironmentObject var worker: Worker
+    
     var day: String
     var approvalState: String = "Non envoyée"
     
@@ -32,9 +33,10 @@ struct DayView: View {
 }
 
 struct DayView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
+    static let worker = Worker()
+    
     static var previews: some View {
-        DayView(day: "Lundi").environmentObject(worksheet)
+        DayView(day: "Lundi").environmentObject(worker)
         //, approvalState: "Approuvée"
         //must take argument for approval state
     }

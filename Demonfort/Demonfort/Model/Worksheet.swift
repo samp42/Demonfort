@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 import Firebase
 import FirebaseFirestore
 
@@ -50,30 +51,24 @@ enum Status: String{
     }
 }
 
-class Worksheet: Worker{
-
-    @Published var start: Date // start date and hour of the current worksheet to be sent
-    @Published var end: Date // end date and hour of the current worksheet to be sent
-    @Published var selectedWorkPlace: Int // workplace selected for the worksheet to be sent
-    @Published var tasks: String // tasks description for the current worksheet
-    @Published var status: Status = .notSent // status of the worksheet
+class Worksheet: ObservableObject{
+    @Published var start: Date// start date and hour of the current worksheet to be sent
+    @Published var end: Date// end date and hour of the current worksheet to be sent
+    @Published var selectedWorkPlace: String// workplace selected for the worksheet to be sent
+    @Published var tasks: String// tasks description for the current
+    @Published var status: Status = .notSent// status of the worksheet
     
-    override init(){
+    init(){
         start = Date().addingTimeInterval(-10800) // remove 3 hours
         end = Date()
-        selectedWorkPlace = 0
+        selectedWorkPlace = ""
         tasks = ""
-        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        //ERROR
-        //Unexpectedly found nil while unwrapping an Optional value
-        super.init()
-        print("INITIALIZED: \(workerName)")
     }
     
     func reset() -> Void{
         start = Date().addingTimeInterval(-10800)
         end = Date()
-        selectedWorkPlace = 0
+        selectedWorkPlace = ""
         tasks = ""
     }
 }

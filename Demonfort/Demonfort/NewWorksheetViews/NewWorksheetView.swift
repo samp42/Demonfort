@@ -7,8 +7,11 @@
 //
 
 import SwiftUI
+import Combine
 
 struct NewWorksheetView: View {
+    @ObservedObject var worksheet = Worksheet()
+    
     var body: some View {
         VStack(alignment: .leading){
             Text("Nouvelle feuille de temps")
@@ -27,8 +30,7 @@ struct NewWorksheetView: View {
 }
 
 struct NewWorksheetView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
     static var previews: some View {
-        NewWorksheetView().environmentObject(worksheet)
+        NewWorksheetView()
     }
 }

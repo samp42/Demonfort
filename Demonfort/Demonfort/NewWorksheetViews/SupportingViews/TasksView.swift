@@ -9,19 +9,18 @@
 import SwiftUI
 
 struct TasksView: View {
-    @EnvironmentObject var worksheet: Worksheet
+    @State private var tasks = ""
     
     var body: some View {
         VStack{
-            TextField("Description des tâches", text: $worksheet.tasks)
+            TextField("Description des tâches", text: $tasks)
         }
     }
 }
 
 struct TasksView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
     
     static var previews: some View {
-        TasksView().environmentObject(worksheet)
+        TasksView()
     }
 }

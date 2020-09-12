@@ -11,7 +11,7 @@ import FirebaseAuth
 
 struct WorksheetView: View {
     //change to worker when will be able to retrieve data from workerWorksheets
-    @EnvironmentObject var worksheet: Worksheet
+    @EnvironmentObject var worker: Worker
     @State private var worksheets: [String:[String:Any]] = ["":["":""]]
 //    var drag: some Gesture{
 //        DragGesture(){_ in
@@ -32,18 +32,18 @@ struct WorksheetView: View {
     //if no error
     var body: some View {
          NavigationView{
-            if self.worksheet.worksheets.isEmpty {
+            if self.worker.worksheets.isEmpty {
                 //if successfully retrieves worksheets from firebase
             
                 List{
-                    ForEach(0..<self.worksheet.numOfDocs){_ in
+                    ForEach(0..<self.worker.numOfDocs){_ in
                         NavigationLink(destination: WorksheetDetailView()){
                             WorksheetRowView(startTime: Date(), endTime: Date(), workPlace: "Some place")
                         }
 
                     }
                 }.navigationBarTitle("Feuilles de temps")
-                    .onAppear{self.worksheets = self.worksheet.fetchWorksheetsOfWorker(email: Auth.auth().currentUser!.email!)
+                    .onAppear{self.worksheets = self.worker.fetchWorksheetsOfWorker(email: Auth.auth().currentUser!.email!)
                 }
                     .gesture(
                         DragGesture()
@@ -58,9 +58,9 @@ struct WorksheetView: View {
 }
 
 struct WorksheetView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
+    static let worker = Worker()
     
     static var previews: some View {
-        WorksheetView().environmentObject(worksheet)
+        WorksheetView().environmentObject(worker)
     }
 }

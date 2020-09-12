@@ -10,7 +10,7 @@ import SwiftUI
 import FirebaseAuth
 
 struct ProfileView: View {
-    @EnvironmentObject var worksheet: Worksheet
+    @EnvironmentObject var worker: Worker
     @EnvironmentObject var session: SessionStore
     
     var body: some View {
@@ -22,11 +22,11 @@ struct ProfileView: View {
                 VStack(alignment: .leading){
                     Spacer()
                     
-                    Text("\(self.worksheet.workerName)")
+                    Text("\(self.worker.workerName)")
                         .fontWeight(.semibold)
                         .font(.headline)
                     
-                    Text("\(self.worksheet.workerRole.toStringFrench())")
+                    Text("\(self.worker.workerRole.toStringFrench())")
                         .font(.subheadline)
                     
                     Spacer()
@@ -40,7 +40,7 @@ struct ProfileView: View {
                     Text("Déconnexion").foregroundColor(Color("lightText"))
                         .fontWeight(.medium)
                         .padding(8)
-                        .background(Color.red)
+                        .background(Color("DevaubanGreen"))
                         .cornerRadius(8)
                 }
                 
@@ -54,10 +54,10 @@ struct ProfileView: View {
 
 
 struct ProfileView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
+    static let worker = Worker()
     static let session = SessionStore()
     
     static var previews: some View {
-        ProfileView().environmentObject(worksheet).environmentObject(session)
+        ProfileView().environmentObject(worker).environmentObject(session)
     }
 }

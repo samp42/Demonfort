@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct WorksheetDetailView: View {
-    @EnvironmentObject var worksheet: Worksheet
+    @EnvironmentObject var worker: Worker
     var body: some View {
         VStack {
             Group {
@@ -58,9 +58,9 @@ struct WorksheetDetailView: View {
 }
 
 struct WorksheetDetailView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
+    static let worker = Worker()
     
     static var previews: some View {
-        WorksheetDetailView().environmentObject(worksheet)
+        WorksheetDetailView().environmentObject(worker)
     }
 }

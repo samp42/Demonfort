@@ -20,7 +20,7 @@ struct ForgottenPasswordView: View {
                 Image("Devauban")
                 Spacer()
             }
-            Text("A email will be sent if the address exists.")
+            Text("Un courriel sera envoyé s'il est connu.")
                 .foregroundColor(Color.red)
                 .padding([.horizontal])
                 .lineLimit(nil)

@@ -17,7 +17,6 @@ import SwiftUI
 //Alert(title: Text("Une feuille de temps existe déjà pour cette journée."), message: Text("Envoyer la feuille de temps malgré tout?"), primaryButton: .default(Text("Non")), secondaryButton: .default(Text("Oui")))
 
 struct SendButtonView: View {
-    @EnvironmentObject var worksheet: Worksheet
     
     var body: some View {
         HStack{
@@ -31,8 +30,8 @@ struct SendButtonView: View {
                  - setData method allows to name the document, but document can be overriden which we don't want to happen when sending a **NEW** worksheet
                  */
   
-                self.worksheet.sendWorksheet(employee: self.worksheet.workerName, start: self.worksheet.start, end: self.worksheet.end, status: self.worksheet.status, tasks: self.worksheet.tasks)
-                self.worksheet.reset()
+//                self.worksheet.sendWorksheet(employee: self.worksheet.workerName, start: self.worksheet.start, end: self.worksheet.end, status: self.worksheet.status, tasks: self.worksheet.tasks)
+//                self.worksheet.reset()
                 
             }/*End of button action*/) {
                 //ButtonAlerts()
@@ -53,10 +52,9 @@ struct SendButtonView: View {
 }
 
 struct SendButtonView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
     
     static var previews: some View {
-        SendButtonView().environmentObject(worksheet)
+        SendButtonView()
     }
 }
 

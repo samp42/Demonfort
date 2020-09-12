@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct EndPickerView: View {
-    @EnvironmentObject var worksheet: Worksheet
+    @State private var end = Date()
     
     var body: some View {
         VStack{
-            DatePicker(selection: $worksheet.end, label: {
+            DatePicker(selection: $end, label: {
                 Text("Fin")
                     .fontWeight(.semibold).frame(minWidth: 80)
             }).labelsHidden()
@@ -22,9 +22,9 @@ struct EndPickerView: View {
 }
 
 struct EndPickerView_Previews: PreviewProvider {
-    static let worksheet = Worksheet()
     
     static var previews: some View {
-        EndPickerView().environmentObject(worksheet)
+        EndPickerView()
+        
     }
 }

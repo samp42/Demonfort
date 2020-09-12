@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var worksheet: Worksheet
+    @EnvironmentObject var worker: Worker
     @EnvironmentObject var session: SessionStore
     
     func getUser(){
@@ -24,7 +24,7 @@ struct ContentView: View {
                 } else {
                     Group {
                         HeaderView()
-                        MainView().environmentObject(worksheet)
+                        MainView().environmentObject(worker)
                     }
                 }
             }
