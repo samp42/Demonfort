@@ -53,6 +53,10 @@ class SessionStore: ObservableObject{
         //add user to workers collection
         //send email first!!! (creates document)
         sendUserEmail(email: email)
+        
+        /*---------------------FOR SOME REASON THIS IS NOT PUT INTO DOCUMENT WHEN CREATING USER------------------------*/
+        /*probably because of firestore rules*/
+        
         sendUserName(email: email, employee: employee)
         sendUserRole(email: email, role: .worker)//worker by default
     }
@@ -73,7 +77,8 @@ class SessionStore: ObservableObject{
     
     //used to send data about user's name
     func sendUserName(email: String, employee: String) -> Void{
-        database.collection(workerCollection).document(email).setData(["Name": employee])
+        database.collection(workerCollection).document(email).setData(["Name": employee], merge: true)
+
     }
     
     //used to send data about user's mail (creates new document with email as documentId)
@@ -85,7 +90,7 @@ class SessionStore: ObservableObject{
     //used to send data about user's workplaces
     func sendUserWorkPlaces(email: String, workPlaces: [String]) -> Void{
         if(true){
-            database.collection(workerCollection).document(email).setData(["Workplaces": workPlaces])
+            database.collection(workerCollection).document(email).setData(["Workplaces": workPlaces], merge: true)
         }
     }
     
