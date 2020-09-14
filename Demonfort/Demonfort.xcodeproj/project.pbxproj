@@ -22,6 +22,7 @@
 		1E487F8323E67F0B00F01C25 /* DemonfortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F8223E67F0B00F01C25 /* DemonfortTests.swift */; };
 		1E487F8E23E67F0B00F01C25 /* DemonfortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E487F8D23E67F0B00F01C25 /* DemonfortUITests.swift */; };
 		1E4EE786241DA20200855E41 /* UserWorkPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */; };
+		1E51100D250EF00300CBAB15 /* EditUserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51100C250EF00300CBAB15 /* EditUserRowView.swift */; };
 		1E5D7620245CD660008F81A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D761F245CD660008F81A4 /* User.swift */; };
 		1E672D1024207466003E501D /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E672D0F24207466003E501D /* DayView.swift */; };
 		1E6A632B24537066001CFF04 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A632A24537066001CFF04 /* SettingsView.swift */; };
@@ -100,6 +101,7 @@
 		1E487F8D23E67F0B00F01C25 /* DemonfortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemonfortUITests.swift; sourceTree = "<group>"; };
 		1E487F8F23E67F0B00F01C25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserWorkPlacesView.swift; path = Demonfort/AccountViews/SupportingViews/UserWorkPlacesView.swift; sourceTree = SOURCE_ROOT; };
+		1E51100C250EF00300CBAB15 /* EditUserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserRowView.swift; sourceTree = "<group>"; };
 		1E5D761F245CD660008F81A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1E672D0F24207466003E501D /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		1E6A632A24537066001CFF04 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -270,13 +272,14 @@
 			isa = PBXGroup;
 			children = (
 				1E7C97C7246CBE360087D93E /* EditUsersView.swift */,
+				1E51100C250EF00300CBAB15 /* EditUserRowView.swift */,
 				1E7C97C9246CBE560087D93E /* EditUsersButtonView.swift */,
 				1E6A632A24537066001CFF04 /* SettingsView.swift */,
 				1E7C97CB246CBE9A0087D93E /* SettingsButtonView.swift */,
 				1E7AA12E241AF665006CA1BC /* AccountImageView.swift */,
+				1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */,
 				1E672D0F24207466003E501D /* DayView.swift */,
 				1EDF9762242120DB00228FA8 /* WeekDaysView.swift */,
-				1E4EE785241DA20200855E41 /* UserWorkPlacesView.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				1EF04EE22461EC6B0056C166 /* WorksheetDetailView.swift in Sources */,
 				1E487F6E23E67F0A00F01C25 /* SceneDelegate.swift in Sources */,
 				1E7C97C8246CBE360087D93E /* EditUsersView.swift in Sources */,
+				1E51100D250EF00300CBAB15 /* EditUserRowView.swift in Sources */,
 				1E7C97CA246CBE560087D93E /* EditUsersButtonView.swift in Sources */,
 				1EDF9763242120DB00228FA8 /* WeekDaysView.swift in Sources */,
 				1EB6003523E688CC00AB9CD1 /* NewWorksheetView.swift in Sources */,

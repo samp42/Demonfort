@@ -10,7 +10,7 @@ import Firebase
 import FirebaseFirestore
 
 enum Role: String{
-    case superintendent = "Superintendant", worker = "Worker"
+    case superintendent = "Superintendent", worker = "Worker"
     
     func toString() -> String{
         switch self {
@@ -112,7 +112,6 @@ class Worker: SessionStore{
     }
     
     func fetchWorkPlaces(email: String, completion: @escaping ([String]) -> ()) -> Void {
-        //var workPlaces: [String] = []
         
         database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
             if let error = error {
@@ -130,79 +129,26 @@ class Worker: SessionStore{
             }
         }
     }
-        
-    //used to fetch data about a specific user
-    func fetchEmployee(email: String) -> (name: String, workPlaces: [String], role: Role) {
-        var name: String = ""
-        var workPlaces: [String] = []
-        var role: Role = .worker
-        
-        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                //get info about users
-                if (querySnapshot != nil && querySnapshot!.exists){
-                    let documentData = querySnapshot!.data()!
-                    if let nameData = (documentData["Name"] as! String?){
-                        name = nameData
-                    }
-                    print(name)
-                }
-            }
-        }
-        
-        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                //get info about users
-                if (querySnapshot != nil && querySnapshot!.exists){
-                    let documentData = querySnapshot!.data()!
-                    if let workPlacesData = (documentData["Workplaces"] as! [String]?){
-                        workPlaces = workPlacesData
-                    }
-                    for workPlace in workPlaces{
-                        print(workPlace)
-                    }
-                }
-            }
-        }
-        
-        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                //get info about users
-                if (querySnapshot != nil && querySnapshot!.exists){
-                    let documentData = querySnapshot!.data()!
-                    if let roleData = (documentData["Role"] as! String?){
-                        //role = role.stringToRole(role: roleData)
-                        switch(roleData){
-                        case "Worker":
-                            role = .worker
-                        case "Superintendant":
-                            role = .superintendent
-                        default:
-                            role = .worker
-                        }
-                    }
-                    print(role.toString())
-                }
-            }
-        }
-        
-        return (name, workPlaces, role)
-    }
     
     //used to fetch data about all workers
-    func fetchWorkers() -> Void{
-        database.collection(workerCollection).document().getDocument() {(querySnapshot, error) in
+    func fetchWorkers(completion: @escaping ([(String,String,[String])]) -> ()) -> Void{
+        //get name, email, role, workplaces
+        database.collection(workerCollection).getDocuments() {(querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
                 //get info about users
-                
+                if (querySnapshot != nil){
+                    for document in querySnapshot!.documents {
+                        let documentData = document.data()
+                        if documentData["Name"] != nil && documentData["Role"] != nil && documentData["Workplaces"] != nil {
+                            let (nameData, roleData, workPlacesData) = (documentData["Name"] as! String?, documentData["Role"] as! String?, documentData["Workplaces"] as! [String]?)
+                            DispatchQueue.main.async() {
+                                let _ = completion([(nameData!, roleData!, workPlacesData!)])
+                            }
+                        }
+                    }
+                }
             }
         }
     }
