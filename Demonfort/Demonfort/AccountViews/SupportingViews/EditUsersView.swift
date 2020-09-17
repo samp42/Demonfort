@@ -26,16 +26,15 @@ struct EditUsersView: View {
 
                 }
             }.navigationBarTitle("Personnel")
-                .onAppear{
-                    //fetchWorkers "returns" multiple tuples (one tuple per worker fetched)
-                    //GOTTA FIX THIS
-                    self.worker.fetchWorkers(){(name, role, workPlaces) in
-                        self.user.name = name
-                        self.user.role = role
-                        self.user.workPlaces = workPlaces
-                }
-                    
-            }
+//                .onAppear{
+//                    //fetchWorkers "returns" multiple tuples (one tuple per worker fetched)
+//                    //GOTTA FIX THIS
+//                    self.worker.fetchWorkers(){(name, role, workPlaces) in
+//                        self.user.name = name
+//                        self.user.role = role
+//                        self.user.workPlaces = workPlaces
+//                    }
+//                }
             Spacer()
         }
     }

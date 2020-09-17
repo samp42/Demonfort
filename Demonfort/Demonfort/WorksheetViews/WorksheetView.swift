@@ -43,7 +43,7 @@ struct WorksheetView: View {
 
                     }
                 }.navigationBarTitle("Feuilles de temps")
-                    .onAppear{self.worksheets = self.worker.fetchWorksheetsOfWorker(email: Auth.auth().currentUser!.email!)
+                    .onAppear{self.worksheets = self.worker.fetchWorksheetsOfWorker(email: Auth.auth().currentUser!.email!, completion: <#() -> ()#>)
                 }
                     .gesture(
                         DragGesture()

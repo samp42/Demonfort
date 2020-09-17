@@ -56,7 +56,7 @@ class SessionStore: ObservableObject{
         
         /*---------------------FOR SOME REASON THIS IS NOT PUT INTO DOCUMENT WHEN CREATING USER------------------------*/
         /*probably because of firestore rules*/
-        
+        //received role but not name
         sendUserName(email: email, employee: employee)
         sendUserRole(email: email, role: .worker)//worker by default
     }
@@ -77,7 +77,7 @@ class SessionStore: ObservableObject{
     
     //used to send data about user's name
     func sendUserName(email: String, employee: String) -> Void{
-        database.collection(workerCollection).document(email).setData(["Name": employee], merge: true)
+        database.collection(workerCollection).document(email).setData(["Name": employee])
 
     }
     
@@ -90,7 +90,7 @@ class SessionStore: ObservableObject{
     //used to send data about user's workplaces
     func sendUserWorkPlaces(email: String, workPlaces: [String]) -> Void{
         if(true){
-            database.collection(workerCollection).document(email).setData(["Workplaces": workPlaces], merge: true)
+            database.collection(workerCollection).document(email).setData(["Workplaces": workPlaces])
         }
     }
     

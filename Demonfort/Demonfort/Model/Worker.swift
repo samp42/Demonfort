@@ -131,7 +131,7 @@ class Worker: SessionStore{
     }
     
     //used to fetch data about all workers
-    func fetchWorkers(completion: @escaping ([(String,String,[String])]) -> ()) -> Void{
+    func fetchWorkers(completion: @escaping ([(String,String,[String])]) -> ()) -> Void {
         //get name, email, role, workplaces
         database.collection(workerCollection).getDocuments() {(querySnapshot, error) in
             if let error = error {
@@ -154,9 +154,8 @@ class Worker: SessionStore{
     }
     
     //used by worker to fetch data about own worksheets
-    func fetchWorksheetsOfWorker(email: String) -> [String:[String:Any]]{
-        //copy of worksheets
-        var worksheets : [String:[String:Any]] = ["":["Email":email, "StartTime":"", "EndTime":"", "Status":"", "Description":""]]
+    func fetchWorksheetsOfWorker(email: String, completion: @escaping([String:[String:Any]]) -> ()) -> Void {
+        //worksheets : [String:[String:Any]] = ["":["Name": name, "StartTime":"", "EndTime":"", "Status":"", "Description":""]]
 
         //query
         database.collection(worksheetCollection).whereField("Email", isEqualTo: email).getDocuments() { (querySnapshot, error) in
@@ -182,7 +181,6 @@ class Worker: SessionStore{
                     }
                 }
         }
-        return worksheets
     }
     
     //self explanatory (Used by worker)
