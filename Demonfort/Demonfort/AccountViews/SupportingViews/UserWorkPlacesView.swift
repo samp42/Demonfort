@@ -14,9 +14,9 @@ struct UserWorkPlacesView: View {
     var body: some View {
 
         VStack {
-            ForEach(0..<self.worker.workPlaces.count){place in
+            ForEach(0..<self.worker.workplaces.count){place in
                 HStack {
-                    Text(self.worker.workPlaces[place])
+                    Text(self.worker.workplaces[place])
                         .font(.headline)
                         .padding(.bottom, 4)
                     Spacer()
@@ -27,7 +27,7 @@ struct UserWorkPlacesView: View {
 }
 
 struct UserWorkPlacesView_Previews: PreviewProvider {
-    static let worker = Worker()
+    static let worker = Worker.makeMockWorker()
     
     static var previews: some View {
         UserWorkPlacesView().environmentObject(worker)

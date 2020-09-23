@@ -10,7 +10,6 @@ import SwiftUI
 
 struct SignUpView: View {
     @EnvironmentObject var session: SessionStore
-    @EnvironmentObject var worker: Worker
     
     @State private var name: String = ""
     @State private var email: String = ""
@@ -27,7 +26,6 @@ struct SignUpView: View {
                 self.password = ""
             }
         }
-        worker.getWorker(email: email)
     }
     
     var body: some View {
@@ -106,9 +104,9 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static let session = SessionStore()
-    static let worker = Worker()
+    //session.worker = Worker.makeMockWorker()
     
     static var previews: some View {
-        SignUpView().environmentObject(session).environmentObject(worker)
+        SignUpView().environmentObject(session)
     }
 }

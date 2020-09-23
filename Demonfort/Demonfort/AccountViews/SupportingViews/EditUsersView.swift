@@ -8,14 +8,18 @@
 
 import SwiftUI
 
-struct UserToFetch{
-    var (name, role, workPlaces): (String, String, [String])
-}
+//struct UserToFetch{
+//    var (name, role, workPlaces): (String, String, [String])
+//}
 
 struct EditUsersView: View {
     @EnvironmentObject var worker: Worker
     
-    @State private var user = UserToFetch(name: "", role: "", workPlaces: [])
+//    @State private var user: [UserToFetch]
+    
+//    init(){
+//        worker.fetchWorker(){workers in self.user = workers}
+//    }
     
     var body: some View {
         HStack {
@@ -41,7 +45,7 @@ struct EditUsersView: View {
 }
 
 struct EditUsersView_Previews: PreviewProvider {
-    static let worker = Worker()
+    static let worker = Worker.makeMockWorker()
     
     static var previews: some View {
         EditUsersView().environmentObject(worker)

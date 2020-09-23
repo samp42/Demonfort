@@ -10,20 +10,28 @@ import Firebase
 import FirebaseAuth
 import Combine
 
-class SessionStore: ObservableObject{
+struct User{
+    var uid: String
+    var email: String?
+    
+    
+    init(uid: String, email: String?){
+        self.uid = uid
+        self.email = email
+    }
+}
+
+public class SessionStore: ObservableObject{
     var didChange = PassthroughSubject<SessionStore, Never>()
     
-    @Published var session: User? {didSet {self.didChange.send(self)}}
+    @Published var session: User? //{didSet {self.didChange.send(self)}}
+    @Published var worker: Worker?
     var handle: AuthStateDidChangeListenerHandle?
     //lazy var userName: User? = { return Auth.auth().currentUser }
     
     let database = Firestore.firestore()
-    let workerCollection = "workers"
-    let worksheetCollection = "worksheets"
     
-    init(){
-        print("SessionStore initialized")
-    }
+    init(){}
     
 //    func getUserName(user: User) -> String?{
 //        
@@ -62,7 +70,9 @@ class SessionStore: ObservableObject{
     }
     
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback){
+        //Authenticate user in Firebase
         Auth.auth().signIn(withEmail: email, password: password, completion: handler)
+        //Create worker instance
     }
     
     func signOut(){
@@ -75,29 +85,22 @@ class SessionStore: ObservableObject{
         }
     }
     
-    //used to send data about user's name
-    func sendUserName(email: String, employee: String) -> Void{
-        database.collection(workerCollection).document(email).setData(["Name": employee])
-
-    }
-    
-    //used to send data about user's mail (creates new document with email as documentId)
-    func sendUserEmail(email: String) -> Void{
-        //creates new empty document
-        database.collection(workerCollection).document(email).setData([:])
+    //used to send data about user's name and email
+    func sendUserCoord(email: String, employee: String) -> Void{
+        database.collection("workers").document(email).setData(["Email": email ,"Name": employee])
     }
     
     //used to send data about user's workplaces
     func sendUserWorkPlaces(email: String, workPlaces: [String]) -> Void{
         if(true){
-            database.collection(workerCollection).document(email).setData(["Workplaces": workPlaces])
+            database.collection("workers").document(email).setData(["Workplaces": workPlaces])
         }
     }
     
     //used to send data about user's role
     func sendUserRole(email: String, role: Role) -> Void{
         let roleString = role.toString()
-        database.collection(workerCollection).document(email).setData(["Role": roleString])
+        database.collection("workers").document(email).setData(["Role": roleString])
     }
     
     func sendResetPassword(email: String){
@@ -119,13 +122,4 @@ class SessionStore: ObservableObject{
     }
 }
 
-struct User{
-    var uid: String
-    var email: String?
-    
-    
-    init(uid: String, email: String?){
-        self.uid = uid
-        self.email = email
-    }
-}
+

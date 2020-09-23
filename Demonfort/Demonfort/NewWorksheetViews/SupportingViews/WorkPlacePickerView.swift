@@ -16,8 +16,8 @@ struct WorkPlacePickerView: View {
         
         VStack{
             Picker(selection: $selectedWorkPlace, label: Text("Chantier")) {
-                ForEach(0..<self.worker.workPlaces.count) {
-                    Text(self.worker.workPlaces[$0])
+                ForEach(0..<self.worker.workplaces.count) {
+                    Text(self.worker.workplaces[$0])
                 }
             }.pickerStyle(WheelPickerStyle())
                 .labelsHidden()
@@ -27,7 +27,7 @@ struct WorkPlacePickerView: View {
 }
 
 struct WorkPlacePickerView_Previews: PreviewProvider {
-    static let worker = Worker()
+    static let worker = Worker.makeMockWorker()
     
     static var previews: some View {
         WorkPlacePickerView().environmentObject(worker)

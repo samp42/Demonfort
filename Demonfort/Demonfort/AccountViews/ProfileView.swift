@@ -22,11 +22,11 @@ struct ProfileView: View {
                 VStack(alignment: .leading){
                     Spacer()
                     
-                    Text("\(self.worker.workerName)")
+                    Text("\(self.worker.name)")
                         .fontWeight(.semibold)
                         .font(.headline)
                     
-                    Text("\(self.worker.workerRole.toStringFrench())")
+                    Text("\(self.worker.role.toStringFrench())")
                         .font(.subheadline)
                     
                     Spacer()
@@ -54,7 +54,7 @@ struct ProfileView: View {
 
 
 struct ProfileView_Previews: PreviewProvider {
-    static let worker = Worker()
+    static let worker = Worker.makeMockWorker()
     static let session = SessionStore()
     
     static var previews: some View {

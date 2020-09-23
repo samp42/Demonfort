@@ -13,7 +13,7 @@ struct WorksheetCorrectionView: View {
     
     var body: some View {
         VStack {
-            if(self.worker.workerRole == .superintendent) {
+            if(self.worker.role == .superintendent) {
                 HStack{
                     Button(action: {
                         //
@@ -48,7 +48,7 @@ struct WorksheetCorrectionView: View {
 }
 
 struct WorksheetCorrectionView_Previews: PreviewProvider {
-    static let worker = Worker()
+    static let worker = Worker.makeMockWorker()
     
     static var previews: some View {
         WorksheetCorrectionView().environmentObject(worker)

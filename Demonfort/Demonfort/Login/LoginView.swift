@@ -102,7 +102,7 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static let session = SessionStore()
-    static let worker = Worker()
+    static let worker = Worker.makeMockWorker()
     
     static var previews: some View {
         LoginView().environmentObject(session).environmentObject(worker)

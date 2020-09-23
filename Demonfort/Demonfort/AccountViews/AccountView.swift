@@ -28,7 +28,7 @@ struct AccountView: View {
                     .frame(height: 10)
                 
                 //if superintendent
-                if(self.worker.workerRole==Role.superintendent) {
+                if(self.worker.role==Role.superintendent) {
                     NavigationLink(destination: EditUsersView()){
                         EditUsersButtonView()
                     }
@@ -36,7 +36,7 @@ struct AccountView: View {
                 
                 Spacer()
                     .frame(height: 20)
-                    if(self.worker.workerRole==Role.worker){
+                    if(self.worker.role==Role.worker){
                         HStack {
                             Text("Jours de la semaine")
                                 .font(.title)
@@ -61,7 +61,7 @@ struct AccountView: View {
 }
 
 struct AccountView_Previews: PreviewProvider {
-    static let worker = Worker()
+    static let worker = Worker.makeMockWorker()
     //static let session = SessionStore()
     
     static var previews: some View {

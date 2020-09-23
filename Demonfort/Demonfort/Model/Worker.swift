@@ -6,10 +6,7 @@
 //  Copyright © 2020 Demonfort. All rights reserved.
 //
 
-import Firebase
-import FirebaseFirestore
-
-enum Role: String{
+public enum Role: String{
     case superintendent = "Superintendent", worker = "Worker"
     
     func toString() -> String{
@@ -32,211 +29,54 @@ enum Role: String{
     
 }
 
-class Worker: SessionStore{
+struct Worker {
+    
+    // MARK: - Properties
+    
     //worker name
-    var workerName: String
+    public let name: String
+    
     //worker role (superintendent/worker)
-    var workerRole: Role
+    public let role: Role
+    
     //worker's workplaces
-    var workPlaces: [String]
+    public let workplaces: [String]
+    
     //worker's worksheets
-    var worksheets: [String:[String:Any]]//[documentName:[key:value]]
+    public let worksheets: [String:[String:Any]]
+    
     //number of documents is handled by class DatabaseManager
     //woksheets for the week
-    var weeklyWorksheets: [String:[String:Any]]//[documentName:[key:value]]
-    //of many documents belonging to worker
-    var numOfDocs: Int
+    public let weeklyWorksheets: [String:[String:Any]]
     
-    func getWorker(email: String) -> Void{
-        fetchName(email: email){name in self.workerName = name}
-        fetchRole(email: email){role in self.workerRole = Role.init(rawValue: role) ?? .worker}
-        fetchWorkPlaces(email: email){workPlaces in self.workPlaces = workPlaces}
+    // MARK: - Initialization
+    
+    public init(name: String, role: Role, workplaces: [String], worksheets: [String: [String: Any]], weeklyWorksheets: [String:[String:Any]]) {
+        self.name = name
+        self.role = role
+        self.workplaces = workplaces
+        self.worksheets = worksheets
+        self.weeklyWorksheets = weeklyWorksheets
+    }
+    
+    public init?(JSON: [String: Any]) {
+        guard let name = JSON["Name"] as? String,
+              let roleString = JSON["Role"] as? String,
+              let workplaces = JSON["Workplaces"] as? [String],
+              let role = Role(rawValue: roleString) else { return nil }
+        
+        // Initialize the instance's properties.
+        self.name = name
+        self.role = role
+        self.workplaces = workplaces
         self.worksheets = [:]
         self.weeklyWorksheets = [:]
     }
     
-    override init(){
-        //first initialisation
-        self.workerName = ""
-        self.workerRole = .worker
-        self.workPlaces = []
-        self.worksheets = [:]
-        self.weeklyWorksheets = [:]
-        self.numOfDocs = 0
-        
-        super.init()
-        
-        //this line might cause some problems
-        //self.getWorker(email: Auth.auth().currentUser!.email!)
-        
-        //self.worksheets = self.workerRole == .worker ? fetchWorksheets(employee: self.workerName, worksheets: self.worksheets) : fetchWorksheetsWithStatusSent(worksheets: self.worksheets)
-        //self.worksheets = sort(dictionary: self.worksheets, ascending: true)
-    }
+    // MARK: - Helper methods
     
-    func fetchName(email: String, completion: @escaping (String) -> ()) -> Void {
-        
-        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                //get info about users
-                if (querySnapshot != nil && querySnapshot!.exists){
-                    let documentData = querySnapshot!.data()!
-                    if let nameData = (documentData["Name"] as! String?){
-                        DispatchQueue.main.async() {
-                            let _ = completion(nameData)
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    func fetchRole(email: String, completion: @escaping (String) -> ()) -> Void {
-    
-        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                //get info about users
-                if (querySnapshot != nil && querySnapshot!.exists){
-                    let documentData = querySnapshot!.data()!
-                    if let roleData = (documentData["Role"] as! String?){
-                        DispatchQueue.main.async() {
-                            let _ = completion(roleData)
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    func fetchWorkPlaces(email: String, completion: @escaping ([String]) -> ()) -> Void {
-        
-        database.collection(workerCollection).document(email).getDocument() {(querySnapshot, error) in
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                //get info about users
-                if (querySnapshot != nil && querySnapshot!.exists){
-                    let documentData = querySnapshot!.data()!
-                        if let workPlacesData = (documentData["Workplaces"] as! [String]?){
-                            DispatchQueue.main.async() {
-                                let _ = completion(workPlacesData)
-                            }
-                        }
-                }
-            }
-        }
-    }
-    
-    //used to fetch data about all workers
-    func fetchWorkers(completion: @escaping ([(String,String,[String])]) -> ()) -> Void {
-        //get name, email, role, workplaces
-        database.collection(workerCollection).getDocuments() {(querySnapshot, error) in
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                //get info about users
-                if (querySnapshot != nil){
-                    for document in querySnapshot!.documents {
-                        let documentData = document.data()
-                        if documentData["Name"] != nil && documentData["Role"] != nil && documentData["Workplaces"] != nil {
-                            let (nameData, roleData, workPlacesData) = (documentData["Name"] as! String?, documentData["Role"] as! String?, documentData["Workplaces"] as! [String]?)
-                            DispatchQueue.main.async() {
-                                let _ = completion([(nameData!, roleData!, workPlacesData!)])
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    //used by worker to fetch data about own worksheets
-    func fetchWorksheetsOfWorker(email: String, completion: @escaping([String:[String:Any]]) -> ()) -> Void {
-        //worksheets : [String:[String:Any]] = ["":["Name": name, "StartTime":"", "EndTime":"", "Status":"", "Description":""]]
-
-        //query
-        database.collection(worksheetCollection).whereField("Email", isEqualTo: email).getDocuments() { (querySnapshot, error) in
-                if let error = error {
-                    print("Error getting documents: \(error)")
-                } else {
-                    if(querySnapshot != nil){
-                        //key = Employee + #
-                        for document in querySnapshot!.documents{
-                            worksheets.updateValue(document.data(), forKey: "\(document.documentID)")
-                        }
-
-                    }
-
-                    //sort documents by time
-                        //must sort here
-                    for key in worksheets.keys{
-                        print(key)
-                        self.numOfDocs += 1
-                    }
-                    if(worksheets.isEmpty){
-                        print("Empty")
-                    }
-                }
-        }
-    }
-    
-    //self explanatory (Used by worker)
-    func fetchWorksheetsOfWorkerWithStatusSent(email: String) -> [String:[String:Any]]{
-        var worksheets: [String:[String:Any]] = ["":["":""]]
-        
-        database.collection(worksheetCollection).whereField("Email", isEqualTo: email).whereField("Status", isEqualTo: "Sent").getDocuments(){
-            (querySnapshot, error) in
-            //
-            
-        }
-        
-        return worksheets
-    }
-    
-    //used by *superintendent* to retrieve documents from workers
-    func fetchWorksheetsWithStatusSent() -> [String:[String:Any]]{
-        //copy of worksheets
-        var worksheets: [String:[String:Any]] = ["":["":""]]
-        
-        //query
-        database.collection(worksheetCollection).whereField("Status", isEqualTo: "Envoyée")
-            .getDocuments() { (querySnapshot, error) in
-                if let error = error {
-                    print("Error getting documents: \(error)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        //print("\(document.documentID) => \(document.data())")
-                        //store documents in dictionary
-                        worksheets.updateValue(document.data(), forKey: "\(document.documentID)")
-                    }
-                    //sort documents by time
-                        //MUST SORT HERE
-                    for key in worksheets.keys{
-                        print(key)
-                        self.numOfDocs += 1
-                    }
-                    if(worksheets.isEmpty){
-                        print("Empty")
-                    }
-                }
-        }
-        
-        return worksheets
-    }
-    
-    //used to fetch worksheets for this current week(worker)
-    func fetchWeeklyWorksheetsOfWorker(email: String) -> [String:[String:Any]]{
-        var weeklyWorksheets: [String:[String:Any]] = ["":["":""]]
-        return weeklyWorksheets
-    }
-    
-    //used to fetch worksheets for this current week(superintendent)
-    func fetchWeeklyWorksheetsForSuperintendent() -> [String:[String:Any]]{
-        var weeklyWorksheets: [String:[String:Any]] = ["":["":""]]
-        return weeklyWorksheets
+    public static func makeMockWorker() -> Worker {
+        return Worker(name: "Nom utilisateur", role: .worker, workplaces: ["123 rue d'Ici", "456 rue d'Ailleurs"], worksheets: ["":["":""]], weeklyWorksheets: ["":["":""]])
     }
     
 }

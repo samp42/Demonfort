@@ -33,7 +33,7 @@ struct DayView: View {
 }
 
 struct DayView_Previews: PreviewProvider {
-    static let worker = Worker()
+    static let worker = Worker.makeMockWorker()
     
     static var previews: some View {
         DayView(day: "Lundi").environmentObject(worker)

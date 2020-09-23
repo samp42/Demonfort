@@ -58,7 +58,7 @@ struct WorksheetDetailView: View {
 }
 
 struct WorksheetDetailView_Previews: PreviewProvider {
-    static let worker = Worker()
+    static let worker = Worker.makeMockWorker()
     
     static var previews: some View {
         WorksheetDetailView().environmentObject(worker)

@@ -11,7 +11,7 @@ import FirebaseAuth
 
 struct WorksheetView: View {
     //change to worker when will be able to retrieve data from workerWorksheets
-    @EnvironmentObject var worker: Worker
+    @EnvironmentObject var session: SessionStore
     @State private var worksheets: [String:[String:Any]] = ["":["":""]]
 //    var drag: some Gesture{
 //        DragGesture(){_ in
@@ -32,19 +32,20 @@ struct WorksheetView: View {
     //if no error
     var body: some View {
          NavigationView{
-            if self.worker.worksheets.isEmpty {
+            if self.session.worker!.worksheets.isEmpty {
                 //if successfully retrieves worksheets from firebase
             
                 List{
-                    ForEach(0..<self.worker.numOfDocs){_ in
+                    //must get the number of worksheets
+                    ForEach(0..<5){_ in
                         NavigationLink(destination: WorksheetDetailView()){
                             WorksheetRowView(startTime: Date(), endTime: Date(), workPlace: "Some place")
                         }
 
                     }
                 }.navigationBarTitle("Feuilles de temps")
-                    .onAppear{self.worksheets = self.worker.fetchWorksheetsOfWorker(email: Auth.auth().currentUser!.email!, completion: <#() -> ()#>)
-                }
+//                    .onAppear{self.worksheets = self.worker.fetchWorksheetsOfWorker(email: Auth.auth().currentUser!.email!, completion: <#() -> ()#>)
+//                }
                     .gesture(
                         DragGesture()
                         //refresh festure
@@ -58,9 +59,9 @@ struct WorksheetView: View {
 }
 
 struct WorksheetView_Previews: PreviewProvider {
-    static let worker = Worker()
+    static let session = SessionStore()
     
     static var previews: some View {
-        WorksheetView().environmentObject(worker)
+        WorksheetView().environmentObject(session)
     }
 }
