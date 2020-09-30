@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct UserWorkPlacesView: View {
-    @EnvironmentObject var worker: Worker
+    @EnvironmentObject var session: SessionStore
 
     var body: some View {
 
         VStack {
-            ForEach(0..<self.worker.workplaces.count){place in
+            ForEach(0..<self.session.worker!.workplaces.count){place in
                 HStack {
-                    Text(self.worker.workplaces[place])
+                    Text(self.session.worker!.workplaces[place])
                         .font(.headline)
                         .padding(.bottom, 4)
                     Spacer()
@@ -27,9 +27,9 @@ struct UserWorkPlacesView: View {
 }
 
 struct UserWorkPlacesView_Previews: PreviewProvider {
-    static let worker = Worker.makeMockWorker()
+    static let session = SessionStore()
     
     static var previews: some View {
-        UserWorkPlacesView().environmentObject(worker)
+        UserWorkPlacesView().environmentObject(session)
     }
 }

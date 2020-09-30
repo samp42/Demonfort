@@ -11,7 +11,6 @@ import FirebaseUI
 
 struct LoginView: View {
     @EnvironmentObject var session: SessionStore
-    @EnvironmentObject var worker: Worker
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -26,7 +25,7 @@ struct LoginView: View {
                 self.password = ""
             }
         }
-        worker.getWorker(email: email)
+        //session.worker!.getWorker(email: email)
     }
     
     var body: some View {
@@ -102,9 +101,8 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static let session = SessionStore()
-    static let worker = Worker.makeMockWorker()
     
     static var previews: some View {
-        LoginView().environmentObject(session).environmentObject(worker)
+        LoginView().environmentObject(session)
     }
 }

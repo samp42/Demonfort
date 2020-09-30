@@ -45,6 +45,10 @@ public class SessionStore: ObservableObject{
 //        return nil
 //    }
     
+    func setWorker(){
+        
+    }
+    
     func listen(){
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if let user = user{
@@ -59,14 +63,11 @@ public class SessionStore: ObservableObject{
         //Sign Up use with firebase Auth
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
         //add user to workers collection
-        //send email first!!! (creates document)
-        sendUserEmail(email: email)
-        
+
         /*---------------------FOR SOME REASON THIS IS NOT PUT INTO DOCUMENT WHEN CREATING USER------------------------*/
         /*probably because of firestore rules*/
         //received role but not name
-        sendUserName(email: email, employee: employee)
-        sendUserRole(email: email, role: .worker)//worker by default
+        WorkerRepository.sendUser(email: email, employee: employee, role: .worker)
     }
     
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback){
@@ -83,24 +84,6 @@ public class SessionStore: ObservableObject{
             print("Error signing out")
             //SEND ALERT TO USER
         }
-    }
-    
-    //used to send data about user's name and email
-    func sendUserCoord(email: String, employee: String) -> Void{
-        database.collection("workers").document(email).setData(["Email": email ,"Name": employee])
-    }
-    
-    //used to send data about user's workplaces
-    func sendUserWorkPlaces(email: String, workPlaces: [String]) -> Void{
-        if(true){
-            database.collection("workers").document(email).setData(["Workplaces": workPlaces])
-        }
-    }
-    
-    //used to send data about user's role
-    func sendUserRole(email: String, role: Role) -> Void{
-        let roleString = role.toString()
-        database.collection("workers").document(email).setData(["Role": roleString])
     }
     
     func sendResetPassword(email: String){

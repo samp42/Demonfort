@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct WorksheetCorrectionView: View {
-    @EnvironmentObject var worker: Worker
+    @EnvironmentObject var session: SessionStore
     
     var body: some View {
         VStack {
-            if(self.worker.role == .superintendent) {
+            if(self.session.worker!.role == Role.superintendent) {
                 HStack{
                     Button(action: {
                         //
@@ -48,9 +48,9 @@ struct WorksheetCorrectionView: View {
 }
 
 struct WorksheetCorrectionView_Previews: PreviewProvider {
-    static let worker = Worker.makeMockWorker()
+    static let session = SessionStore()
     
     static var previews: some View {
-        WorksheetCorrectionView().environmentObject(worker)
+        WorksheetCorrectionView().environmentObject(session)
     }
 }

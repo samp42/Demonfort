@@ -51,7 +51,7 @@ enum Status: String{
     }
 }
 
-struct Worksheet{
+class Worksheet: ObservableObject{
     let database = Firestore.firestore()
     let workerCollection = "workers"
     let worksheetCollection = "worksheets"

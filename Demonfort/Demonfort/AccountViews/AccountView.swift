@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AccountView: View {
-    @EnvironmentObject var worker: Worker
+    @EnvironmentObject var session: SessionStore
     //@EnvironmentObject var session: SessionStore
     var body: some View {
             
@@ -28,7 +28,7 @@ struct AccountView: View {
                     .frame(height: 10)
                 
                 //if superintendent
-                if(self.worker.role==Role.superintendent) {
+                if(self.session.worker!.role==Role.superintendent) {
                     NavigationLink(destination: EditUsersView()){
                         EditUsersButtonView()
                     }
@@ -36,7 +36,7 @@ struct AccountView: View {
                 
                 Spacer()
                     .frame(height: 20)
-                    if(self.worker.role==Role.worker){
+                if(self.session.worker!.role==Role.worker){
                         HStack {
                             Text("Jours de la semaine")
                                 .font(.title)
@@ -61,10 +61,10 @@ struct AccountView: View {
 }
 
 struct AccountView_Previews: PreviewProvider {
-    static let worker = Worker.makeMockWorker()
+    static let session = SessionStore()
     //static let session = SessionStore()
     
     static var previews: some View {
-        AccountView().environmentObject(worker)//.environmentObject(session)
+        AccountView().environmentObject(session)
     }
 }

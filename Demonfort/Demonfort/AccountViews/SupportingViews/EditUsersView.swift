@@ -13,7 +13,7 @@ import SwiftUI
 //}
 
 struct EditUsersView: View {
-    @EnvironmentObject var worker: Worker
+    @EnvironmentObject var session: SessionStore
     
 //    @State private var user: [UserToFetch]
     
@@ -45,9 +45,9 @@ struct EditUsersView: View {
 }
 
 struct EditUsersView_Previews: PreviewProvider {
-    static let worker = Worker.makeMockWorker()
+    static let session = SessionStore()
     
     static var previews: some View {
-        EditUsersView().environmentObject(worker)
+        EditUsersView().environmentObject(session)
     }
 }

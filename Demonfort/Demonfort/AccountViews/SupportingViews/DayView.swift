@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct DayView: View {
-    @EnvironmentObject var worker: Worker
+    @EnvironmentObject var session: SessionStore
     
     var day: String
     var approvalState: String = "Non envoyée"
@@ -33,10 +33,10 @@ struct DayView: View {
 }
 
 struct DayView_Previews: PreviewProvider {
-    static let worker = Worker.makeMockWorker()
+    static let session = SessionStore()
     
     static var previews: some View {
-        DayView(day: "Lundi").environmentObject(worker)
+        DayView(day: "Lundi").environmentObject(session)
         //, approvalState: "Approuvée"
         //must take argument for approval state
     }
