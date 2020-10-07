@@ -23,19 +23,19 @@ struct WorkerRepository {
     
     // MARK: - Methods
     
-//    public func getWorker(withEmailAddress emailAddress: String, completionHandler: @escaping ((Swift.Result<Worker, Error>) -> Void)) {
-//        database.collection("workers").document(emailAddress).getDocument() { (querySnapshot, error) in
-//            guard error == nil else { completionHandler(.failure(error!)) ; return }
-//            
-//            // Unwrap the snapshot object.
-//            guard let querySnapshot = querySnapshot else { return }
-//            
-//            let worker = querySnapshot.data() { Worker(JSON: $0.data()) }
-//            
-//            // Call the completion handler.
-//            completionHandler(.success(worker))
-//        }
-//    }
+    public static func getWorker(withEmail email: String, completionHandler: @escaping ((Swift.Result<Worker, Error>) -> Void)) {
+        Firestore.firestore().collection("workers").document(email).getDocument() { (querySnapshot, error) in
+            guard error == nil else { completionHandler(.failure(error!)) ; return }
+            
+            // Unwrap the snapshot object.
+            guard let querySnapshot = querySnapshot else { return }
+            
+            let worker = querySnapshot.data().map { Worker(JSON: $0.self) }
+            
+            // Call the completion handler.
+            completionHandler(.success(worker!!))//this is ugly
+        }
+    }
     
     public static func getWorkers(completionHandler: @escaping ((Swift.Result<[Worker], Error>) -> Void)) {
         Firestore.firestore().collection("workers").getDocuments() {(querySnapshot, error) in

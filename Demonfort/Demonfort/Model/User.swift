@@ -45,8 +45,16 @@ public class SessionStore: ObservableObject{
 //        return nil
 //    }
     
-    func setWorker(){
-        
+    func setWorker(email: String){
+        WorkerRepository.getWorker(withEmail: email){result in
+            //fetch the current user
+            switch(result){
+                case .success(let worker_):
+                    self.worker = worker_
+                case .failure(_):
+                    return //do nothing, must change
+            }
+        }
     }
     
     func listen(){
@@ -68,12 +76,14 @@ public class SessionStore: ObservableObject{
         /*probably because of firestore rules*/
         //received role but not name
         WorkerRepository.sendUser(email: email, employee: employee, role: .worker)
+        setWorker(email: email)
     }
     
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback){
         //Authenticate user in Firebase
         Auth.auth().signIn(withEmail: email, password: password, completion: handler)
         //Create worker instance
+        setWorker(email: email)
     }
     
     func signOut(){
