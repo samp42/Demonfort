@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         VStack{
             Group{
-                if(session.session == nil){
+                if(session.session == nil && session.worker == nil){
                     AuthView()
                 } else {
                     Group {
@@ -27,7 +27,7 @@ struct ContentView: View {
                     }
                 }
             }
-        }.onAppear(perform: getUser)//outer group
+        }//.onAppear(perform: getUser)//outer group
     }
 }
 

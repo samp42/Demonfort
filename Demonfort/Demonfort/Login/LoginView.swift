@@ -25,7 +25,7 @@ struct LoginView: View {
                 self.password = ""
             }
         }
-        //session.worker!.getWorker(email: email)
+        session.setWorker(email: email)
     }
     
     var body: some View {
@@ -65,7 +65,6 @@ struct LoginView: View {
                 
                 Button(action: {
                     self.signIn()
-
                 }){
                     Text("Connexion")
                         .fontWeight(.bold)

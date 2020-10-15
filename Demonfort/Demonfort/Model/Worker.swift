@@ -79,4 +79,8 @@ struct Worker {
         return Worker(name: "Nom utilisateur", role: .worker, workplaces: ["123 rue d'Ici", "456 rue d'Ailleurs"], worksheets: ["":["":""]], weeklyWorksheets: ["":["":""]])
     }
     
+    public static func makeMockSuperintendent() -> Worker {
+        return Worker(name: "Nom utilisateur", role: .superintendent, workplaces: ["123 rue d'Ici", "456 rue d'Ailleurs"], worksheets: ["":["":""]], weeklyWorksheets: ["":["":""]])
+    }
+    
 }

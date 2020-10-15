@@ -22,16 +22,13 @@ struct User{
 }
 
 public class SessionStore: ObservableObject{
-    var didChange = PassthroughSubject<SessionStore, Never>()
+    //var didChange = PassthroughSubject<SessionStore, Never>() ------>>>> this line seems to make login crash..
     
-    @Published var session: User? //{didSet {self.didChange.send(self)}}
+    @Published var session: User?
     @Published var worker: Worker?
     var handle: AuthStateDidChangeListenerHandle?
-    //lazy var userName: User? = { return Auth.auth().currentUser }
     
     let database = Firestore.firestore()
-    
-    init(){}
     
 //    func getUserName(user: User) -> String?{
 //        
@@ -44,6 +41,8 @@ public class SessionStore: ObservableObject{
 //        
 //        return nil
 //    }
+    
+    // MARK: - Methods
     
     func setWorker(email: String){
         WorkerRepository.getWorker(withEmail: email){result in
@@ -61,6 +60,7 @@ public class SessionStore: ObservableObject{
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if let user = user{
                 self.session = User(uid: user.uid, email: user.email)
+                self.setWorker(email: user.email!)
             } else{
                 self.session = nil
             }

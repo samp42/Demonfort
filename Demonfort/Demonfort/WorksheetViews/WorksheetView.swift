@@ -32,7 +32,7 @@ struct WorksheetView: View {
     //if no error
     var body: some View {
          NavigationView{
-            if self.session.worker!.worksheets.isEmpty {
+            if ((self.session.worker?.worksheets.isEmpty) != nil) {
                 //if successfully retrieves worksheets from firebase
             
                 List{
@@ -52,7 +52,7 @@ struct WorksheetView: View {
                     )
             } else {
                 //error fetching documents
-                Text("Error loading documents from database.")
+                Text("Erreur lors de la récupération des documents. Vous n'avez peut-être pas de feuille de temps.")
             }
         }
     }
