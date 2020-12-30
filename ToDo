@@ -1,8 +1,9 @@
+- create collection for construction sites
 - allow superintendent to add workplaces and add workers to the workplaces
 - allow superintendents to change workerRole of workers
-- in LoginView and SignupView: change placeholder color when in dark mode
 - method to retrieve worksheets
 - handle instances (fetchWorker method does not work because of an instance problem)
 - allow workplaces of employee to be displayed in account view and in picker view when
     creating new worksheet
 - logos to svg
+- consistent language accross app

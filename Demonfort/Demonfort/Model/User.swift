@@ -44,14 +44,16 @@ public class SessionStore: ObservableObject{
     
     // MARK: - Methods
     
-    func setWorker(email: String){
+    func setWorker(email: String) {
         WorkerRepository.getWorker(withEmail: email){result in
             //fetch the current user
             switch(result){
                 case .success(let worker_):
                     self.worker = worker_
                 case .failure(_):
-                    return //do nothing, must change
+                    // worker probably does not exist if it fails
+                    // worker is nil
+                    self.worker = nil
             }
         }
     }
@@ -71,12 +73,13 @@ public class SessionStore: ObservableObject{
         //Sign Up use with firebase Auth
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
         //add user to workers collection
-
         /*---------------------FOR SOME REASON THIS IS NOT PUT INTO DOCUMENT WHEN CREATING USER------------------------*/
         /*probably because of firestore rules*/
         //received role but not name
         WorkerRepository.sendUser(email: email, employee: employee, role: .worker)
-        setWorker(email: email)
+        let workerRepo = WorkerRepository()
+        //workerRepo.sendUserWorkPlaces(email: email, workPlaces: locations)
+        //setWorker(email: email)
     }
     
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback){

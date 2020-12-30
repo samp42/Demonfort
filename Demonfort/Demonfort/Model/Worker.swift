@@ -40,7 +40,7 @@ struct Worker {
     public let role: Role
     
     //worker's workplaces
-    public let workplaces: [String]
+    public let workplaces: [String]?
     
     //worker's worksheets
     public let worksheets: [String:[String:Any]]
@@ -51,7 +51,7 @@ struct Worker {
     
     // MARK: - Initialization
     
-    public init(name: String, role: Role, workplaces: [String], worksheets: [String: [String: Any]], weeklyWorksheets: [String:[String:Any]]) {
+    public init(name: String, role: Role, workplaces: [String]?, worksheets: [String: [String: Any]], weeklyWorksheets: [String:[String:Any]]) {
         self.name = name
         self.role = role
         self.workplaces = workplaces
@@ -62,7 +62,7 @@ struct Worker {
     public init?(JSON: [String: Any]) {
         guard let name = JSON["Name"] as? String,
               let roleString = JSON["Role"] as? String,
-              let workplaces = JSON["Workplaces"] as? [String],
+              let workplaces = JSON["Workplaces"] as? [String]?,
               let role = Role(rawValue: roleString) else { return nil }
         
         // Initialize the instance's properties.

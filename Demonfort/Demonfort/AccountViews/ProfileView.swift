@@ -36,7 +36,7 @@ struct ProfileView: View {
                 Button(action: {
                     self.session.signOut()
                 }){
-                    Text("Déconnexion").foregroundColor(Color("lightText"))
+                    Text("Déconnexion").foregroundColor(Color("darkText"))
                         .fontWeight(.medium)
                         .padding(8)
                         .background(Color("DevaubanGreen"))

@@ -30,13 +30,16 @@ struct WorkerRepository {
             // Unwrap the snapshot object.
             guard let querySnapshot = querySnapshot else { return }
             
+            //create worker
             let worker = querySnapshot.data().map { Worker(JSON: $0.self) }
             
             // Call the completion handler.
-            completionHandler(.success(worker!!))//this is ugly
+            completionHandler(.success(worker!!))
+            //this is ugly
         }
     }
     
+    // gets every persone registered
     public static func getWorkers(completionHandler: @escaping ((Swift.Result<[Worker], Error>) -> Void)) {
         Firestore.firestore().collection("workers").getDocuments() {(querySnapshot, error) in
             guard error == nil else { completionHandler(.failure(error!)) ; return }
@@ -63,9 +66,9 @@ struct WorkerRepository {
     
     //used to send data about user's workplaces
     public func sendUserWorkPlaces(email: String, workPlaces: [String]) -> Void{
-        if(true){
+        //if(true){
             database.collection("workers").document(email).setData(["Workplaces": workPlaces])
-        }
+        //}
     }
     
     //used to send data about user's role

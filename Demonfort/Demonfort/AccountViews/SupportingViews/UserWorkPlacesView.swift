@@ -14,13 +14,21 @@ struct UserWorkPlacesView: View {
     var body: some View {
 
         VStack {
-            ForEach(0..<self.session.worker!.workplaces.count){place in
-                HStack {
-                    Text(self.session.worker!.workplaces[place])
-                        .font(.headline)
-                        .padding(.bottom, 4)
-                    Spacer()
+            if self.session.worker?.workplaces != nil {
+                ForEach(0..<self.session.worker!.workplaces!.count){place in
+                    HStack {
+                        Text(self.session.worker!.workplaces![place])
+                            .font(.headline)
+                            .padding(.bottom, 4)
+                        Spacer()
+                    }
                 }
+            } else {
+                Text("Vous n'êtes associez à aucun chantier.")
+                    .fontWeight(.heavy)
+                    .font(.headline)
+                    .foregroundColor(.init(red: 1, green: 0.41, blue: 0.38, opacity: 1.0))
+                //pastel red
             }
         }
     }

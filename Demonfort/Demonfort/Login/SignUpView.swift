@@ -18,6 +18,7 @@ struct SignUpView: View {
     @State private var error: String = ""
     
     func signUp(){
+        // signup + create new user
         session.signUp(employee: name, email: email, password: password){(result, error) in
             if let error = error{
                 self.error = error.localizedDescription
@@ -26,6 +27,17 @@ struct SignUpView: View {
                 self.password = ""
             }
         }
+        
+        // signin new user
+        session.signIn(email: email, password: password){(result, error) in
+            if let error = error{
+                self.error = error.localizedDescription
+            } else {
+                self.email = ""
+                self.password = ""
+            }
+        }
+        //session.setWorker(email: email)
     }
     
     var body: some View {
@@ -49,9 +61,11 @@ struct SignUpView: View {
                 }
                 
                 HStack {
-                    TextField("Nom", text: $name)
+                    TextField("Name", text: $name)
+                        .keyboardType(.alphabet)
                         .keyboardType(.alphabet)
                         .disableAutocorrection(true)
+                        .textContentType(.name)
                         .padding(12)
                         .background(Color("textFieldBackground"))
                         .cornerRadius(12)
@@ -61,20 +75,30 @@ struct SignUpView: View {
                     TextField("Email", text: $email)
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
+                        .disableAutocorrection(true)
+                        .textContentType(.emailAddress)
                         .padding(12)
                         .background(Color("textFieldBackground"))
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
                 
                 HStack {
-                    SecureField("Mot de passe", text: $password)
+                    SecureField("Password", text: $password)
+//                        .autocapitalization(.none)
+//                        .keyboardType(.default)
+//                        .disableAutocorrection(true)
+                        .textContentType(.none)
                         .padding(12)
                         .background(Color("textFieldBackground"))
                         .cornerRadius(12)
                 }.padding([.horizontal], 12)
                 
                 HStack {
-                    SecureField("Confirmez le mot de passe", text: $passwordCnfrm)
+                    SecureField("Confirm password", text: $passwordCnfrm)
+//                        .autocapitalization(.none)
+//                        .keyboardType(.default)
+//                        .disableAutocorrection(true)
+                        .textContentType(.none)
                         .padding(12)
                         .background(Color("textFieldBackground"))
                         .cornerRadius(12)

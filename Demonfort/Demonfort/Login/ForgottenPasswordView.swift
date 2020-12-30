@@ -26,6 +26,10 @@ struct ForgottenPasswordView: View {
                 .lineLimit(nil)
             HStack {
                 TextField("Email", text: $email)
+                    .autocapitalization(.none)
+                    .keyboardType(.emailAddress)
+                    .disableAutocorrection(true)
+                    .textContentType(.emailAddress)
                     .padding(12)
                     .background(Color("textFieldBackground"))
                     .cornerRadius(12)

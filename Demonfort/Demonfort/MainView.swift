@@ -25,7 +25,7 @@ struct MainView: View {
                 }
                 .tag(0)
                 
-               // if(self.session.worker!.role==Role.worker) {
+                if(self.session.worker!.role==Role.worker) {
                     NewWorksheetView()
                         .tabItem {
                             VStack {
@@ -34,7 +34,7 @@ struct MainView: View {
                             }
                     }
                     .tag(1)
-                // }//end of if
+                }//end of if
                 NavigationView{
                     AccountView()
                         .navigationBarTitle("Compte")

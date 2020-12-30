@@ -25,7 +25,7 @@ struct LoginView: View {
                 self.password = ""
             }
         }
-        session.setWorker(email: email)
+        //session.setWorker(email: email)
     }
     
     var body: some View {
@@ -51,6 +51,8 @@ struct LoginView: View {
                     TextField("Email", text: $email)
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
+                        .disableAutocorrection(true)
+                        .textContentType(.emailAddress)
                         .padding(12)
                         .background(Color("textFieldBackground"))
                         .cornerRadius(12)
@@ -58,6 +60,10 @@ struct LoginView: View {
                 
                 HStack {
                     SecureField("Mot de passe", text: $password)
+                        .autocapitalization(.none)
+                        .keyboardType(.default)
+                        .disableAutocorrection(true)
+                        .textContentType(.oneTimeCode)
                         .padding(12)
                         .background(Color("textFieldBackground"))
                         .cornerRadius(12)

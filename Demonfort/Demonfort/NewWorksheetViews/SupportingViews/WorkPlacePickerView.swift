@@ -15,13 +15,21 @@ struct WorkPlacePickerView: View {
     var body: some View {
         
         VStack{
-            Picker(selection: $selectedWorkPlace, label: Text("Chantier")) {
-                ForEach(0..<self.session.worker!.workplaces.count) {
-                    Text(self.session.worker!.workplaces[$0])
-                }
-            }.pickerStyle(WheelPickerStyle())
-                .labelsHidden()
+            if self.session.worker?.workplaces != nil {
+                Picker(selection: $selectedWorkPlace, label: Text("Chantier")) {
+                    ForEach(0..<self.session.worker!.workplaces!.count) {
+                        Text(self.session.worker!.workplaces![$0])
+                    }
+                }.pickerStyle(WheelPickerStyle())
+                    .labelsHidden()
                 .frame(height: 180)
+            } else {
+                Text("Vous n'êtes associez à aucun chantier.")
+                    .fontWeight(.heavy)
+                    .font(.headline)
+                    .foregroundColor(.init(red: 1, green: 0.41, blue: 0.38, opacity: 1.0))
+                //pastel red
+            }
         }
     }
 }
