@@ -17,7 +17,7 @@ struct SignUpView: View {
     @State private var passwordCnfrm: String = ""
     @State private var error: String = ""
     
-    func signUp(){
+    func signUp() {
         // signup + create new user
         session.signUp(employee: name, email: email, password: password){(result, error) in
             if let error = error{
@@ -28,6 +28,10 @@ struct SignUpView: View {
             }
         }
         
+        //session.setWorker(email: email)
+    }
+    
+    func signIn() {
         // signin new user
         session.signIn(email: email, password: password){(result, error) in
             if let error = error{
@@ -37,7 +41,6 @@ struct SignUpView: View {
                 self.password = ""
             }
         }
-        //session.setWorker(email: email)
     }
     
     var body: some View {
@@ -62,7 +65,6 @@ struct SignUpView: View {
                 
                 HStack {
                     TextField("Name", text: $name)
-                        .keyboardType(.alphabet)
                         .keyboardType(.alphabet)
                         .disableAutocorrection(true)
                         .textContentType(.name)
@@ -107,6 +109,7 @@ struct SignUpView: View {
                 Button(action: {
                     if(self.password==self.passwordCnfrm){
                         self.signUp()
+                        self.signIn()
                     } else {
                         self.error = "Different passwords"
                     }

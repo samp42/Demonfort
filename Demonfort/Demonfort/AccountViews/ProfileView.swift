@@ -53,7 +53,7 @@ struct ProfileView: View {
 
 
 struct ProfileView_Previews: PreviewProvider {
-    //static let worker = Worker.makeMockWorker()
+    static let worker = Worker.makeMockWorker()
     static let session = SessionStore()
     
     static var previews: some View {

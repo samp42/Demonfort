@@ -29,11 +29,12 @@ public class SessionStore: ObservableObject{
     var handle: AuthStateDidChangeListenerHandle?
     
     let database = Firestore.firestore()
+    let firebaseAuth = Auth.auth()
     
 //    func getUserName(user: User) -> String?{
 //        
 //        //check if there is user logged in (user exists)
-//        if Auth.auth().currentUser != nil{
+//        if firebaseAuth.currentUser != nil{
 //            //find the name of the user from the workers collection
 //            
 //            return fetchName(email: user.email!){ name in return name }
@@ -59,7 +60,7 @@ public class SessionStore: ObservableObject{
     }
     
     func listen(){
-        handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+        handle = firebaseAuth.addStateDidChangeListener({ (auth, user) in
             if let user = user{
                 self.session = User(uid: user.uid, email: user.email)
                 self.setWorker(email: user.email!)
@@ -71,45 +72,45 @@ public class SessionStore: ObservableObject{
     
     func signUp(employee: String, email: String, password: String, handler: @escaping AuthDataResultCallback){
         //Sign Up use with firebase Auth
-        Auth.auth().createUser(withEmail: email, password: password, completion: handler)
+        firebaseAuth.createUser(withEmail: email, password: password, completion: handler)
         //add user to workers collection
         /*---------------------FOR SOME REASON THIS IS NOT PUT INTO DOCUMENT WHEN CREATING USER------------------------*/
         /*probably because of firestore rules*/
         //received role but not name
         WorkerRepository.sendUser(email: email, employee: employee, role: .worker)
-        let workerRepo = WorkerRepository()
+//        let workerRepo = WorkerRepository()
         //workerRepo.sendUserWorkPlaces(email: email, workPlaces: locations)
         //setWorker(email: email)
     }
     
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback){
         //Authenticate user in Firebase
-        Auth.auth().signIn(withEmail: email, password: password, completion: handler)
+        firebaseAuth.signIn(withEmail: email, password: password, completion: handler)
         //Create worker instance
         setWorker(email: email)
     }
     
     func signOut(){
         do {
-            try Auth.auth().signOut()
+            try firebaseAuth.signOut()
             self.session = nil
-        } catch {
-            print("Error signing out")
+        } catch let signOutError as NSError{
+            print(signOutError)
             //SEND ALERT TO USER
         }
     }
     
     func sendResetPassword(email: String){
-        Auth.auth().sendPasswordReset(withEmail: email, completion: nil)
+        firebaseAuth.sendPasswordReset(withEmail: email, completion: nil)
     }
     
     func deleteAccount(){
-        Auth.auth().currentUser!.delete(completion: nil)
+        firebaseAuth.currentUser!.delete(completion: nil)
     }
     
     func unbind(){
         if let handle = handle{
-            Auth.auth().removeStateDidChangeListener(handle)
+            firebaseAuth.removeStateDidChangeListener(handle)
         }
     }
     

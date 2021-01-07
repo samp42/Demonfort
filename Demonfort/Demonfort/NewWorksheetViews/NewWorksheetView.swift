@@ -30,7 +30,9 @@ struct NewWorksheetView: View {
 }
 
 struct NewWorksheetView_Previews: PreviewProvider {
+    static let session = SessionStore()
+    
     static var previews: some View {
-        NewWorksheetView()
+        NewWorksheetView().environmentObject(session)
     }
 }

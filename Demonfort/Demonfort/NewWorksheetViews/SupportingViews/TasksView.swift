@@ -13,7 +13,18 @@ struct TasksView: View {
     
     var body: some View {
         VStack{
-            TextField("Description des tâches", text: $tasks)
+            // use texteditor if on iOS 14
+            if #available(iOS 14.0, *) {
+                TextEditor(text: $tasks)
+                    .autocapitalization(.sentences)
+                    .disableAutocorrection(true)
+                    .font(.body)
+            } else {
+                TextField("Description des tâches", text: $tasks)
+                    .autocapitalization(.sentences)
+                    .disableAutocorrection(true)
+                    .font(.body)
+            }
         }
     }
 }
